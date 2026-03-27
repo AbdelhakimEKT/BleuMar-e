@@ -1,36 +1,56 @@
 import type { Metadata } from "next";
 
-import { siteConfig } from "@/content/site";
+import { getSiteConfig } from "@/content/site";
+import type { Locale } from "@/i18n/config";
+import { locales } from "@/i18n/config";
+import { withLocale } from "@/i18n/routing";
 
 type MetadataOptions = {
   title: string;
   description: string;
+  locale?: Locale;
   path?: string;
 };
 
-export function createMetadata({ title, description, path = "/" }: MetadataOptions): Metadata {
+export function createMetadata({
+  title,
+  description,
+  locale = "fr",
+  path = "/"
+}: MetadataOptions): Metadata {
+  const siteConfig = getSiteConfig(locale);
   const fullTitle = `${title} | ${siteConfig.name}`;
-  const url = new URL(path, siteConfig.url).toString();
+  const localizedPath = withLocale(locale, path);
+  const canonical = new URL(localizedPath, siteConfig.url).toString();
 
   return {
     title: fullTitle,
     description,
     alternates: {
-      canonical: url
+      canonical,
+      languages: Object.fromEntries(
+        locales.map((supportedLocale) => [
+          supportedLocale,
+          new URL(withLocale(supportedLocale, path), siteConfig.url).toString()
+        ])
+      )
     },
     openGraph: {
       title: fullTitle,
       description,
-      url,
+      url: canonical,
       siteName: siteConfig.name,
-      locale: "fr_FR",
+      locale: locale === "fr" ? "fr_FR" : "en_GB",
       type: "website",
       images: [
         {
           url: "/images/hero/bleu-maree-hero-dining-room-sunset.png",
           width: 1920,
           height: 1080,
-          alt: "Bleu Marée, table gastronomique à Biarritz"
+          alt:
+            locale === "fr"
+              ? "Bleu Maree, table gastronomique a Biarritz"
+              : "Bleu Maree fine dining table in Biarritz"
         }
       ]
     },
@@ -43,14 +63,19 @@ export function createMetadata({ title, description, path = "/" }: MetadataOptio
   };
 }
 
-export function createRestaurantSchema() {
+export function createRestaurantSchema(locale: Locale = "fr") {
+  const siteConfig = getSiteConfig(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     name: siteConfig.name,
     description: siteConfig.description,
-    servesCuisine: ["Cuisine française contemporaine", "Produits de la mer"],
-    priceRange: "€€€€",
+    servesCuisine:
+      locale === "fr"
+        ? ["Cuisine francaise contemporaine", "Produits de la mer"]
+        : ["Contemporary French cuisine", "Seafood"],
+    priceRange: "$$$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.addressLineOne,
@@ -60,7 +85,7 @@ export function createRestaurantSchema() {
     },
     telephone: siteConfig.phoneRaw,
     email: siteConfig.email,
-    url: siteConfig.url,
+    url: new URL(withLocale(locale, "/"), siteConfig.url).toString(),
     image: `${siteConfig.url}/images/hero/bleu-maree-hero-dining-room-sunset.png`
   };
 }

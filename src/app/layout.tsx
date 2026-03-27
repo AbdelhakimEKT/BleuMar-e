@@ -4,6 +4,7 @@ import { AppShell } from "@/components/layout/app-shell";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/content/site";
+import { getSiteSettingsData } from "@/sanity/loaders";
 
 import "./globals.css";
 
@@ -31,11 +32,23 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const [frSettings, enSettings] = await Promise.all([
+    getSiteSettingsData("fr"),
+    getSiteSettingsData("en")
+  ]);
+  const settingsByLocale = {
+    fr: frSettings,
+    en: enSettings
+  } as const;
+
   return (
     <html lang="fr">
       <body>
-        <AppShell header={<SiteHeader />} footer={<SiteFooter />}>
+        <AppShell
+          header={<SiteHeader settingsByLocale={settingsByLocale} />}
+          footer={<SiteFooter settingsByLocale={settingsByLocale} />}
+        >
           {children}
         </AppShell>
       </body>

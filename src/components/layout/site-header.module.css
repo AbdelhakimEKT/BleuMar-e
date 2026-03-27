@@ -22,6 +22,12 @@
   min-height: 86px;
 }
 
+.utilityRail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -63,6 +69,41 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+
+.localeSwitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(245, 239, 228, 0.04);
+}
+
+.localeLink,
+.mobileLocaleLink {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.localeLink {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.localeLinkActive {
+  background: rgba(201, 165, 106, 0.14);
+  color: var(--foreground);
+}
+
+.mobileLocaleLink {
+  display: none;
 }
 
 .navLink {
@@ -107,6 +148,10 @@
     display: inline-flex;
   }
 
+  .localeSwitch {
+    display: none;
+  }
+
   .nav {
     position: absolute;
     left: 14px;
@@ -132,5 +177,10 @@
 
   .brandCopy span {
     display: none;
+  }
+
+  .mobileLocaleLink {
+    display: inline-flex;
+    margin-top: 0.25rem;
   }
 }

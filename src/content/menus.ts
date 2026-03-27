@@ -1,3 +1,5 @@
+import type { Locale } from "@/i18n/config";
+
 export type MenuItem = {
   name: string;
   description: string;
@@ -13,271 +15,608 @@ export type MenuSection = {
   items: MenuItem[];
 };
 
-export const menuSections: MenuSection[] = [
-  {
-    title: "Menu déjeuner",
-    subtitle: "Service du midi",
-    priceHint: "39 € · 2 ou 3 temps",
-    description:
-      "Une proposition plus concise, pensée pour un déjeuner gastronomique lisible et efficace.",
-    items: [
-      {
-        name: "Entrée du marché",
-        description: "Composition du moment selon la saison et les arrivages.",
-        price: "16 €",
-        tag: "De saison"
-      },
-      {
-        name: "Poisson du jour ou viande du moment",
-        description: "Suggestion raffinée en fonction du service et du produit.",
-        price: "28 €",
-        tag: "Selon arrivage"
-      },
-      {
-        name: "Dessert du chef",
-        description: "Finale du jour, nette et saisonnière.",
-        price: "12 €"
+const menusContentByLocale = {
+  fr: {
+    pageHero: {
+      eyebrow: "La carte",
+      title: "Des menus lisibles, désirables et simples à faire évoluer.",
+      intro:
+        "La structure de cette page est pensée pour une mise à jour régulière: catégories claires, mentions de saison, prix visibles et futur branchement à un CMS.",
+      image: "/images/menu/bleu-maree-menu-scallops-signature.png"
+    },
+    sectionIntro: {
+      eyebrow: "Menus & cave",
+      title: "Une carte conçue pour séduire autant que pour être administrée facilement.",
+      lead:
+        "Les sections sont séparées proprement pour préparer la suite: affichage conditionnel, tags “nouveau” ou “de saison”, PDF et synchronisation future avec un back-office."
+    },
+    seasonalitySplit: {
+      eyebrow: "Saisonnalité",
+      title: "La carte vit avec les arrivages, pas avec une structure figée.",
+      intro:
+        "Ce socle permet déjà d'introduire des suggestions temporaires, des menus de fête, des sélections de vins ou une carte déjeuner distincte sans alourdir l'interface.",
+      paragraphs: [
+        "Le contenu est centralisé dans des modules dédiés afin de faciliter la migration vers un CMS headless ou un back-office léger.",
+        "Pour la mise en ligne, il suffira de remplacer les propositions de démonstration par votre carte réelle et vos prix définitifs."
+      ],
+      image: "/images/details/bleu-maree-detail-table-setting.jpg",
+      imageAlt: "Détail de table Bleu Marée",
+      actions: {
+        reserve: "Réserver",
+        pdf: "Demander le PDF"
       }
+    },
+    menuSections: [
+      {
+        title: "Menu déjeuner",
+        subtitle: "Service du midi",
+        priceHint: "39 € · 2 ou 3 temps",
+        description:
+          "Une proposition plus concise, pensée pour un déjeuner gastronomique lisible et efficace.",
+        items: [
+          {
+            name: "Entrée du marché",
+            description: "Composition du moment selon la saison et les arrivages.",
+            price: "16 €",
+            tag: "De saison"
+          },
+          {
+            name: "Poisson du jour ou viande du moment",
+            description: "Suggestion raffinée en fonction du service et du produit.",
+            price: "28 €",
+            tag: "Selon arrivage"
+          },
+          {
+            name: "Dessert du chef",
+            description: "Finale du jour, nette et saisonnière.",
+            price: "12 €"
+          }
+        ]
+      },
+      {
+        title: "Menu dégustation 5 temps",
+        subtitle: "Parcours signature",
+        priceHint: "95 €",
+        description:
+          "Lecture concise de l'univers Bleu Marée, autour de la mer, de la saison et du tempo du service.",
+        items: [
+          {
+            name: "Huître, pomme verte, verjus",
+            description: "Ouverture saline et vive pour lancer la dégustation.",
+            price: "Inclus",
+            tag: "De saison"
+          },
+          {
+            name: "Crudo de Saint-Jacques",
+            description: "Agrumes doux, huile d'algues et feuille capucine.",
+            price: "Inclus",
+            tag: "Signature"
+          },
+          {
+            name: "Poisson de ligne, jus réduit",
+            description: "Lecture du moment selon arrivage et maturité du produit.",
+            price: "Inclus",
+            tag: "Selon arrivage"
+          },
+          {
+            name: "Pré-dessert",
+            description: "Transition fraîche et légère autour des agrumes.",
+            price: "Inclus"
+          },
+          {
+            name: "Dessert signature",
+            description: "Finale précise, nette et aérienne.",
+            price: "Inclus"
+          }
+        ]
+      },
+      {
+        title: "Menu dégustation 7 temps",
+        subtitle: "Expérience complète",
+        priceHint: "135 €",
+        description:
+          "Une progression plus ample pour les clients qui viennent vivre la maison dans sa forme la plus immersive.",
+        items: [
+          {
+            name: "Mise en bouche marine",
+            description: "Amuse-bouche inspiré de l'Atlantique.",
+            price: "Inclus"
+          },
+          {
+            name: "Entrée froide signature",
+            description: "Jeu de coupe, fraîcheur et tension aromatique.",
+            price: "Inclus"
+          },
+          {
+            name: "Entrée chaude de saison",
+            description: "Travail plus enveloppant autour du jus et des textures.",
+            price: "Inclus",
+            tag: "De saison"
+          },
+          {
+            name: "Poisson noble",
+            description: "Cuisson juste et garniture végétale.",
+            price: "Inclus",
+            tag: "Selon arrivage"
+          },
+          {
+            name: "Viande choisie",
+            description: "Séquence plus terrienne pour donner du relief au parcours.",
+            price: "Inclus"
+          },
+          {
+            name: "Pré-dessert",
+            description: "Relance fraîche avant la finale sucrée.",
+            price: "Inclus"
+          },
+          {
+            name: "Dessert signature",
+            description: "Clôture de l'expérience sur une note claire et élégante.",
+            price: "Inclus",
+            tag: "Signature"
+          }
+        ]
+      },
+      {
+        title: "Entrées",
+        subtitle: "À la carte",
+        priceHint: "De 18 € à 32 €",
+        description:
+          "Assiettes d'ouverture pensées pour installer immédiatement le ton de la maison.",
+        items: [
+          {
+            name: "Crudo de Saint-Jacques",
+            description: "Agrumes doux, huile d'algues, herbes fraîches.",
+            price: "24 €",
+            tag: "Signature"
+          },
+          {
+            name: "Langoustine, laitue braisée, bisque légère",
+            description: "Une entrée plus enveloppante, structurée et profonde.",
+            price: "32 €"
+          },
+          {
+            name: "Entrée végétale du moment",
+            description: "Interprétation saisonnière selon le marché.",
+            price: "18 €",
+            tag: "De saison"
+          }
+        ]
+      },
+      {
+        title: "Poissons & produits de la mer",
+        subtitle: "À la carte",
+        priceHint: "De 34 € à 54 €",
+        description:
+          "Le coeur de la carte, construit autour des produits marins et de la précision des cuissons.",
+        items: [
+          {
+            name: "Poisson du jour",
+            description: "Cuisson courte, garniture saisonnière et sauce de la maison.",
+            price: "34 €",
+            tag: "Selon arrivage"
+          },
+          {
+            name: "Saint-Jacques rôties",
+            description: "Céleri, noisette et jus corsé mais net.",
+            price: "46 €",
+            tag: "Signature"
+          },
+          {
+            name: "Turbot, beurre blanc fumé, poireau jeune",
+            description: "Lecture contemporaine d'un grand produit.",
+            price: "54 €"
+          }
+        ]
+      },
+      {
+        title: "Viandes",
+        subtitle: "À la carte",
+        priceHint: "De 36 € à 48 €",
+        description:
+          "Une sélection courte pour les clients qui souhaitent compléter le récit marin par une séquence plus terrienne.",
+        items: [
+          {
+            name: "Volaille fermière, jus réduit, légumes braisés",
+            description: "Texture fondante et sauce courte.",
+            price: "36 €"
+          },
+          {
+            name: "Pièce de boeuf maturée",
+            description: "Accompagnement saisonnier et jus plus profond.",
+            price: "48 €"
+          }
+        ]
+      },
+      {
+        title: "Desserts",
+        subtitle: "À la carte",
+        priceHint: "De 14 € à 21 €",
+        description:
+          "Des finales précises, construites sur la fraîcheur, le relief et l'équilibre.",
+        items: [
+          {
+            name: "Dessert signature",
+            description: "Crème légère, agrumes et note toastée.",
+            price: "21 €",
+            tag: "Signature"
+          },
+          {
+            name: "Dessert du moment",
+            description: "Variation courte selon la saison.",
+            price: "14 €",
+            tag: "De saison"
+          }
+        ]
+      },
+      {
+        title: "Carte des vins",
+        subtitle: "Sélection cave",
+        priceHint: "À partir de 9 € le verre",
+        description:
+          "Une cave courte et pensée pour dialoguer avec la minéralité, l'iode et la précision du menu.",
+        items: [
+          {
+            name: "Verres du moment",
+            description: "Sélection évolutive selon les services.",
+            price: "9 € à 18 €"
+          },
+          {
+            name: "Bouteilles signature",
+            description: "Sélection française et quelques accents plus atlantiques.",
+            price: "À partir de 42 €"
+          }
+        ]
+      },
+      {
+        title: "Accords mets & vins",
+        subtitle: "Sommellerie",
+        priceHint: "42 € à 86 €",
+        description:
+          "Accords pensés pour épouser les menus dégustation et les temps forts de la carte.",
+        items: [
+          {
+            name: "Accord 3 verres",
+            description: "Pour le déjeuner ou un parcours plus court.",
+            price: "42 €"
+          },
+          {
+            name: "Accord 5 verres",
+            description: "Construction progressive, fraîcheur puis structure.",
+            price: "68 €"
+          },
+          {
+            name: "Accord 7 verres",
+            description: "Version complète pour le menu dégustation 7 temps.",
+            price: "86 €"
+          }
+        ]
+      },
+      {
+        title: "Menu spécial événement",
+        subtitle: "Temps fort",
+        priceHint: "Selon programmation",
+        description:
+          "Section activable pour les fêtes, collaborations, Saint-Valentin ou soirées signatures.",
+        items: [
+          {
+            name: "Exemple de menu spécial",
+            description: "À publier seulement lorsqu'un événement est actif.",
+            price: "Sur annonce",
+            tag: "Événement"
+          }
+        ]
+      }
+    ],
+    menuNotes: [
+      "La structure de carte suit désormais vos familles de contenus réelles: déjeuner, dégustation, entrées, mer, viandes, desserts, vins et accords.",
+      "Les mentions “de saison”, “selon arrivage” et “événement” sont déjà prévues pour être pilotées depuis le futur back-office.",
+      "Une version PDF et un lien de menu Zenchef pourront être associés à chaque service si vous activez cette option dans Zenchef."
     ]
   },
-  {
-    title: "Menu dégustation 5 temps",
-    subtitle: "Parcours signature",
-    priceHint: "95 €",
-    description:
-      "Lecture concise de l'univers Bleu Marée, autour de la mer, de la saison et du tempo du service.",
-    items: [
-      {
-        name: "Huître, pomme verte, verjus",
-        description: "Ouverture saline et vive pour lancer la dégustation.",
-        price: "Inclus",
-        tag: "De saison"
-      },
-      {
-        name: "Crudo de Saint-Jacques",
-        description: "Agrumes doux, huile d'algues et feuille capucine.",
-        price: "Inclus",
-        tag: "Signature"
-      },
-      {
-        name: "Poisson de ligne, jus réduit",
-        description: "Lecture du moment selon arrivage et maturité du produit.",
-        price: "Inclus",
-        tag: "Selon arrivage"
-      },
-      {
-        name: "Pré-dessert",
-        description: "Transition fraîche et légère autour des agrumes.",
-        price: "Inclus"
-      },
-      {
-        name: "Dessert signature",
-        description: "Finale précise, nette et aérienne.",
-        price: "Inclus"
+  en: {
+    pageHero: {
+      eyebrow: "Menus",
+      title: "Menus that stay clear, desirable, and easy to evolve.",
+      intro:
+        "This page structure is designed for regular updates: clear categories, seasonal mentions, visible pricing, and a future CMS connection.",
+      image: "/images/menu/bleu-maree-menu-scallops-signature.png"
+    },
+    sectionIntro: {
+      eyebrow: "Menus & cellar",
+      title: "A menu designed to seduce while remaining easy to manage.",
+      lead:
+        "The sections are separated cleanly to prepare what comes next: conditional display, seasonal tags, PDFs, and future back-office synchronization."
+    },
+    seasonalitySplit: {
+      eyebrow: "Seasonality",
+      title: "The menu moves with arrivals, not with a fixed structure.",
+      intro:
+        "This foundation already makes room for temporary suggestions, celebration menus, wine selections, or a distinct lunch offering without weighing down the interface.",
+      paragraphs: [
+        "Content is centralized in dedicated modules to ease the move to a headless CMS or a lightweight back-office.",
+        "For launch, the sample dishes only need to be replaced with your real menu and final pricing."
+      ],
+      image: "/images/details/bleu-maree-detail-table-setting.jpg",
+      imageAlt: "Bleu Maree table detail",
+      actions: {
+        reserve: "Book",
+        pdf: "Request the PDF"
       }
-    ]
-  },
-  {
-    title: "Menu dégustation 7 temps",
-    subtitle: "Expérience complète",
-    priceHint: "135 €",
-    description:
-      "Une progression plus ample pour les clients qui viennent vivre la maison dans sa forme la plus immersive.",
-    items: [
+    },
+    menuSections: [
       {
-        name: "Mise en bouche marine",
-        description: "Amuse-bouche inspiré de l'Atlantique.",
-        price: "Inclus"
+        title: "Lunch menu",
+        subtitle: "Lunch service",
+        priceHint: "EUR39 · 2 or 3 courses",
+        description:
+          "A shorter proposal designed for a refined, efficient gastronomic lunch.",
+        items: [
+          {
+            name: "Market starter",
+            description: "Current composition shaped by the season and daily arrivals.",
+            price: "EUR16",
+            tag: "Seasonal"
+          },
+          {
+            name: "Fish of the day or meat of the moment",
+            description: "A refined suggestion according to service and product.",
+            price: "EUR28",
+            tag: "According to market arrivals"
+          },
+          {
+            name: "Chef's dessert",
+            description: "A clean and seasonal final note.",
+            price: "EUR12"
+          }
+        ]
       },
       {
-        name: "Entrée froide signature",
-        description: "Jeu de coupe, fraîcheur et tension aromatique.",
-        price: "Inclus"
+        title: "Five-course tasting menu",
+        subtitle: "Signature journey",
+        priceHint: "EUR95",
+        description:
+          "A concise reading of the Bleu Maree universe through the sea, the season, and the rhythm of service.",
+        items: [
+          {
+            name: "Oyster, green apple, verjus",
+            description: "A saline, lively opening to begin the tasting.",
+            price: "Included",
+            tag: "Seasonal"
+          },
+          {
+            name: "Scallop crudo",
+            description: "Soft citrus, seaweed oil, and nasturtium leaf.",
+            price: "Included",
+            tag: "Signature"
+          },
+          {
+            name: "Line-caught fish, reduced jus",
+            description: "A moment-specific reading depending on arrivals and maturity.",
+            price: "Included",
+            tag: "According to market arrivals"
+          },
+          {
+            name: "Pre-dessert",
+            description: "A fresh, light transition built around citrus.",
+            price: "Included"
+          },
+          {
+            name: "Signature dessert",
+            description: "A precise, airy ending.",
+            price: "Included"
+          }
+        ]
       },
       {
-        name: "Entrée chaude de saison",
-        description: "Travail plus enveloppant autour du jus et des textures.",
-        price: "Inclus",
-        tag: "De saison"
+        title: "Seven-course tasting menu",
+        subtitle: "Complete experience",
+        priceHint: "EUR135",
+        description:
+          "A broader progression for guests who want to experience the house in its most immersive form.",
+        items: [
+          {
+            name: "Marine amuse-bouche",
+            description: "A bite inspired by the Atlantic.",
+            price: "Included"
+          },
+          {
+            name: "Cold signature starter",
+            description: "A play of cut, freshness, and aromatic tension.",
+            price: "Included"
+          },
+          {
+            name: "Seasonal warm starter",
+            description: "A more enveloping sequence built around jus and texture.",
+            price: "Included",
+            tag: "Seasonal"
+          },
+          {
+            name: "Noble fish",
+            description: "Precise cooking and a vegetal garnish.",
+            price: "Included",
+            tag: "According to market arrivals"
+          },
+          {
+            name: "Selected meat",
+            description: "A more terrestrial moment to add relief to the journey.",
+            price: "Included"
+          },
+          {
+            name: "Pre-dessert",
+            description: "A fresh reset before the sweet finale.",
+            price: "Included"
+          },
+          {
+            name: "Signature dessert",
+            description: "A clear and elegant close to the experience.",
+            price: "Included",
+            tag: "Signature"
+          }
+        ]
       },
       {
-        name: "Poisson noble",
-        description: "Cuisson juste et garniture végétale.",
-        price: "Inclus",
-        tag: "Selon arrivage"
+        title: "Starters",
+        subtitle: "A la carte",
+        priceHint: "From EUR18 to EUR32",
+        description:
+          "Opening plates designed to establish the house tone immediately.",
+        items: [
+          {
+            name: "Scallop crudo",
+            description: "Soft citrus, seaweed oil, and fresh herbs.",
+            price: "EUR24",
+            tag: "Signature"
+          },
+          {
+            name: "Langoustine, braised lettuce, light bisque",
+            description: "A more enveloping, structured, and deeper starter.",
+            price: "EUR32"
+          },
+          {
+            name: "Vegetal dish of the moment",
+            description: "A seasonal interpretation according to the market.",
+            price: "EUR18",
+            tag: "Seasonal"
+          }
+        ]
       },
       {
-        name: "Viande choisie",
-        description: "Séquence plus terrienne pour donner du relief au parcours.",
-        price: "Inclus"
+        title: "Fish & seafood",
+        subtitle: "A la carte",
+        priceHint: "From EUR34 to EUR54",
+        description:
+          "The heart of the menu, built around marine ingredients and precise cooking.",
+        items: [
+          {
+            name: "Fish of the day",
+            description: "Short cooking, seasonal garnish, and house sauce.",
+            price: "EUR34",
+            tag: "According to market arrivals"
+          },
+          {
+            name: "Roasted scallops",
+            description: "Celery, hazelnut, and a rich but clean jus.",
+            price: "EUR46",
+            tag: "Signature"
+          },
+          {
+            name: "Turbot, smoked beurre blanc, young leek",
+            description: "A contemporary reading of a grand ingredient.",
+            price: "EUR54"
+          }
+        ]
       },
       {
-        name: "Pré-dessert",
-        description: "Relance fraîche avant la finale sucrée.",
-        price: "Inclus"
+        title: "Meats",
+        subtitle: "A la carte",
+        priceHint: "From EUR36 to EUR48",
+        description:
+          "A short selection for guests who want to complement the marine narrative with a more grounded sequence.",
+        items: [
+          {
+            name: "Free-range poultry, reduced jus, braised vegetables",
+            description: "Tender texture and a short sauce.",
+            price: "EUR36"
+          },
+          {
+            name: "Aged beef cut",
+            description: "Seasonal garnish and a deeper jus.",
+            price: "EUR48"
+          }
+        ]
       },
       {
-        name: "Dessert signature",
-        description: "Clôture de l'expérience sur une note claire et élégante.",
-        price: "Inclus",
-        tag: "Signature"
+        title: "Desserts",
+        subtitle: "A la carte",
+        priceHint: "From EUR14 to EUR21",
+        description:
+          "Precise endings built on freshness, contrast, and balance.",
+        items: [
+          {
+            name: "Signature dessert",
+            description: "Light cream, citrus, and a toasted note.",
+            price: "EUR21",
+            tag: "Signature"
+          },
+          {
+            name: "Dessert of the moment",
+            description: "A short variation according to the season.",
+            price: "EUR14",
+            tag: "Seasonal"
+          }
+        ]
+      },
+      {
+        title: "Wine list",
+        subtitle: "Cellar selection",
+        priceHint: "From EUR9 per glass",
+        description:
+          "A concise cellar designed to dialogue with minerality, iodine, and the precision of the menu.",
+        items: [
+          {
+            name: "Glasses of the moment",
+            description: "An evolving selection according to service.",
+            price: "EUR9 to EUR18"
+          },
+          {
+            name: "Signature bottles",
+            description: "French selections with a few more Atlantic accents.",
+            price: "From EUR42"
+          }
+        ]
+      },
+      {
+        title: "Food & wine pairings",
+        subtitle: "Sommelier selection",
+        priceHint: "EUR42 to EUR86",
+        description:
+          "Pairings designed to match the tasting menus and the strongest moments of the menu.",
+        items: [
+          {
+            name: "Three-glass pairing",
+            description: "For lunch or a shorter journey.",
+            price: "EUR42"
+          },
+          {
+            name: "Five-glass pairing",
+            description: "A progressive construction, freshness first, then structure.",
+            price: "EUR68"
+          },
+          {
+            name: "Seven-glass pairing",
+            description: "The complete version for the seven-course tasting menu.",
+            price: "EUR86"
+          }
+        ]
+      },
+      {
+        title: "Special event menu",
+        subtitle: "Featured moment",
+        priceHint: "According to programming",
+        description:
+          "A section ready to be activated for celebrations, collaborations, Valentine's Day, or signature evenings.",
+        items: [
+          {
+            name: "Sample special menu",
+            description: "To be published only when an event is active.",
+            price: "Announced separately",
+            tag: "Event"
+          }
+        ]
       }
-    ]
-  },
-  {
-    title: "Entrées",
-    subtitle: "À la carte",
-    priceHint: "De 18 € à 32 €",
-    description:
-      "Assiettes d'ouverture pensées pour installer immédiatement le ton de la maison.",
-    items: [
-      {
-        name: "Crudo de Saint-Jacques",
-        description: "Agrumes doux, huile d'algues, herbes fraîches.",
-        price: "24 €",
-        tag: "Signature"
-      },
-      {
-        name: "Langoustine, laitue braisée, bisque légère",
-        description: "Une entrée plus enveloppante, structurée et profonde.",
-        price: "32 €"
-      },
-      {
-        name: "Entrée végétale du moment",
-        description: "Interprétation saisonnière selon le marché.",
-        price: "18 €",
-        tag: "De saison"
-      }
-    ]
-  },
-  {
-    title: "Poissons & produits de la mer",
-    subtitle: "À la carte",
-    priceHint: "De 34 € à 54 €",
-    description:
-      "Le coeur de la carte, construit autour des produits marins et de la précision des cuissons.",
-    items: [
-      {
-        name: "Poisson du jour",
-        description: "Cuisson courte, garniture saisonnière et sauce de la maison.",
-        price: "34 €",
-        tag: "Selon arrivage"
-      },
-      {
-        name: "Saint-Jacques rôties",
-        description: "Céleri, noisette et jus corsé mais net.",
-        price: "46 €",
-        tag: "Signature"
-      },
-      {
-        name: "Turbot, beurre blanc fumé, poireau jeune",
-        description: "Lecture contemporaine d'un grand produit.",
-        price: "54 €"
-      }
-    ]
-  },
-  {
-    title: "Viandes",
-    subtitle: "À la carte",
-    priceHint: "De 36 € à 48 €",
-    description:
-      "Une sélection courte pour les clients qui souhaitent compléter le récit marin par une séquence plus terrienne.",
-    items: [
-      {
-        name: "Volaille fermière, jus réduit, légumes braisés",
-        description: "Texture fondante et sauce courte.",
-        price: "36 €"
-      },
-      {
-        name: "Pièce de boeuf maturée",
-        description: "Accompagnement saisonnier et jus plus profond.",
-        price: "48 €"
-      }
-    ]
-  },
-  {
-    title: "Desserts",
-    subtitle: "À la carte",
-    priceHint: "De 14 € à 21 €",
-    description:
-      "Des finales précises, construites sur la fraîcheur, le relief et l'équilibre.",
-    items: [
-      {
-        name: "Dessert signature",
-        description: "Crème légère, agrumes et note toastée.",
-        price: "21 €",
-        tag: "Signature"
-      },
-      {
-        name: "Dessert du moment",
-        description: "Variation courte selon la saison.",
-        price: "14 €",
-        tag: "De saison"
-      }
-    ]
-  },
-  {
-    title: "Carte des vins",
-    subtitle: "Sélection cave",
-    priceHint: "À partir de 9 € le verre",
-    description:
-      "Une cave courte et pensée pour dialoguer avec la minéralité, l'iode et la précision du menu.",
-    items: [
-      {
-        name: "Verres du moment",
-        description: "Sélection évolutive selon les services.",
-        price: "9 € à 18 €"
-      },
-      {
-        name: "Bouteilles signature",
-        description: "Sélection française et quelques accents plus atlantiques.",
-        price: "À partir de 42 €"
-      }
-    ]
-  },
-  {
-    title: "Accords mets & vins",
-    subtitle: "Sommellerie",
-    priceHint: "42 € à 86 €",
-    description:
-      "Accords pensés pour épouser les menus dégustation et les temps forts de la carte.",
-    items: [
-      {
-        name: "Accord 3 verres",
-        description: "Pour le déjeuner ou un parcours plus court.",
-        price: "42 €"
-      },
-      {
-        name: "Accord 5 verres",
-        description: "Construction progressive, fraîcheur puis structure.",
-        price: "68 €"
-      },
-      {
-        name: "Accord 7 verres",
-        description: "Version complète pour le menu dégustation 7 temps.",
-        price: "86 €"
-      }
-    ]
-  },
-  {
-    title: "Menu spécial événement",
-    subtitle: "Temps fort",
-    priceHint: "Selon programmation",
-    description:
-      "Section activable pour les fêtes, collaborations, Saint-Valentin ou soirées signatures.",
-    items: [
-      {
-        name: "Exemple de menu spécial",
-        description: "À publier seulement lorsqu'un événement est actif.",
-        price: "Sur annonce",
-        tag: "Événement"
-      }
+    ],
+    menuNotes: [
+      "The menu structure now follows your real content families: lunch, tasting, starters, seafood, meats, desserts, wines, and pairings.",
+      "The tags \"seasonal\", \"according to market arrivals\", and \"event\" are already prepared for future back-office management.",
+      "A PDF version and a Zenchef menu link can later be attached to each service if you enable that option in Zenchef."
     ]
   }
-];
+};
 
-export const menuNotes = [
-  "La structure de carte suit désormais vos familles de contenus réelles: déjeuner, dégustation, entrées, mer, viandes, desserts, vins et accords.",
-  "Les mentions “de saison”, “selon arrivage” et “événement” sont déjà prévues pour être pilotées depuis le futur back-office.",
-  "Une version PDF et un lien de menu Zenchef pourront être associés à chaque service si vous activez cette option dans Zenchef."
-];
+export const menuSections: MenuSection[] = menusContentByLocale.fr.menuSections;
+export const menuNotes = menusContentByLocale.fr.menuNotes;
+
+export function getMenusContent(locale: Locale) {
+  return menusContentByLocale[locale];
+}

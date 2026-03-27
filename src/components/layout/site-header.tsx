@@ -1,9 +1,12 @@
-import { getSiteSettingsData } from "@/sanity/loaders";
+import type { Locale } from "@/i18n/config";
+import type { SiteSettingsData } from "@/sanity/loaders";
 
 import { SiteHeaderClient } from "./site-header.client";
 
-export async function SiteHeader() {
-  const settings = await getSiteSettingsData();
+type SiteHeaderProps = {
+  settingsByLocale: Record<Locale, SiteSettingsData>;
+};
 
-  return <SiteHeaderClient name={settings.name} location={settings.location} />;
+export function SiteHeader({ settingsByLocale }: SiteHeaderProps) {
+  return <SiteHeaderClient settingsByLocale={settingsByLocale} />;
 }

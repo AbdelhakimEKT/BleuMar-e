@@ -1,16 +1,11 @@
 import { cache } from "react";
 
-import {
-  curatedImpressions,
-  guestJourney,
-  philosophyHighlights,
-  signatureDishes,
-  heroContent
-} from "@/content/home";
-import { upcomingExperiences, privateDiningPoints, seasonalMoments } from "@/content/experiences";
-import { galleryItems } from "@/content/gallery";
-import { menuNotes, menuSections } from "@/content/menus";
-import { siteConfig } from "@/content/site";
+import { getExperiencesContent } from "@/content/experiences";
+import { getGalleryContent } from "@/content/gallery";
+import { getHomeContent } from "@/content/home";
+import { getMenusContent } from "@/content/menus";
+import { getSiteConfig } from "@/content/site";
+import type { Locale } from "@/i18n/config";
 import { safeSanityFetch } from "@/sanity/lib/client";
 import { resolveSanityImageUrl } from "@/sanity/lib/image";
 import {
@@ -21,97 +16,88 @@ import {
   siteSettingsQuery
 } from "@/sanity/queries";
 
-const defaultHomePageData = {
-  heroContent,
-  philosophyHighlights,
-  signatureDishes,
-  guestJourney,
-  curatedImpressions
-};
+export type SiteSettingsData = ReturnType<typeof getSiteConfig>;
+export type HomePageData = ReturnType<typeof getHomeContent>;
+export type MenusPageData = Pick<ReturnType<typeof getMenusContent>, "menuSections" | "menuNotes">;
+export type ExperiencesPageData = Pick<
+  ReturnType<typeof getExperiencesContent>,
+  "upcomingExperiences" | "privateDiningPoints" | "seasonalMoments"
+>;
+export type GalleryPageData = Pick<ReturnType<typeof getGalleryContent>, "galleryItems">;
 
-const defaultMenusPageData = {
-  menuSections,
-  menuNotes
-};
-
-const defaultExperiencesPageData = {
-  upcomingExperiences,
-  privateDiningPoints,
-  seasonalMoments
-};
-
-const defaultGalleryPageData = {
-  galleryItems
-};
-
-export type SiteSettingsData = typeof siteConfig;
-export type HomePageData = typeof defaultHomePageData;
-export type MenusPageData = typeof defaultMenusPageData;
-export type ExperiencesPageData = typeof defaultExperiencesPageData;
-export type GalleryPageData = typeof defaultGalleryPageData;
-
-export const getSiteSettingsData = cache(async (): Promise<SiteSettingsData> => {
+export const getSiteSettingsData = cache(async (locale: Locale = "fr"): Promise<SiteSettingsData> => {
+  const fallback = getSiteConfig(locale);
   const data = await safeSanityFetch<any>(siteSettingsQuery);
 
   if (!data) {
-    return siteConfig;
+    return fallback;
   }
 
   return {
-    ...siteConfig,
-    name: data.name ?? siteConfig.name,
-    location: data.location ?? siteConfig.location,
-    tagline: data.tagline ?? siteConfig.tagline,
-    description: data.description ?? siteConfig.description,
-    url: data.url ?? siteConfig.url,
-    email: data.email ?? siteConfig.email,
-    phoneDisplay: data.phoneDisplay ?? siteConfig.phoneDisplay,
-    phoneRaw: data.phoneRaw ?? siteConfig.phoneRaw,
-    addressLineOne: data.addressLineOne ?? siteConfig.addressLineOne,
-    addressLineTwo: data.addressLineTwo ?? siteConfig.addressLineTwo,
-    mapUrl: data.mapUrl ?? siteConfig.mapUrl,
-    bookingProvider: data.bookingProvider ?? siteConfig.bookingProvider,
-    bookingLink: data.bookingLink ?? siteConfig.bookingLink,
-    bookingNote: data.bookingNote ?? siteConfig.bookingNote,
+    ...fallback,
+    name: data.name ?? fallback.name,
+    location: data.location ?? fallback.location,
+    url: data.url ?? fallback.url,
+    email: data.email ?? fallback.email,
+    phoneDisplay: data.phoneDisplay ?? fallback.phoneDisplay,
+    phoneRaw: data.phoneRaw ?? fallback.phoneRaw,
+    addressLineOne: data.addressLineOne ?? fallback.addressLineOne,
+    addressLineTwo: data.addressLineTwo ?? fallback.addressLineTwo,
+    mapUrl: data.mapUrl ?? fallback.mapUrl,
+    bookingProvider: data.bookingProvider ?? fallback.bookingProvider,
+    bookingLink: data.bookingLink ?? fallback.bookingLink,
+    tagline: locale === "fr" ? data.tagline ?? fallback.tagline : fallback.tagline,
+    description: locale === "fr" ? data.description ?? fallback.description : fallback.description,
+    bookingNote: locale === "fr" ? data.bookingNote ?? fallback.bookingNote : fallback.bookingNote,
     openingHours:
-      Array.isArray(data.openingHours) && data.openingHours.length > 0
+      locale === "fr" &&
+      Array.isArray(data.openingHours) &&
+      data.openingHours.length > 0
         ? data.openingHours.map((item: any) => ({
             day: item.day ?? "",
             hours: item.hours ?? ""
           }))
-        : siteConfig.openingHours,
+        : fallback.openingHours,
     reservationHighlights:
-      Array.isArray(data.reservationHighlights) && data.reservationHighlights.length > 0
+      locale === "fr" &&
+      Array.isArray(data.reservationHighlights) &&
+      data.reservationHighlights.length > 0
         ? data.reservationHighlights.filter(Boolean)
-        : siteConfig.reservationHighlights
+        : fallback.reservationHighlights
   };
 });
 
-export const getHomePageData = cache(async (): Promise<HomePageData> => {
+export const getHomePageData = cache(async (locale: Locale = "fr"): Promise<HomePageData> => {
+  const fallback = getHomeContent(locale);
+
+  if (locale !== "fr") {
+    return fallback;
+  }
+
   const data = await safeSanityFetch<any>(homePageQuery);
 
   if (!data) {
-    return defaultHomePageData;
+    return fallback;
   }
 
   return {
     heroContent: {
-      eyebrow: data.heroEyebrow ?? heroContent.eyebrow,
-      title: data.heroTitle ?? heroContent.title,
-      intro: data.heroIntro ?? heroContent.intro,
+      eyebrow: data.heroEyebrow ?? fallback.heroContent.eyebrow,
+      title: data.heroTitle ?? fallback.heroContent.title,
+      intro: data.heroIntro ?? fallback.heroContent.intro,
       primaryCta: {
-        href: data.primaryCta?.href ?? heroContent.primaryCta.href,
-        label: data.primaryCta?.label ?? heroContent.primaryCta.label
+        href: data.primaryCta?.href ?? fallback.heroContent.primaryCta.href,
+        label: data.primaryCta?.label ?? fallback.heroContent.primaryCta.label
       },
       secondaryCta: {
-        href: data.secondaryCta?.href ?? heroContent.secondaryCta.href,
-        label: data.secondaryCta?.label ?? heroContent.secondaryCta.label
+        href: data.secondaryCta?.href ?? fallback.heroContent.secondaryCta.href,
+        label: data.secondaryCta?.label ?? fallback.heroContent.secondaryCta.label
       },
-      image: resolveSanityImageUrl(data.heroImage, heroContent.image, 2000),
+      image: resolveSanityImageUrl(data.heroImage, fallback.heroContent.image, 2000),
       highlights:
         Array.isArray(data.heroHighlights) && data.heroHighlights.length > 0
           ? data.heroHighlights.filter(Boolean)
-          : heroContent.highlights
+          : fallback.heroContent.highlights
     },
     philosophyHighlights:
       Array.isArray(data.philosophyHighlights) && data.philosophyHighlights.length > 0
@@ -119,40 +105,52 @@ export const getHomePageData = cache(async (): Promise<HomePageData> => {
             title: item.title ?? "",
             copy: item.copy ?? ""
           }))
-        : philosophyHighlights,
+        : fallback.philosophyHighlights,
     signatureDishes:
       Array.isArray(data.signatureDishes) && data.signatureDishes.length > 0
         ? data.signatureDishes.map((item: any, index: number) => ({
-            name: item.name ?? signatureDishes[index]?.name ?? "",
-            description: item.description ?? signatureDishes[index]?.description ?? "",
-            price: item.price ?? signatureDishes[index]?.price ?? "",
-            tag: item.tag ?? signatureDishes[index]?.tag ?? "",
+            name: item.name ?? fallback.signatureDishes[index]?.name ?? "",
+            description: item.description ?? fallback.signatureDishes[index]?.description ?? "",
+            price: item.price ?? fallback.signatureDishes[index]?.price ?? "",
+            tag: item.tag ?? fallback.signatureDishes[index]?.tag ?? "",
             image: resolveSanityImageUrl(
               item.image,
-              signatureDishes[index]?.image ?? signatureDishes[0].image,
+              fallback.signatureDishes[index]?.image ?? fallback.signatureDishes[0].image,
               1600
             )
           }))
-        : signatureDishes,
+        : fallback.signatureDishes,
     guestJourney:
       Array.isArray(data.guestJourney) && data.guestJourney.length > 0
         ? data.guestJourney.map((item: any) => ({
             title: item.title ?? "",
             copy: item.copy ?? ""
           }))
-        : guestJourney,
+        : fallback.guestJourney,
     curatedImpressions:
       Array.isArray(data.curatedImpressions) && data.curatedImpressions.length > 0
         ? data.curatedImpressions.filter(Boolean)
-        : curatedImpressions
+        : fallback.curatedImpressions
   };
 });
 
-export const getMenusPageData = cache(async (): Promise<MenusPageData> => {
+export const getMenusPageData = cache(async (locale: Locale = "fr"): Promise<MenusPageData> => {
+  const fallback = getMenusContent(locale);
+
+  if (locale !== "fr") {
+    return {
+      menuSections: fallback.menuSections,
+      menuNotes: fallback.menuNotes
+    };
+  }
+
   const data = await safeSanityFetch<any>(menusPageQuery);
 
   if (!data) {
-    return defaultMenusPageData;
+    return {
+      menuSections: fallback.menuSections,
+      menuNotes: fallback.menuNotes
+    };
   }
 
   return {
@@ -172,52 +170,78 @@ export const getMenusPageData = cache(async (): Promise<MenusPageData> => {
                 }))
               : []
           }))
-        : menuSections,
+        : fallback.menuSections,
     menuNotes:
       Array.isArray(data.menuNotes) && data.menuNotes.length > 0
         ? data.menuNotes.filter(Boolean)
-        : menuNotes
+        : fallback.menuNotes
   };
 });
 
-export const getExperiencesPageData = cache(async (): Promise<ExperiencesPageData> => {
-  const data = await safeSanityFetch<any>(experiencesPageQuery);
+export const getExperiencesPageData = cache(
+  async (locale: Locale = "fr"): Promise<ExperiencesPageData> => {
+    const fallback = getExperiencesContent(locale);
 
-  if (!data) {
-    return defaultExperiencesPageData;
+    if (locale !== "fr") {
+      return {
+        upcomingExperiences: fallback.upcomingExperiences,
+        privateDiningPoints: fallback.privateDiningPoints,
+        seasonalMoments: fallback.seasonalMoments
+      };
+    }
+
+    const data = await safeSanityFetch<any>(experiencesPageQuery);
+
+    if (!data) {
+      return {
+        upcomingExperiences: fallback.upcomingExperiences,
+        privateDiningPoints: fallback.privateDiningPoints,
+        seasonalMoments: fallback.seasonalMoments
+      };
+    }
+
+    return {
+      upcomingExperiences:
+        Array.isArray(data.upcomingExperiences) && data.upcomingExperiences.length > 0
+          ? data.upcomingExperiences.map((item: any) => ({
+              title: item.title ?? "",
+              date: item.date ?? "",
+              time: item.time ?? "",
+              description: item.description ?? "",
+              ctaLabel: item.ctaLabel ?? "Decouvrir",
+              ctaHref: item.ctaHref ?? "/contact"
+            }))
+          : fallback.upcomingExperiences,
+      privateDiningPoints:
+        Array.isArray(data.privateDiningPoints) && data.privateDiningPoints.length > 0
+          ? data.privateDiningPoints.filter(Boolean)
+          : fallback.privateDiningPoints,
+      seasonalMoments:
+        Array.isArray(data.seasonalMoments) && data.seasonalMoments.length > 0
+          ? data.seasonalMoments.map((item: any) => ({
+              title: item.title ?? "",
+              copy: item.copy ?? ""
+            }))
+          : fallback.seasonalMoments
+    };
+  }
+);
+
+export const getGalleryPageData = cache(async (locale: Locale = "fr"): Promise<GalleryPageData> => {
+  const fallback = getGalleryContent(locale);
+
+  if (locale !== "fr") {
+    return {
+      galleryItems: fallback.galleryItems
+    };
   }
 
-  return {
-    upcomingExperiences:
-      Array.isArray(data.upcomingExperiences) && data.upcomingExperiences.length > 0
-        ? data.upcomingExperiences.map((item: any) => ({
-            title: item.title ?? "",
-            date: item.date ?? "",
-            time: item.time ?? "",
-            description: item.description ?? "",
-            ctaLabel: item.ctaLabel ?? "Découvrir",
-            ctaHref: item.ctaHref ?? "/contact"
-          }))
-        : upcomingExperiences,
-    privateDiningPoints:
-      Array.isArray(data.privateDiningPoints) && data.privateDiningPoints.length > 0
-        ? data.privateDiningPoints.filter(Boolean)
-        : privateDiningPoints,
-    seasonalMoments:
-      Array.isArray(data.seasonalMoments) && data.seasonalMoments.length > 0
-        ? data.seasonalMoments.map((item: any) => ({
-            title: item.title ?? "",
-            copy: item.copy ?? ""
-          }))
-        : seasonalMoments
-  };
-});
-
-export const getGalleryPageData = cache(async (): Promise<GalleryPageData> => {
   const data = await safeSanityFetch<any>(galleryPageQuery);
 
   if (!data) {
-    return defaultGalleryPageData;
+    return {
+      galleryItems: fallback.galleryItems
+    };
   }
 
   return {
@@ -228,10 +252,10 @@ export const getGalleryPageData = cache(async (): Promise<GalleryPageData> => {
             caption: item.caption ?? "",
             image: resolveSanityImageUrl(
               item.image,
-              galleryItems[index]?.image ?? galleryItems[0].image,
+              fallback.galleryItems[index]?.image ?? fallback.galleryItems[0].image,
               1600
             )
           }))
-        : galleryItems
+        : fallback.galleryItems
   };
 });

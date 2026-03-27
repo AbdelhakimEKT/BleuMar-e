@@ -3,6 +3,9 @@
 import type { FormEvent } from "react";
 import { useState, useTransition } from "react";
 
+import type { Locale } from "@/i18n/config";
+import { getUiCopy } from "@/i18n/ui";
+
 import styles from "./forms.module.css";
 
 type Status = {
@@ -10,7 +13,12 @@ type Status = {
   message: string;
 } | null;
 
-export function ContactForm() {
+type ContactFormProps = {
+  locale: Locale;
+};
+
+export function ContactForm({ locale }: ContactFormProps) {
+  const copy = getUiCopy(locale).contactForm;
   const [status, setStatus] = useState<Status>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -46,44 +54,40 @@ export function ContactForm() {
 
   return (
     <div className={styles.panel}>
-      <h2 className={styles.title}>Écrire à la maison</h2>
-      <p className={styles.copy}>
-        Pour une privatisation, une demande presse ou une occasion particulière, l'équipe peut vous
-        répondre rapidement depuis ce formulaire.
-      </p>
+      <h2 className={styles.title}>{copy.title}</h2>
+      <p className={styles.copy}>{copy.intro}</p>
 
       <form className={styles.form} onSubmit={handleSubmit}>
+        <input type="hidden" name="locale" value={locale} />
+
         <div className={styles.gridTwo}>
           <label className={styles.field}>
-            <span className={styles.label}>Nom</span>
+            <span className={styles.label}>{copy.name}</span>
             <input className={styles.control} type="text" name="name" required />
           </label>
 
           <label className={styles.field}>
-            <span className={styles.label}>Email</span>
+            <span className={styles.label}>{copy.email}</span>
             <input className={styles.control} type="email" name="email" required />
           </label>
         </div>
 
         <label className={styles.field}>
-          <span className={styles.label}>Téléphone</span>
+          <span className={styles.label}>{copy.phone}</span>
           <input className={styles.control} type="tel" name="phone" />
         </label>
 
         <label className={styles.field}>
-          <span className={styles.label}>Sujet</span>
+          <span className={styles.label}>{copy.subject}</span>
           <input className={styles.control} type="text" name="subject" required />
         </label>
 
         <label className={styles.field}>
-          <span className={styles.label}>Message</span>
+          <span className={styles.label}>{copy.message}</span>
           <textarea className={styles.textarea} name="message" required />
         </label>
 
-        <p className={styles.hint}>
-          Les messages envoyés ici sont validés côté serveur et prêts à être reliés à votre outil
-          email ou CRM.
-        </p>
+        <p className={styles.hint}>{copy.hint}</p>
 
         {status ? (
           <p className={`${styles.status} ${status.tone === "success" ? styles.success : styles.error}`}>
@@ -92,7 +96,7 @@ export function ContactForm() {
         ) : null}
 
         <button type="submit" className={`button ${styles.submit}`} disabled={isPending}>
-          {isPending ? "Envoi..." : "Envoyer le message"}
+          {isPending ? copy.submitting : copy.submit}
         </button>
       </form>
     </div>

@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 
+import { isLocale } from "@/i18n/config";
+import { getUiCopy } from "@/i18n/ui";
 import { isValidEmail } from "@/lib/validation";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as Record<string, string | undefined>;
+  const requestedLocale = body.locale ?? "";
+  const locale = isLocale(requestedLocale) ? requestedLocale : "fr";
+  const messages = getUiCopy(locale).contactApi;
 
   const name = body.name?.trim() ?? "";
   const email = body.email?.trim() ?? "";
@@ -12,14 +17,11 @@ export async function POST(request: Request) {
   const phone = body.phone?.trim() ?? "";
 
   if (!name || !email || !subject || !message) {
-    return NextResponse.json(
-      { message: "Merci de renseigner votre nom, votre email, le sujet et le message." },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: messages.missingFields }, { status: 400 });
   }
 
   if (!isValidEmail(email)) {
-    return NextResponse.json({ message: "L'adresse email indiquée semble invalide." }, { status: 400 });
+    return NextResponse.json({ message: messages.invalidEmail }, { status: 400 });
   }
 
   console.info("Bleu Maree contact request", {
@@ -31,6 +33,6 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json({
-    message: "Merci, votre message a bien été transmis à l'équipe Bleu Marée."
+    message: messages.success
   });
 }

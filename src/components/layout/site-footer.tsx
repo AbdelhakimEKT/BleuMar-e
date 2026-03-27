@@ -1,12 +1,27 @@
-import Link from "next/link";
+"use client";
 
-import { footerLinks, navigation } from "@/content/site";
-import { getSiteSettingsData } from "@/sanity/loaders";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { getFooterLinks, getNavigation } from "@/content/site";
+import type { Locale } from "@/i18n/config";
+import { getLocaleFromPathname, withLocale } from "@/i18n/routing";
+import { getUiCopy } from "@/i18n/ui";
+import type { SiteSettingsData } from "@/sanity/loaders";
 
 import styles from "./site-footer.module.css";
 
-export async function SiteFooter() {
-  const siteConfig = await getSiteSettingsData();
+type SiteFooterProps = {
+  settingsByLocale: Record<Locale, SiteSettingsData>;
+};
+
+export function SiteFooter({ settingsByLocale }: SiteFooterProps) {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const settings = settingsByLocale[locale];
+  const navigation = getNavigation(locale);
+  const footerLinks = getFooterLinks(locale);
+  const ui = getUiCopy(locale);
 
   return (
     <footer className={styles.footer}>
@@ -15,20 +30,18 @@ export async function SiteFooter() {
           <div className={styles.brandBlock}>
             <img
               src="/branding/bleu-maree-logo-dark.svg"
-              alt="Logo Bleu Marée"
+              alt={`Logo ${settings.name}`}
               className={styles.logo}
             />
-            <p className="microcopy">
-              {siteConfig.description}
-            </p>
+            <p className="microcopy">{settings.description}</p>
           </div>
 
           <div className={styles.linksBlock}>
             <div>
-              <p className="kicker">Navigation</p>
+              <p className="kicker">{ui.navigationHeading}</p>
               <div className={styles.linkList}>
                 {navigation.map((item) => (
-                  <Link key={item.href} href={item.href}>
+                  <Link key={item.href} href={withLocale(locale, item.href)}>
                     {item.label}
                   </Link>
                 ))}
@@ -36,31 +49,31 @@ export async function SiteFooter() {
             </div>
 
             <div>
-              <p className="kicker">Informations pratiques</p>
+              <p className="kicker">{ui.informationHeading}</p>
               <ul className="contact-list">
                 <li>
-                  <span className="contact-label">Adresse</span>
+                  <span className="contact-label">{ui.addressLabel}</span>
                   <span className="contact-copy">
-                    {siteConfig.addressLineOne}
+                    {settings.addressLineOne}
                     <br />
-                    {siteConfig.addressLineTwo}
+                    {settings.addressLineTwo}
                   </span>
                 </li>
                 <li>
-                  <span className="contact-label">Contact</span>
+                  <span className="contact-label">{ui.contactLabel}</span>
                   <span className="contact-copy">
-                    <a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phoneDisplay}</a>
+                    <a href={`tel:${settings.phoneRaw}`}>{settings.phoneDisplay}</a>
                     <br />
-                    <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+                    <a href={`mailto:${settings.email}`}>{settings.email}</a>
                   </span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="kicker">Horaires</p>
+              <p className="kicker">{ui.openingHoursHeading}</p>
               <ul className="detail-list">
-                {siteConfig.openingHours.map((item) => (
+                {settings.openingHours.map((item) => (
                   <li key={item.day}>
                     <span className="detail-title">{item.day}</span>
                     <span className="detail-copy">{item.hours}</span>
@@ -74,12 +87,12 @@ export async function SiteFooter() {
         <div className={styles.bottom}>
           <div className={styles.linkList}>
             {footerLinks.map((item) => (
-              <Link key={item.href} href={item.href}>
+              <Link key={item.href} href={withLocale(locale, item.href)}>
                 {item.label}
               </Link>
             ))}
           </div>
-          <p className="microcopy">Bleu Marée · Biarritz · Expérience gastronomique premium</p>
+          <p className="microcopy">{ui.footerTagline}</p>
         </div>
       </div>
     </footer>

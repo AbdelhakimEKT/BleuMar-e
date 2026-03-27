@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/ui/reveal";
+import type { Locale } from "@/i18n/config";
+import { withLocale } from "@/i18n/routing";
 
 import styles from "./home-manifesto.module.css";
 
@@ -12,9 +14,33 @@ type PhilosophyHighlight = {
 
 type HomeManifestoProps = {
   highlights: PhilosophyHighlight[];
+  locale: Locale;
 };
 
-export function HomeManifesto({ highlights }: HomeManifestoProps) {
+const manifestoCopy = {
+  fr: {
+    mainAlt: "Service en salle chez Bleu Marée",
+    detailAlt: "Détail de table chez Bleu Marée",
+    eyebrow: "Manifeste",
+    title: "Plus de silence, plus de lumière, plus de tenue.",
+    lead:
+      "Bleu Marée affirme une hospitalité précise, contemporaine et enveloppante. La salle, le service et le rythme du dîner composent une expérience pensée pour rester sobre, fluide et mémorable.",
+    action: "Découvrir la maison"
+  },
+  en: {
+    mainAlt: "Dining room service at Bleu Maree",
+    detailAlt: "Table detail at Bleu Maree",
+    eyebrow: "Manifesto",
+    title: "More silence, more light, more poise.",
+    lead:
+      "Bleu Maree asserts a precise, contemporary, enveloping hospitality. The room, the service, and the rhythm of dinner compose an experience designed to remain restrained, fluid, and memorable.",
+    action: "Discover the house"
+  }
+} as const;
+
+export function HomeManifesto({ highlights, locale }: HomeManifestoProps) {
+  const copy = manifestoCopy[locale];
+
   return (
     <section className={`section ${styles.section}`}>
       <div className={`container ${styles.layout}`}>
@@ -22,7 +48,7 @@ export function HomeManifesto({ highlights }: HomeManifestoProps) {
           <figure className={styles.mainImage} data-cursor-label="Service">
             <Image
               src="/images/people/bleu-maree-team-service-in-action.jpg"
-              alt="Service en salle chez Bleu Marée"
+              alt={copy.mainAlt}
               fill
               sizes="(max-width: 1080px) 100vw, 48vw"
               className={styles.image}
@@ -32,7 +58,7 @@ export function HomeManifesto({ highlights }: HomeManifestoProps) {
           <figure className={styles.detailImage} data-cursor-label="Table">
             <Image
               src="/images/details/bleu-maree-detail-table-setting-alt-01.jpg"
-              alt="Détail de table chez Bleu Marée"
+              alt={copy.detailAlt}
               fill
               sizes="(max-width: 1080px) 68vw, 18vw"
               className={styles.image}
@@ -42,16 +68,16 @@ export function HomeManifesto({ highlights }: HomeManifestoProps) {
 
         <div className={styles.storyColumn}>
           <Reveal className={styles.introBlock}>
-            <div className="eyebrow">Manifeste</div>
-            <h2 className={styles.title}>Plus de silence, plus de lumière, plus de tenue.</h2>
-            <p className={styles.lead}>
-              Bleu Marée affirme une hospitalité précise, contemporaine et enveloppante. La salle,
-              le service et le rythme du dîner composent une expérience pensée pour rester sobre,
-              fluide et mémorable.
-            </p>
+            <div className="eyebrow">{copy.eyebrow}</div>
+            <h2 className={styles.title}>{copy.title}</h2>
+            <p className={styles.lead}>{copy.lead}</p>
 
-            <Link href="/restaurant" className="button-ghost" data-cursor-label="Histoire">
-              Découvrir la maison
+            <Link
+              href={withLocale(locale, "/restaurant")}
+              className="button-ghost"
+              data-cursor-label={copy.action}
+            >
+              {copy.action}
             </Link>
           </Reveal>
 

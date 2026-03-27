@@ -1,13 +1,18 @@
 import Link from "next/link";
 
+import type { Locale } from "@/i18n/config";
+import { withLocale } from "@/i18n/routing";
+import { getUiCopy } from "@/i18n/ui";
 import type { SiteSettingsData } from "@/sanity/loaders";
 
 type ZenchefReservationPanelProps = {
   settings: SiteSettingsData;
+  locale: Locale;
 };
 
-export function ZenchefReservationPanel({ settings }: ZenchefReservationPanelProps) {
+export function ZenchefReservationPanel({ settings, locale }: ZenchefReservationPanelProps) {
   const hasBookingLink = settings.bookingLink.length > 0;
+  const copy = getUiCopy(locale).zenchef;
 
   return (
     <div className="surface-card">
@@ -15,34 +20,29 @@ export function ZenchefReservationPanel({ settings }: ZenchefReservationPanelPro
         <div>
           <p className="kicker">{settings.bookingProvider}</p>
           <h2 className="section-title" style={{ fontSize: "2.3rem" }}>
-            Réservation V1 via le module officiel.
+            {copy.title}
           </h2>
-          <p className="microcopy">
-            Le site est prêt à déclencher le widget ou le Booking Link Zenchef. Dès que vous nous
-            transmettez l'accès ou le lien officiel, ce bloc devient le point d'entrée principal
-            pour choisir la date, l'heure et le nombre de couverts.
-          </p>
+          <p className="microcopy">{copy.intro}</p>
         </div>
 
         <div className="notice-panel">
-          <strong>Ce que Zenchef prendra en charge</strong>
+          <strong>{copy.noticeTitle}</strong>
           <br />
-          Nombre de couverts, disponibilités, créneaux, fermetures exceptionnelles, confirmations
-          email et ajustements côté restaurant.
+          {copy.noticeCopy}
         </div>
 
         {hasBookingLink ? (
           <Link href={settings.bookingLink} className="button">
-            Réserver avec {settings.bookingProvider}
+            {copy.bookWithProvider.replace("{provider}", settings.bookingProvider)}
           </Link>
         ) : (
           <div className="stack">
             <div className="surface-card">
-              <p className="kicker">Intégration en attente</p>
+              <p className="kicker">{copy.pendingTitle}</p>
               <p className="microcopy">{settings.bookingNote}</p>
             </div>
-            <Link href="/contact" className="button-secondary">
-              Nous transmettre le lien {settings.bookingProvider}
+            <Link href={withLocale(locale, "/contact")} className="button-secondary">
+              {copy.shareLink.replace("{provider}", settings.bookingProvider)}
             </Link>
           </div>
         )}

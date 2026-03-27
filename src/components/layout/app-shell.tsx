@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import { SignatureCursor } from "@/components/home/signature-cursor";
+import { getLocaleFromPathname } from "@/i18n/routing";
+import { getUiCopy } from "@/i18n/ui";
 
 import { BrandIntro } from "./brand-intro";
 
@@ -14,6 +17,12 @@ type AppShellProps = {
 
 export function AppShell({ children, header, footer }: AppShellProps) {
   const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const ui = getUiCopy(locale);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   if (pathname.startsWith("/studio")) {
     return <>{children}</>;
@@ -22,7 +31,7 @@ export function AppShell({ children, header, footer }: AppShellProps) {
   return (
     <>
       <a href="#main-content" className="skip-link">
-        Aller au contenu principal
+        {ui.skipToContent}
       </a>
       <BrandIntro />
       <SignatureCursor />
