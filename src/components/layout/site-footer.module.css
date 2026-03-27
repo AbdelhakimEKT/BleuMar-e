@@ -1,0 +1,60 @@
+.footer {
+  position: relative;
+  padding: 4rem 0 2rem;
+  background:
+    linear-gradient(180deg, rgba(3, 13, 20, 0.12), rgba(3, 13, 20, 0.92)),
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: start;
+}
+
+.brandBlock {
+  display: grid;
+  gap: 1.4rem;
+  max-width: 460px;
+}
+
+.logo {
+  width: min(100%, 280px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.linksBlock {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.linkList {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.linkList a {
+  color: var(--muted-strong);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 980px) {
+  .top,
+  .linksBlock,
+  .bottom {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+}

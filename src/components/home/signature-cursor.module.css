@@ -1,0 +1,43 @@
+.cursor {
+  --cursor-x: 0px;
+  --cursor-y: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 186, 134, 0.42);
+  background: radial-gradient(circle, rgba(214, 186, 134, 0.26), rgba(214, 186, 134, 0.04) 68%);
+  box-shadow:
+    0 0 0 10px rgba(214, 186, 134, 0.05),
+    0 12px 30px rgba(6, 15, 22, 0.18);
+  mix-blend-mode: screen;
+  transform: translate3d(calc(var(--cursor-x) - 13px), calc(var(--cursor-y) - 13px), 0)
+    scale(0.8);
+  transition:
+    opacity 180ms ease,
+    transform 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.cursorVisible {
+  opacity: 1;
+}
+
+.cursorInteractive {
+  background: radial-gradient(circle, rgba(214, 186, 134, 0.34), rgba(214, 186, 134, 0.08) 70%);
+  border-color: rgba(245, 239, 228, 0.5);
+  transform: translate3d(calc(var(--cursor-x) - 13px), calc(var(--cursor-y) - 13px), 0)
+    scale(1.7);
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

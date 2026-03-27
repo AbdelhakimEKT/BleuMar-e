@@ -1,0 +1,148 @@
+.section {
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.visualColumn {
+  position: relative;
+  min-height: 760px;
+}
+
+.mainImage,
+.detailImage {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0 28px 80px rgba(12, 28, 39, 0.18);
+}
+
+.mainImage {
+  inset: 0 4.2rem 7rem 0;
+}
+
+.detailImage {
+  right: 0;
+  bottom: 0;
+  width: min(52%, 270px);
+  aspect-ratio: 0.88;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.mainImage:hover .image,
+.detailImage:hover .image {
+  transform: scale(1.04);
+}
+
+.copyColumn {
+  display: grid;
+  gap: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.lead {
+  max-width: 35rem;
+  margin: 1.1rem 0 0;
+  color: rgba(16, 39, 56, 0.8);
+  line-height: 1.82;
+}
+
+.dishList {
+  display: grid;
+  gap: 0;
+}
+
+.dishRow {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.45rem 0;
+  border-top: 1px solid rgba(16, 39, 56, 0.1);
+}
+
+.dishRow:last-child {
+  border-bottom: 1px solid rgba(16, 39, 56, 0.1);
+}
+
+.rowHead {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dishRow h3,
+.dishRow p,
+.dishRow strong {
+  margin: 0;
+}
+
+.dishRow h3 {
+  margin-top: 0.35rem;
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  font-weight: 400;
+}
+
+.dishRow p {
+  color: rgba(16, 39, 56, 0.74);
+  line-height: 1.76;
+}
+
+.dishRow strong {
+  color: rgba(16, 39, 56, 0.94);
+  white-space: nowrap;
+}
+
+.tag {
+  color: rgba(183, 136, 71, 0.86);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .visualColumn {
+    min-height: 520px;
+  }
+
+  .mainImage {
+    inset: 0 3rem 6rem 0;
+  }
+
+  .detailImage {
+    width: min(48vw, 190px);
+  }
+
+  .rowHead {
+    flex-direction: column;
+    align-items: start;
+  }
+}

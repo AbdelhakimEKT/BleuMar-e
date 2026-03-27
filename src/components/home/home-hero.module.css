@@ -1,0 +1,123 @@
+.hero {
+  position: relative;
+  min-height: calc(100svh - 86px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+}
+
+.background {
+  object-fit: cover;
+  object-position: center;
+  animation: drift 14s ease-in-out infinite alternate;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 12, 18, 0.22), rgba(3, 12, 18, 0.68)),
+    linear-gradient(102deg, rgba(4, 12, 18, 0.82) 12%, rgba(4, 12, 18, 0.24) 54%, rgba(4, 12, 18, 0.7));
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+  gap: 2rem;
+  align-items: end;
+  padding-bottom: clamp(2rem, 7vw, 5rem);
+}
+
+.copy {
+  max-width: 720px;
+}
+
+.brandLine {
+  margin: 0 0 1rem;
+  color: rgba(245, 239, 228, 0.82);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.meta {
+  display: grid;
+  gap: 1.4rem;
+  justify-items: end;
+}
+
+.highlightList {
+  display: grid;
+  gap: 0.9rem;
+  width: min(100%, 320px);
+}
+
+.highlightItem {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.highlightItem span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e5c58a 0%, #b58847 100%);
+  box-shadow: 0 0 0 8px rgba(201, 165, 106, 0.12);
+}
+
+.highlightItem p {
+  margin: 0;
+  color: rgba(245, 239, 228, 0.92);
+  line-height: 1.6;
+}
+
+.logoPlate {
+  width: min(100%, 300px);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.logoPlate img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes drift {
+  from {
+    transform: scale(1.02);
+  }
+
+  to {
+    transform: scale(1.08) translateY(-0.5%);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto;
+    padding-top: 1.5rem;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    align-items: end;
+  }
+
+  .meta {
+    justify-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background {
+    animation: none;
+  }
+}

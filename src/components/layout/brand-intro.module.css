@@ -1,0 +1,145 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(201, 165, 106, 0.12), transparent 22%),
+    linear-gradient(180deg, rgba(4, 12, 18, 0.98), rgba(4, 12, 18, 0.94));
+  animation: overlayFade 1650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(245, 239, 228, 0.05), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(201, 165, 106, 0.08), transparent 34%);
+}
+
+.wordmark {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  animation: wordmarkLift 1650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(201, 165, 106, 0.48);
+  border-radius: 50%;
+  color: rgba(245, 239, 228, 0.94);
+  font-family: var(--display);
+  font-size: 2rem;
+}
+
+.copy {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.copy strong,
+.copy span {
+  color: rgba(245, 239, 228, 0.94);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.copy strong {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.copy span {
+  color: rgba(201, 165, 106, 0.84);
+  font-size: 0.72rem;
+}
+
+.rule {
+  position: absolute;
+  left: 50%;
+  bottom: min(16vh, 120px);
+  width: min(200px, 35vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 165, 106, 0.72), transparent);
+  transform: translateX(-50%);
+  animation: ruleReveal 1650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes overlayFade {
+  0% {
+    opacity: 0;
+  }
+
+  18%,
+  78% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes wordmarkLift {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+
+  24%,
+  76% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes ruleReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.2);
+  }
+
+  30%,
+  76% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.5);
+  }
+}
+
+@media (max-width: 720px) {
+  .wordmark {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .copy {
+    justify-items: center;
+  }
+
+  .copy strong {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    display: none;
+  }
+}

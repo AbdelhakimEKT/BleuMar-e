@@ -1,0 +1,136 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  transition:
+    background-color 180ms ease,
+    backdrop-filter 180ms ease,
+    border-color 180ms ease;
+}
+
+.headerScrolled {
+  background: rgba(4, 16, 24, 0.72);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 86px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.brandMark {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 165, 106, 0.48);
+  background: rgba(245, 239, 228, 0.06);
+  color: var(--foreground);
+  font-family: var(--display);
+  font-size: 1.35rem;
+}
+
+.brandCopy {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.brandCopy strong {
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.brandCopy span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.navLink {
+  position: relative;
+  color: var(--muted-strong);
+  font-size: 0.95rem;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.navLink:hover::after,
+.navLinkActive::after {
+  transform: scaleX(1);
+}
+
+.navLinkActive {
+  color: var(--foreground);
+}
+
+.menuButton {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(245, 239, 228, 0.05);
+  color: var(--foreground);
+  padding: 0.8rem 1rem;
+}
+
+@media (max-width: 980px) {
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: calc(100% + 0.5rem);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background: rgba(4, 16, 24, 0.94);
+    box-shadow: var(--shadow);
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .navLink::after {
+    bottom: -0.15rem;
+  }
+
+  .brandCopy span {
+    display: none;
+  }
+}

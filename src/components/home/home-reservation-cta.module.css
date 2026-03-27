@@ -1,0 +1,108 @@
+.section {
+  padding-top: clamp(4rem, 8vw, 6rem);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.copyColumn {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.9rem, 6vw, 5.2rem);
+  line-height: 0.94;
+}
+
+.lead {
+  max-width: 35rem;
+  margin: 0;
+  color: rgba(219, 227, 230, 0.82);
+  line-height: 1.82;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.card {
+  padding: 1.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(5, 18, 28, 0.7), rgba(5, 18, 28, 0.88)),
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.22);
+}
+
+.cardHeader {
+  display: grid;
+  gap: 0.4rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardHeader p,
+.cardHeader strong {
+  margin: 0;
+}
+
+.cardHeader p {
+  color: rgba(201, 165, 106, 0.84);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.cardHeader strong {
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 400;
+}
+
+.hoursList {
+  display: grid;
+  gap: 1rem;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hoursList li {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.hoursList span,
+.hoursList strong {
+  margin: 0;
+}
+
+.hoursList span {
+  color: rgba(201, 165, 106, 0.84);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hoursList strong {
+  color: rgba(245, 239, 228, 0.92);
+  font-weight: 500;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

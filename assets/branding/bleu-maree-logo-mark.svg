@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <rect width="1024" height="1024" rx="120" fill="#F5EFE4"/>
+  <circle cx="512" cy="512" r="270" stroke="#102A38" stroke-width="5"/>
+  <path d="M214 512L315 405H709L810 512L709 619H315L214 512Z" stroke="#CBAA6B" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M314 512C360 455 430 422 512 422C594 422 664 455 710 512" stroke="#102A38" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+  <text x="512" y="565" text-anchor="middle" fill="#102A38" font-family="Didot, 'Bodoni 72', Baskerville, 'Times New Roman', serif" font-size="210" letter-spacing="10">BM</text>
+</svg>

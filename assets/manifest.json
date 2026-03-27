@@ -1,0 +1,127 @@
+{
+  "brand": "Bleu Maree",
+  "assets": [
+    {
+      "id": "logo-primary",
+      "type": "logo",
+      "path": "./branding/bleu-maree-logo.svg",
+      "format": "svg",
+      "usage": ["header", "footer", "brand"],
+      "alt": "Logo principal Bleu Maree"
+    },
+    {
+      "id": "logo-dark",
+      "type": "logo",
+      "path": "./branding/bleu-maree-logo-dark.svg",
+      "format": "svg",
+      "usage": ["dark-backgrounds", "brand"],
+      "alt": "Logo Bleu Maree pour fond sombre"
+    },
+    {
+      "id": "logo-mark",
+      "type": "logo",
+      "path": "./branding/bleu-maree-logo-mark.svg",
+      "format": "svg",
+      "usage": ["favicon", "app-icon", "stamp"],
+      "alt": "Monogramme Bleu Maree"
+    },
+    {
+      "id": "background-marine-premium",
+      "type": "background",
+      "path": "./images/backgrounds/bleu-maree-abstract-marine-premium.svg",
+      "format": "svg",
+      "usage": ["section-background", "footer", "editorial-block"],
+      "alt": "Fond abstrait marin premium Bleu Maree"
+    },
+    {
+      "id": "hero-dining-room-sunset",
+      "type": "image",
+      "path": "./images/hero/bleu-maree-hero-dining-room-sunset.png",
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usage": ["homepage-hero", "restaurant-page"],
+      "alt": "Table gastronomique Bleu Maree au coucher du soleil"
+    },
+    {
+      "id": "hero-atlantic-dining-room",
+      "type": "image",
+      "path": "./images/hero/bleu-maree-hero-atlantic-dining-room.png",
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usage": ["experience-section", "secondary-hero"],
+      "alt": "Salle de restaurant premium face a l Atlantique"
+    },
+    {
+      "id": "menu-crudo-signature",
+      "type": "image",
+      "path": "./images/menu/bleu-maree-menu-crudo-signature.png",
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usage": ["menu-section", "gallery", "signature-dish"],
+      "alt": "Plat signature cru aux inspirations marines"
+    },
+    {
+      "id": "menu-scallops-signature",
+      "type": "image",
+      "path": "./images/menu/bleu-maree-menu-scallops-signature.png",
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usage": ["menu-section", "gallery", "signature-dish"],
+      "alt": "Plat signature de Saint Jacques gastronomique"
+    },
+    {
+      "id": "plating-action",
+      "type": "image",
+      "path": "./images/experience/bleu-maree-plating-action.jpg",
+      "format": "jpg",
+      "width": 1600,
+      "height": 896,
+      "usage": ["experience-section", "craftsmanship", "storytelling"],
+      "alt": "Moment de dressage gastronomique chez Bleu Maree"
+    },
+    {
+      "id": "dessert-signature",
+      "type": "image",
+      "path": "./images/desserts/bleu-maree-dessert-signature.jpg",
+      "format": "jpg",
+      "width": 1600,
+      "height": 896,
+      "usage": ["dessert-section", "gallery", "menu-degustation"],
+      "alt": "Dessert signature gastronomique de Bleu Maree"
+    },
+    {
+      "id": "detail-table-setting",
+      "type": "image",
+      "path": "./images/details/bleu-maree-detail-table-setting.jpg",
+      "format": "jpg",
+      "width": 1600,
+      "height": 896,
+      "usage": ["editorial-section", "background-detail", "ambience"],
+      "alt": "Detail premium de table et matieres chez Bleu Maree"
+    },
+    {
+      "id": "chef-portrait",
+      "type": "image",
+      "path": "./images/people/bleu-maree-chef-portrait.jpg",
+      "format": "jpg",
+      "width": 1600,
+      "height": 896,
+      "usage": ["about-page", "chef-section", "storytelling"],
+      "alt": "Portrait du chef de Bleu Maree"
+    },
+    {
+      "id": "team-portrait",
+      "type": "image",
+      "path": "./images/people/bleu-maree-team-portrait.jpg",
+      "format": "jpg",
+      "width": 1600,
+      "height": 896,
+      "usage": ["team-section", "about-page", "recruitment"],
+      "alt": "Portrait de l equipe Bleu Maree dans le restaurant"
+    }
+  ]
+}

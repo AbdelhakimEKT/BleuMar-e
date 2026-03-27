@@ -1,0 +1,95 @@
+.section {
+  background:
+    linear-gradient(180deg, rgba(4, 16, 24, 0.56), rgba(4, 16, 24, 0.88)),
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.layout {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 54rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.lead {
+  max-width: 40rem;
+  margin: 0;
+  color: rgba(219, 227, 230, 0.82);
+  line-height: 1.82;
+}
+
+.heroFrame {
+  position: relative;
+  min-height: clamp(360px, 52vw, 620px);
+  overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.heroFrame:hover .image {
+  transform: scale(1.03);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.step {
+  display: grid;
+  gap: 0.8rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stepIndex {
+  color: rgba(201, 165, 106, 0.72);
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.9;
+}
+
+.step h3,
+.step p {
+  margin: 0;
+}
+
+.step h3 {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+}
+
+.step p {
+  color: rgba(219, 227, 230, 0.78);
+  line-height: 1.8;
+}
+
+.actionRow {
+  display: flex;
+}
+
+@media (max-width: 980px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

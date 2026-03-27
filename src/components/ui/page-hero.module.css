@@ -1,0 +1,32 @@
+.hero {
+  position: relative;
+  min-height: clamp(420px, 66vh, 680px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.background {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 12, 18, 0.35), rgba(3, 12, 18, 0.72)),
+    linear-gradient(120deg, rgba(4, 12, 18, 0.72), rgba(4, 12, 18, 0.15) 45%, rgba(4, 12, 18, 0.75));
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  padding-bottom: clamp(2.2rem, 7vw, 5rem);
+}
+
+.copy {
+  max-width: 720px;
+}

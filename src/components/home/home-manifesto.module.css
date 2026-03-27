@@ -1,0 +1,139 @@
+.section {
+  padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.mediaColumn {
+  position: relative;
+  min-height: 690px;
+}
+
+.mainImage,
+.detailImage {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.mainImage {
+  inset: 0 4rem 5.5rem 0;
+}
+
+.detailImage {
+  right: 0;
+  bottom: 0;
+  width: min(54%, 280px);
+  aspect-ratio: 0.88;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.mainImage:hover .image,
+.detailImage:hover .image {
+  transform: scale(1.04);
+}
+
+.storyColumn {
+  display: grid;
+  gap: 2rem;
+}
+
+.introBlock {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0.015em;
+}
+
+.lead {
+  max-width: 33rem;
+  margin: 0;
+  color: rgba(219, 227, 230, 0.84);
+  font-size: 1.04rem;
+  line-height: 1.88;
+}
+
+.storyList {
+  display: grid;
+  gap: 0;
+}
+
+.storyRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.85rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.storyRow:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.index {
+  color: rgba(201, 165, 106, 0.74);
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 0.9;
+}
+
+.storyCopy {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.storyCopy h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.storyCopy p {
+  max-width: 36rem;
+  margin: 0;
+  color: rgba(219, 227, 230, 0.8);
+  line-height: 1.85;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .mediaColumn {
+    min-height: 460px;
+  }
+
+  .mainImage {
+    inset: 0 2.8rem 4.5rem 0;
+  }
+
+  .detailImage {
+    width: min(56vw, 220px);
+  }
+
+  .storyRow {
+    grid-template-columns: 1fr;
+  }
+}

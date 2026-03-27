@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" fill="none">
+  <rect width="1800" height="1200" fill="#F5EFE4"/>
+  <circle cx="900" cy="330" r="214" stroke="#102A38" stroke-width="4"/>
+  <path d="M664 330L742 248H1058L1136 330L1058 412H742L664 330Z" stroke="#CBAA6B" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M741 330C776 285 832 259 900 259C968 259 1024 285 1059 330" stroke="#102A38" stroke-width="3" stroke-linecap="round" opacity="0.72"/>
+  <text x="900" y="366" text-anchor="middle" fill="#102A38" font-family="Didot, 'Bodoni 72', Baskerville, 'Times New Roman', serif" font-size="150" letter-spacing="10">BM</text>
+  <text x="900" y="780" text-anchor="middle" fill="#102A38" font-family="Didot, 'Bodoni 72', Baskerville, 'Times New Roman', serif" font-size="168" letter-spacing="14">BLEU MARÉE</text>
+  <text x="900" y="866" text-anchor="middle" fill="#667983" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif" font-size="36" letter-spacing="14">BIARRITZ · RESTAURANT GASTRONOMIQUE</text>
+</svg>
