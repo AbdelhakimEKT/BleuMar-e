@@ -2,6 +2,7 @@ import { experiencesPageType } from "@/sanity/schemaTypes/documents/experiences-
 import { galleryPageType } from "@/sanity/schemaTypes/documents/gallery-page";
 import { homePageType } from "@/sanity/schemaTypes/documents/home-page";
 import { menusPageType } from "@/sanity/schemaTypes/documents/menus-page";
+import { reservationRequestType } from "@/sanity/schemaTypes/documents/reservation-request";
 import { siteSettingsType } from "@/sanity/schemaTypes/documents/site-settings";
 import { actionLinkType } from "@/sanity/schemaTypes/objects/action-link";
 import { eventItemType } from "@/sanity/schemaTypes/objects/event-item";
@@ -19,6 +20,7 @@ export const schemaTypes = [
   menusPageType,
   experiencesPageType,
   galleryPageType,
+  reservationRequestType,
   actionLinkType,
   eventItemType,
   featureItemType,

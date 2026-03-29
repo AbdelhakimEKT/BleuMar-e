@@ -11,10 +11,14 @@ const singletonItems = [
 export const structure: StructureResolver = (S) =>
   S.list()
     .title("Bleu Marée")
-    .items(
-      singletonItems.map((item) =>
+    .items([
+      ...singletonItems.map((item) =>
         S.listItem()
           .title(item.title)
           .child(S.document().schemaType(item.schemaType).documentId(item.documentId))
-      )
-    );
+      ),
+      S.divider(),
+      S.listItem()
+        .title("Demandes de réservation")
+        .child(S.documentTypeList("reservationRequest").title("Demandes de réservation"))
+    ]);

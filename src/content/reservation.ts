@@ -4,40 +4,40 @@ const reservationContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "Réservation",
-      title: "Un parcours simple, clair et rassurant.",
+      title: "Une demande de réservation pensée comme une évidence.",
       intro:
-        "La V1 est désormais pensée autour de Zenchef: fiabilité, rapidité de mise en place, affichage mobile clair et gestion centralisée des disponibilités.",
+        "Le parcours privilégie la clarté, le calme et la précision: date, heure, couverts, occasion et remarques sont réunis dans une expérience premium, lisible et mobile.",
       image: "/images/hero/bleu-maree-hero-dining-room-sunset.png"
     },
     infoIntro: {
       eyebrow: "Informations utiles",
       title: "Ce que le client doit comprendre sans effort.",
       lead:
-        "Horaires, demandes spéciales, groupes, occasions et promesse de confirmation: tout est réuni pour rassurer dès la première lecture, tout en laissant Zenchef piloter le moteur de réservation."
+        "Horaires, demandes spéciales, groupes, occasions et promesse de réponse: tout est réuni pour rassurer dès la première lecture et donner envie de confirmer sa venue."
     },
     groupCta: "Demande de groupe ou privatisation",
     organizationIntro: {
-      eyebrow: "Organisation",
-      title: "Une intégration propre avant tout.",
+      eyebrow: "Back-office",
+      title: "Une logique simple, propre et administrable.",
       lead:
-        "La meilleure V1 consiste à ouvrir Zenchef depuis le site avec un habillage cohérent, puis à laisser Zenchef gérer les règles métier, les créneaux et les confirmations."
+        "Le site enregistre les demandes dans un back-office clair pour garder une démonstration crédible: chaque demande peut être suivie, confirmée ou annulée depuis l'admin."
     },
-    implementationLabel: "Mise en place",
+    implementationLabel: "Fonctionnement",
     reservationJourney: [
       {
-        title: "Widget Zenchef officiel",
+        title: "Choix du moment",
         copy:
-          "Le site appellera le module Zenchef pour le choix des couverts, de la date et de l'heure, afin d'éviter un flux maison fragile en V1."
+          "Le visiteur choisit le nombre de couverts, la date, l'heure et peut ajouter une occasion ou une remarque importante."
       },
       {
-        title: "Disponibilités et créneaux pilotés côté restaurant",
+        title: "Demande enregistrée",
         copy:
-          "Les heures réservables, les jours fermés, les exceptions et les limitations de capacité sont ensuite gérés depuis l'interface Zenchef."
+          "La demande est conçue pour être sauvegardée dans le back-office du restaurant, avec toutes les informations utiles à l'équipe."
       },
       {
-        title: "Confirmation et suivi",
+        title: "Suivi côté maison",
         copy:
-          "La confirmation automatique par email et les mécanismes de reconfirmation restent entre les mains du prestataire de réservation."
+          "Depuis l'admin, la maison peut retrouver les demandes, faire évoluer leur statut et préparer les réponses ou confirmations."
       }
     ],
     reservationPractices: [
@@ -46,57 +46,57 @@ const reservationContentByLocale = {
         copy: "Au-delà de 8 couverts, nous recommandons une demande dédiée afin de construire l'expérience."
       },
       {
-        label: "Zenchef V1",
-        copy: "Pour le lancement, nous privilégions la stabilité du module officiel et un déclenchement propre depuis le site."
+        label: "Parcours premium",
+        copy: "Le formulaire reste volontairement calme, lisible et désirable pour donner une impression haut de gamme dès la première interaction."
       },
       {
         label: "Occasions spéciales",
-        copy: "Anniversaire, allergènes ou attention particulière pourront être gérés via le parcours Zenchef ou via le contact direct."
+        copy: "Anniversaire, allergènes ou attention particulière peuvent être indiqués dès la demande afin de préparer une réponse plus juste."
       }
     ],
     zenchefSetupSteps: [
-      "Récupérer le script officiel ou le Booking Link dans l'interface Zenchef.",
-      "Brancher le script une seule fois dans le site et utiliser notre bouton principal pour ouvrir le module.",
-      "Configurer dans Zenchef les services déjeuner/dîner, la capacité, les exceptions et les emails."
+      "Chaque demande crée une entrée structurée dans le back-office.",
+      "Le statut peut ensuite être suivi côté maison: nouvelle, confirmée ou annulée.",
+      "Une confirmation email peut être ajoutée ensuite si l'on veut pousser la démonstration encore plus loin."
     ]
   },
   en: {
     pageHero: {
       eyebrow: "Booking",
-      title: "A simple, clear, reassuring journey.",
+      title: "A booking request designed to feel effortless.",
       intro:
-        "V1 is now designed around Zenchef: reliability, quick setup, clear mobile display, and centralized availability management.",
+        "The journey favors clarity, calm, and precision: date, time, party size, occasion, and notes are gathered in a premium, legible, mobile-first experience.",
       image: "/images/hero/bleu-maree-hero-dining-room-sunset.png"
     },
     infoIntro: {
       eyebrow: "Useful information",
       title: "What the guest should understand effortlessly.",
       lead:
-        "Opening hours, special requests, groups, occasions, and the promise of confirmation are all gathered here to reassure on first read while letting Zenchef handle the booking engine."
+        "Opening hours, special requests, groups, occasions, and the promise of a response are gathered here to reassure on first read and encourage action."
     },
     groupCta: "Group booking or private dining request",
     organizationIntro: {
-      eyebrow: "Structure",
-      title: "A clean integration first.",
+      eyebrow: "Back-office",
+      title: "A simple, clean, manageable logic.",
       lead:
-        "The best V1 is to open Zenchef from the site with a coherent premium wrapper, then let Zenchef handle business rules, time slots, and confirmations."
+        "The site records requests in a clear back-office so the demo stays credible: each request can be tracked, confirmed, or cancelled from the admin."
     },
-    implementationLabel: "Implementation",
+    implementationLabel: "How it works",
     reservationJourney: [
       {
-        title: "Official Zenchef widget",
+        title: "Choosing the moment",
         copy:
-          "The site will call the Zenchef module for party size, date, and time selection in order to avoid a fragile in-house flow for V1."
+          "The guest chooses party size, preferred date, preferred time, and can add an occasion or an important note."
       },
       {
-        title: "Availability and slots managed restaurant-side",
+        title: "Request saved",
         copy:
-          "Bookable hours, closed days, exceptions, and capacity limits are then managed from the Zenchef interface."
+          "The request is designed to be saved in the restaurant back-office with all the information the team needs."
       },
       {
-        title: "Confirmation and follow-up",
+        title: "House-side follow-up",
         copy:
-          "Automatic confirmation emails and reconfirmation mechanics remain in the hands of the booking provider."
+          "From the admin, the house can find requests again, update their status, and prepare responses or confirmations."
       }
     ],
     reservationPractices: [
@@ -105,18 +105,18 @@ const reservationContentByLocale = {
         copy: "For more than 8 guests, we recommend a dedicated request in order to shape the experience properly."
       },
       {
-        label: "Zenchef V1",
-        copy: "For launch, we are prioritizing the stability of the official module and a clean trigger from the site."
+        label: "Premium journey",
+        copy: "The form deliberately stays calm, legible, and desirable so the very first interaction already feels high-end."
       },
       {
         label: "Special occasions",
-        copy: "Birthdays, allergens, and special attentions can be handled through the Zenchef flow or direct contact."
+        copy: "Birthdays, allergens, and special attentions can be handled directly through the request journey."
       }
     ],
     zenchefSetupSteps: [
-      "Retrieve the official script or Booking Link from the Zenchef interface.",
-      "Connect the script only once on the site and use our main button to open the module.",
-      "Configure lunch and dinner services, capacity, exceptions, and emails directly in Zenchef."
+      "Each request creates a structured entry in the back-office.",
+      "The status can then be tracked house-side: new, confirmed, or cancelled.",
+      "A confirmation email can be added later if we want to push the demo further."
     ]
   }
 };

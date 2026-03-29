@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ZenchefReservationPanel } from "@/components/blocks/zenchef-reservation-panel";
+import { ReservationRequestForm } from "@/components/forms/reservation-request-form";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
 import { PageHero } from "@/components/ui/page-hero";
@@ -9,6 +9,7 @@ import { getReservationContent } from "@/content/reservation";
 import { resolveLocale } from "@/i18n/server";
 import { withLocale } from "@/i18n/routing";
 import { createMetadata } from "@/lib/metadata";
+import { isSanityWriteConfigured } from "@/sanity/env";
 import { getSiteSettingsData } from "@/sanity/loaders";
 
 type ReservationPageProps = {
@@ -57,7 +58,7 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
       <section className="section">
         <div className="container grid-two">
           <Reveal>
-            <ZenchefReservationPanel settings={siteConfig} locale={locale} />
+            <ReservationRequestForm locale={locale} storageReady={isSanityWriteConfigured} />
           </Reveal>
 
           <Reveal className="stack">
@@ -126,9 +127,9 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
             <div className="surface-card surface-card--light">
               <p className="kicker">{content.implementationLabel}</p>
               <ul className="detail-list">
-                {content.zenchefSetupSteps.map((step) => (
+                {content.zenchefSetupSteps.map((step, index) => (
                   <li key={step}>
-                    <span className="detail-title">{siteConfig.bookingProvider}</span>
+                    <span className="detail-title">0{index + 1}</span>
                     <span className="detail-copy">{step}</span>
                   </li>
                 ))}

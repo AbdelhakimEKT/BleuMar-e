@@ -36,6 +36,45 @@ const uiCopy = {
       invalidEmail: "L'adresse email indiquée semble invalide.",
       success: "Merci, votre message a bien été transmis à l'équipe Bleu Marée."
     },
+    reservationForm: {
+      title: "Réserver une table",
+      intro:
+        "Choisissez votre moment, indiquez vos préférences et laissez la maison revenir vers vous avec une réponse claire et rapide.",
+      name: "Nom et prénom",
+      email: "Email",
+      phone: "Téléphone",
+      covers: "Couverts",
+      date: "Date souhaitée",
+      time: "Heure souhaitée",
+      occasion: "Occasion",
+      notes: "Allergies ou remarques",
+      occasionOptions: {
+        default: "Sélectionner",
+        dinner: "Dîner à deux",
+        anniversary: "Anniversaire",
+        business: "Dîner professionnel",
+        celebration: "Célébration",
+        private: "Privatisation"
+      },
+      hint:
+        "Les demandes enregistrées sont conçues pour apparaître dans le back-office du restaurant et suivre un statut clair.",
+      submit: "Envoyer la demande",
+      submitting: "Envoi en cours...",
+      storagePending:
+        "Cette instance de démonstration n'a pas encore l'enregistrement activé. Le parcours reste prêt pour une vraie sauvegarde côté back-office."
+    },
+    reservationApi: {
+      missingFields:
+        "Merci de renseigner votre nom, votre email, votre téléphone, le nombre de couverts, la date et l'heure souhaitées.",
+      invalidEmail: "L'adresse email indiquée semble invalide.",
+      invalidCovers: "Le nombre de couverts doit être compris entre 1 et 12.",
+      storageNotReady:
+        "Cette instance de démonstration n'enregistre pas encore les demandes pour de vrai.",
+      saveFailed:
+        "La demande n'a pas pu être enregistrée pour le moment. Réessayez dans un instant.",
+      success:
+        "Votre demande a bien été enregistrée. Elle apparaît maintenant dans le back-office Bleu Marée."
+    },
     zenchef: {
       title: "Réservation V1 via le module officiel.",
       intro:
@@ -121,6 +160,45 @@ const uiCopy = {
       missingFields: "Please provide your name, email, subject, and message.",
       invalidEmail: "The email address provided appears to be invalid.",
       success: "Thank you, your message has been sent to the Bleu Marée team."
+    },
+    reservationForm: {
+      title: "Book a table",
+      intro:
+        "Choose your moment, share your preferences, and let the house come back to you with a clear and timely response.",
+      name: "Full name",
+      email: "Email",
+      phone: "Phone",
+      covers: "Guests",
+      date: "Preferred date",
+      time: "Preferred time",
+      occasion: "Occasion",
+      notes: "Allergies or notes",
+      occasionOptions: {
+        default: "Select",
+        dinner: "Dinner for two",
+        anniversary: "Anniversary",
+        business: "Business dinner",
+        celebration: "Celebration",
+        private: "Private event"
+      },
+      hint:
+        "Saved requests are designed to appear in the restaurant back-office and follow a clear status.",
+      submit: "Send request",
+      submitting: "Sending...",
+      storagePending:
+        "This demo instance does not have live storage enabled yet. The journey is still ready for real back-office saving."
+    },
+    reservationApi: {
+      missingFields:
+        "Please provide your name, email, phone, number of guests, preferred date, and preferred time.",
+      invalidEmail: "The email address provided appears to be invalid.",
+      invalidCovers: "The number of guests must be between 1 and 12.",
+      storageNotReady:
+        "This demo instance is not saving requests for real yet.",
+      saveFailed:
+        "The request could not be saved right now. Please try again in a moment.",
+      success:
+        "Your request has been saved successfully. It now appears in the Bleu Marée back-office."
     },
     zenchef: {
       title: "V1 booking through the official module.",
