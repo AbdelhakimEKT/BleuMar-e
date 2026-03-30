@@ -141,7 +141,7 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
         </div>
       </section>
 
-      <section className="section section-surface">
+      <section className="section reservation-hospitality-section">
         <div className="container">
           <EditorialSplit
             className="reservation-hospitality"
@@ -157,7 +157,8 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
               {
                 href: withLocale(locale, "/contact"),
                 label: content.groupCta,
-                variant: "primary"
+                variant: "primary",
+                className: "reservation-hospitality-cta"
               }
             ]}
           />
