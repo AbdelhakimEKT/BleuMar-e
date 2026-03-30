@@ -20,7 +20,7 @@ const experiencesMetaCopy = {
   fr: {
     title: "Experiences",
     description:
-      "Valorisez les soirees speciales, menus saisonniers, collaborations et privatisations de Bleu Maree."
+      "Découvrez les soirées spéciales, menus de saison, accords et privatisations imaginés par Bleu Marée."
   },
   en: {
     title: "Experiences",

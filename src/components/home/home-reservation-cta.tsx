@@ -22,16 +22,16 @@ type HomeReservationCtaProps = {
 const reservationCtaCopy = {
   fr: {
     eyebrow: "Réservation",
-    title: "Maintenant, il faut que la page donne envie de cliquer sans hésiter.",
+    title: "Réserver, puis laisser le dîner faire le reste.",
     lead:
-      "On garde la réservation simple, mais on la cadre comme un geste premium: bonne information, bonne respiration, bon moment pour convertir.",
+      "Déjeuner, dîner et occasions particulières se réservent en quelques instants. L'équipe reprend ensuite la main avec le même soin que celui porté à la table.",
     reserve: "Réserver une table"
   },
   en: {
     eyebrow: "Booking",
-    title: "Now the page needs to make the click feel immediate.",
+    title: "Book the table, then let dinner take over.",
     lead:
-      "Booking stays simple, but it is framed like a premium gesture: the right information, the right breathing room, the right moment to convert.",
+      "Lunch, dinner, and special occasions can be booked in moments. The team then takes over with the same care found at the table itself.",
     reserve: "Book a table"
   }
 } as const;

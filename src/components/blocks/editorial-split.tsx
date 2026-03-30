@@ -94,6 +94,8 @@ export function EditorialSplit({
             alt={imageAlt}
             width={1600}
             height={1000}
+            sizes="(max-width: 1080px) 100vw, 44vw"
+            loading="eager"
             className="image-cover"
             style={imagePosition ? { objectPosition: imagePosition } : undefined}
           />

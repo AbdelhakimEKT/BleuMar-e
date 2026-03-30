@@ -6,7 +6,7 @@ const restaurantContentByLocale = {
       eyebrow: "Le restaurant",
       title: "Une maison où l'élégance reste vivante.",
       intro:
-        "Histoire, vision culinaire, travail de l'équipe et atmosphère: le site structure un vrai récit de marque, plus humain et plus premium.",
+        "À Bleu Marée, la cuisine, la salle et le service avancent dans le même souffle: une table marine contemporaine, lumineuse et profondément hospitalière.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
       imagePosition: "50% 54%"
     },
@@ -25,9 +25,9 @@ const restaurantContentByLocale = {
     },
     foundations: {
       eyebrow: "Fondations",
-      title: "Trois piliers pour raconter la maison sans lourdeur.",
+      title: "Trois repères pour comprendre la maison.",
       lead:
-        "La page alterne storytelling, détails concrets et visuels d'équipe pour donner de la profondeur sans perdre la clarté."
+        "Bleu Marée tient sur quelques convictions simples: la qualité du produit, la précision du geste et une élégance qui ne se donne jamais en spectacle."
     },
     sourcingPillars: [
       {
@@ -38,7 +38,7 @@ const restaurantContentByLocale = {
       {
         title: "Cuisine de précision",
         copy:
-          "Une lecture contemporaine de la gastronomie française: clarté, profondeur et construction technique sans démonstration inutile."
+          "Une gastronomie française contemporaine, claire dans ses goûts, tenue dans ses sauces et précise dans ses cuissons."
       },
       {
         title: "Élégance sans froideur",
@@ -53,7 +53,7 @@ const restaurantContentByLocale = {
       },
       {
         label: "Équipe",
-        copy: "Une brigade réduite, attentive, formée à un service précis, discret et très lisible pour le client."
+        copy: "Une brigade resserrée, attentive, formée à un service précis et discret."
       },
       {
         label: "Occasions",
@@ -81,9 +81,9 @@ const restaurantContentByLocale = {
       }
     ],
     teamMoments: {
-      title: "Une équipe orchestrée comme une salle de concert intime.",
+      title: "Une équipe qui sert avec netteté, sans jamais hausser le ton.",
       copy:
-        "De la cuisine au service, chaque interaction vise la fluidité: bon tempo, bonne distance, bonne précision. Cette cohérence donne à Bleu Marée son ressenti premium sans surjeu.",
+        "De la cuisine à la salle, chaque interaction cherche la fluidité: le bon tempo, la bonne distance, le bon geste. C'est cette cohérence qui donne à Bleu Marée sa présence.",
       image: "/images/people/bleu-maree-team-service-in-action.jpg",
       imageAlt: "Équipe Bleu Marée en service",
       imagePosition: "50% 46%"
@@ -107,7 +107,7 @@ const restaurantContentByLocale = {
       eyebrow: "The restaurant",
       title: "A house where elegance stays alive.",
       intro:
-        "Story, culinary vision, team craft, and atmosphere: the site builds a true brand narrative, more human and more premium.",
+        "At Bleu Maree, cuisine, room, and service move in the same breath: a contemporary seafood table that feels luminous, precise, and deeply hospitable.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
       imagePosition: "50% 54%"
     },
@@ -126,9 +126,9 @@ const restaurantContentByLocale = {
     },
     foundations: {
       eyebrow: "Foundations",
-      title: "Three pillars to tell the story without making it heavy.",
+      title: "Three markers to understand the house.",
       lead:
-        "The page alternates storytelling, concrete details, and team imagery to add depth without losing clarity."
+        "Bleu Maree rests on a few simple convictions: the quality of the ingredient, the precision of the gesture, and an elegance that never needs to perform."
     },
     sourcingPillars: [
       {
@@ -139,7 +139,7 @@ const restaurantContentByLocale = {
       {
         title: "Precision cuisine",
         copy:
-          "A contemporary reading of French gastronomy: clarity, depth, and technical structure without unnecessary display."
+          "A contemporary French gastronomy rooted in clarity of flavor, controlled sauces, and accurate cooking."
       },
       {
         title: "Elegance without distance",
@@ -154,7 +154,7 @@ const restaurantContentByLocale = {
       },
       {
         label: "Team",
-        copy: "A focused brigade trained for a precise, discreet, highly legible style of service."
+        copy: "A focused brigade trained for precise, discreet service."
       },
       {
         label: "Occasions",
@@ -182,9 +182,9 @@ const restaurantContentByLocale = {
       }
     ],
     teamMoments: {
-      title: "A team orchestrated like an intimate concert hall.",
+      title: "A team that serves with clarity and never raises its voice.",
       copy:
-        "From kitchen to service, every interaction aims for flow: the right tempo, the right distance, the right precision. That coherence is what gives Bleu Maree its premium feeling without overplaying it.",
+        "From kitchen to dining room, every interaction aims for flow: the right tempo, the right distance, the right gesture. That coherence is what gives Bleu Maree its presence.",
       image: "/images/people/bleu-maree-team-service-in-action.jpg",
       imageAlt: "Bleu Maree team in service",
       imagePosition: "50% 46%"

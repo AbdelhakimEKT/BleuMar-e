@@ -27,7 +27,7 @@ const uiCopy = {
       subject: "Sujet",
       message: "Message",
       hint:
-        "Le message est transmis dans un espace de suivi clair pour permettre une réponse plus rapide et plus attentive.",
+        "Le message est transmis directement à l'équipe pour permettre une réponse plus rapide et plus attentive.",
       submit: "Envoyer le message",
       submitting: "Envoi..."
     },
@@ -35,7 +35,7 @@ const uiCopy = {
       missingFields: "Merci de renseigner votre nom, votre email, le sujet et le message.",
       invalidEmail: "L'adresse email indiquée semble invalide.",
       deliveryUnavailable:
-        "Le routage email n'est pas encore configuré sur cette instance. Ajoutez le mot de passe SMTP pour activer l'envoi réel.",
+        "Le service d'email n'est pas encore configuré. Ajoutez le mot de passe SMTP pour activer l'envoi réel.",
       sendFailed:
         "Le message n'a pas pu partir pour le moment. Réessayez dans un instant ou contactez la maison par téléphone.",
       success: "Merci, votre message a bien été transmis à l'équipe Bleu Marée."
@@ -65,7 +65,7 @@ const uiCopy = {
       submit: "Envoyer la demande",
       submitting: "Envoi en cours...",
       storagePending:
-        "Cette instance de démonstration n'a pas encore l'enregistrement activé. Le parcours reste prêt pour une vraie sauvegarde côté back-office."
+        "L'enregistrement des demandes n'est pas encore activé sur cette version. Le parcours reste prêt pour une vraie sauvegarde côté back-office."
     },
     reservationApi: {
       missingFields:
@@ -73,7 +73,7 @@ const uiCopy = {
       invalidEmail: "L'adresse email indiquée semble invalide.",
       invalidCovers: "Le nombre de couverts doit être compris entre 1 et 12.",
       storageNotReady:
-        "Cette instance de démonstration n'enregistre pas encore les demandes pour de vrai.",
+        "L'enregistrement des demandes n'est pas encore activé sur cette version.",
       saveFailed:
         "La demande n'a pas pu être enregistrée pour le moment. Réessayez dans un instant.",
       success:
@@ -98,7 +98,7 @@ const uiCopy = {
       home: "Retour à l'accueil",
       reservation: "Réserver",
       note:
-        "Le site garde volontairement une 404 éditorialisée, cohérente avec l'univers premium et utile pour ne pas perdre les visiteurs."
+        "Retournez à l'accueil ou à la réservation pour retrouver rapidement le bon chemin."
     },
     legal: {
       eyebrow: "Mentions légales",
@@ -156,7 +156,7 @@ const uiCopy = {
       subject: "Subject",
       message: "Message",
       hint:
-        "The message is sent into a clear follow-up workspace so the house can answer with more attention and speed.",
+        "The message is sent directly to the team so the house can reply with more attention and speed.",
       submit: "Send message",
       submitting: "Sending..."
     },
@@ -164,7 +164,7 @@ const uiCopy = {
       missingFields: "Please provide your name, email, subject, and message.",
       invalidEmail: "The email address provided appears to be invalid.",
       deliveryUnavailable:
-        "Email delivery is not configured on this instance yet. Add the SMTP password to enable live sending.",
+        "Email delivery is not configured yet. Add the SMTP password to enable live sending.",
       sendFailed:
         "The message could not be sent right now. Please try again in a moment or contact the house by phone.",
       success: "Thank you, your message has been sent to the Bleu Marée team."
@@ -194,7 +194,7 @@ const uiCopy = {
       submit: "Send request",
       submitting: "Sending...",
       storagePending:
-        "This demo instance does not have live storage enabled yet. The journey is still ready for real back-office saving."
+        "Live request storage is not enabled on this version yet. The journey is still ready for real back-office saving."
     },
     reservationApi: {
       missingFields:
@@ -202,7 +202,7 @@ const uiCopy = {
       invalidEmail: "The email address provided appears to be invalid.",
       invalidCovers: "The number of guests must be between 1 and 12.",
       storageNotReady:
-        "This demo instance is not saving requests for real yet.",
+        "Live request storage is not enabled on this version yet.",
       saveFailed:
         "The request could not be saved right now. Please try again in a moment.",
       success:
@@ -227,11 +227,11 @@ const uiCopy = {
       home: "Back to home",
       reservation: "Book a table",
       note:
-        "The site intentionally keeps an editorial 404 page that stays consistent with the premium universe and helps retain visitors."
+        "Head back home or open the booking page to quickly find the right path again."
     },
     legal: {
       eyebrow: "Legal notice",
-      title: "Legal framework of the site.",
+      title: "Legal information.",
       publisherTitle: "Website publisher",
       publisherCopy:
         "Showcase website for Bleu Marée restaurant in Biarritz. The final details of the operating company, publication director, and hosting provider must be completed before the official launch.",
@@ -256,7 +256,7 @@ const uiCopy = {
         "The retention period and final GDPR contact details will need to be specified when the back-office and email tools are fully connected. Users may exercise their rights of access, rectification, and deletion in accordance with applicable regulations.",
       cookiesTitle: "Cookies and analytics",
       cookiesCopy:
-        "If an analytics tool is added to the site, a banner and a dedicated cookie policy will need to complement this document to remain consistent with applicable obligations."
+        "If an analytics tool is added, a banner and a dedicated cookie policy will need to complement this document to remain consistent with applicable obligations."
     }
   }
 } as const;

@@ -24,8 +24,8 @@ export default function NotFound() {
         <div className="surface-card">
           <p className="kicker">Bleu Marée</p>
           <p className="microcopy">
-            Le site garde volontairement une 404 éditorialisée, cohérente avec l'univers premium et
-            utile pour ne pas perdre les visiteurs.
+            Revenez à l'accueil, explorez la carte ou ouvrez directement la réservation pour
+            retrouver la bonne adresse.
           </p>
         </div>
       </div>

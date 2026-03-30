@@ -13,7 +13,7 @@ const homeContentByLocale = {
       highlights: [
         "Vue inspirée par l'océan",
         "Cuisine française contemporaine",
-        "Service dîner premium"
+        "Service du soir"
       ]
     },
     philosophyHighlights: [
@@ -25,7 +25,7 @@ const homeContentByLocale = {
       {
         title: "Rythme de la saison",
         copy:
-          "La carte évolue selon les marées, les arrivages et la tension du moment, pour garder une signature toujours vivante."
+          "La carte évolue avec les marées, les arrivages et l'énergie du moment, pour garder une signature toujours vivante."
       },
       {
         title: "Hospitalité enveloppante",
@@ -63,23 +63,23 @@ const homeContentByLocale = {
       {
         title: "Un accueil à tempo juste",
         copy:
-          "L'arrivée se fait dans une lumière feutrée, avec une attention immédiate portée à l'occasion, au rythme du dîner et aux préférences de la table."
+          "L'arrivée se fait dans une lumière feutrée, avec une attention immédiate portée à l'occasion, au tempo du dîner et aux attentes de la table."
       },
       {
-        title: "Une carte construite comme un récit",
+        title: "Une carte qui déroule sa cadence",
         copy:
-          "Les menus sont pensés pour faire monter la tension aromatique, jouer sur les textures et laisser de la place à la surprise."
+          "Les menus avancent avec naturel, entre fraîcheur, relief et profondeur, en laissant toujours une place à la surprise."
       },
       {
-        title: "Un souvenir durable",
+        title: "Un souvenir qui reste",
         copy:
-          "Service précis, accords travaillés et dernier geste soigné pour transformer la réservation en moment de mémoire."
+          "Service précis, accords sensibles et dernière note bien tenue: la table laisse une impression qui dépasse le dîner."
       }
     ],
     curatedImpressions: [
-      "L'adresse qui fait dialoguer Biarritz, l'iode et le luxe calme.",
-      "Une expérience contemporaine où chaque détail semble pesé juste.",
-      "La sensation d'une table qui respire et donne envie de revenir."
+      "À Biarritz, une table où l'iode rencontre le calme.",
+      "Une adresse contemporaine où chaque détail paraît à sa place.",
+      "La sensation d'un dîner précis, lumineux, que l'on a envie de revivre."
     ]
   },
   en: {
@@ -94,7 +94,7 @@ const homeContentByLocale = {
       highlights: [
         "Ocean-inspired dining room",
         "Contemporary French cuisine",
-        "Premium dinner service"
+        "Evening service"
       ]
     },
     philosophyHighlights: [
@@ -144,23 +144,23 @@ const homeContentByLocale = {
       {
         title: "A perfectly paced welcome",
         copy:
-          "Arrival unfolds in soft light, with immediate attention paid to the occasion, the dinner rhythm, and the table’s preferences."
+          "Arrival unfolds in soft light, with immediate attention paid to the occasion, the pace of dinner, and the table’s preferences."
       },
       {
-        title: "A menu built like a narrative",
+        title: "A menu that carries its own rhythm",
         copy:
-          "Menus are designed to raise aromatic tension, play with texture, and leave room for surprise."
+          "Menus unfold naturally through freshness, relief, and depth while always leaving room for surprise."
       },
       {
-        title: "A lasting memory",
+        title: "A memory that stays",
         copy:
-          "Precise service, thoughtful pairings, and a carefully handled final gesture turn booking into something memorable."
+          "Precise service, thoughtful pairings, and a well-held final note turn dinner into something memorable."
       }
     ],
     curatedImpressions: [
-      "The address where Biarritz, iodine, and quiet luxury meet.",
-      "A contemporary experience where every detail feels measured just right.",
-      "The sensation of a table that breathes and draws you back."
+      "The address where Biarritz, sea air, and quiet elegance meet.",
+      "A contemporary table where every detail feels measured just right.",
+      "The feeling of a dinner that breathes and draws you back."
     ]
   }
 };

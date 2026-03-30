@@ -19,20 +19,20 @@ const homePageCopy = {
   fr: {
     metaTitle: "Accueil",
     metaDescription:
-      "Découvrez Bleu Marée à Biarritz: une expérience gastronomique premium autour des produits de la mer, d'une salle immersive et d'une réservation pensée avec élégance.",
+      "Découvrez Bleu Marée à Biarritz: une table gastronomique tournée vers la mer, la saison et une élégance contemporaine.",
     impressionsEyebrow: "Impressions",
     impressionsTitle: "Une atmosphère qui reste après le dîner.",
     impressionsLead:
-      "Lumière feutrée, dressage précis, service à tempo juste et horizon atlantique: Bleu Marée s'imprime comme une adresse que l'on retient autant qu'on la raconte."
+      "Lumière feutrée, dressage précis, service à tempo juste et horizon atlantique: Bleu Marée laisse une impression qui dépasse le dîner."
   },
   en: {
     metaTitle: "Home",
     metaDescription:
-      "Discover Bleu Maree in Biarritz: a premium fine dining experience centered on seafood, an immersive dining room, and an elegant booking journey.",
+      "Discover Bleu Maree in Biarritz: a fine dining table shaped by seafood, seasonality, and contemporary elegance.",
     impressionsEyebrow: "Impressions",
     impressionsTitle: "An atmosphere that lingers after dinner.",
     impressionsLead:
-      "Soft light, precise plating, service at the right tempo, and an Atlantic horizon: Bleu Maree stays with you like an address remembered as much as it is told."
+      "Soft light, precise plating, service at the right tempo, and an Atlantic horizon: Bleu Maree leaves an impression that lasts beyond dinner."
   }
 } as const;
 

@@ -6,24 +6,24 @@ const reservationContentByLocale = {
       eyebrow: "Réservation",
       title: "Une demande de réservation pensée comme une évidence.",
       intro:
-        "Le parcours privilégie la clarté, le calme et la précision: date, heure, couverts, occasion et remarques sont réunis dans une expérience premium, lisible et mobile.",
+        "Choisissez le moment, indiquez vos préférences et laissez la maison revenir vers vous avec une réponse claire, attentive et rapide.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
       imagePosition: "50% 56%"
     },
     infoIntro: {
       eyebrow: "Informations utiles",
-      title: "Ce que le client doit comprendre sans effort.",
+      title: "Ce qu'il faut savoir avant de choisir son moment.",
       lead:
-        "Horaires, demandes spéciales, groupes, occasions et promesse de réponse: tout est réuni pour rassurer dès la première lecture et donner envie de confirmer sa venue."
+        "Horaires, demandes spéciales, groupes et occasions particulières sont rappelés ici pour réserver avec calme et confiance."
     },
     groupCta: "Demande de groupe ou privatisation",
     organizationIntro: {
       eyebrow: "Après la demande",
       title: "Une réponse pensée avec le même niveau de soin.",
       lead:
-        "La demande rassemble déjà les informations utiles pour que la maison puisse répondre avec justesse, préparer les occasions spéciales et orienter les groupes."
+        "La demande rassemble déjà les informations utiles pour permettre à la maison de répondre justement, de préparer les occasions et d'orienter les groupes."
     },
-    implementationLabel: "Ce qui se passe ensuite",
+    implementationLabel: "À savoir",
     reservationJourney: [
       {
         title: "Choix du moment",
@@ -47,7 +47,7 @@ const reservationContentByLocale = {
         copy: "Au-delà de 8 couverts, nous recommandons une demande dédiée afin de construire l'expérience."
       },
       {
-        label: "Parcours premium",
+        label: "Réponse soignée",
         copy: "Le formulaire reste volontairement calme, lisible et désirable pour donner une impression haut de gamme dès la première interaction."
       },
       {
@@ -64,7 +64,7 @@ const reservationContentByLocale = {
       eyebrow: "Hospitalité",
       title: "Le formulaire ne remplace pas l'accueil: il le prépare.",
       intro:
-        "Ce bloc garde l'élégance du site tout en donnant à la maison suffisamment de matière pour répondre avec précision.",
+        "Quelques informations bien choisies suffisent pour nous permettre de répondre avec attention, sans alourdir le geste de réservation.",
       image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
       imageAlt: "Verrerie et lumière douce chez Bleu Marée",
       imagePosition: "50% 50%",
@@ -89,24 +89,24 @@ const reservationContentByLocale = {
       eyebrow: "Booking",
       title: "A booking request designed to feel effortless.",
       intro:
-        "The journey favors clarity, calm, and precision: date, time, party size, occasion, and notes are gathered in a premium, legible, mobile-first experience.",
+        "Choose the moment, share your preferences, and let the house come back to you with a clear, attentive, timely reply.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
       imagePosition: "50% 56%"
     },
     infoIntro: {
       eyebrow: "Useful information",
-      title: "What the guest should understand effortlessly.",
+      title: "What to know before choosing the moment.",
       lead:
-        "Opening hours, special requests, groups, occasions, and the promise of a response are gathered here to reassure on first read and encourage action."
+        "Opening hours, special requests, groups, and occasions are gathered here so booking feels calm and straightforward."
     },
     groupCta: "Group booking or private dining request",
     organizationIntro: {
       eyebrow: "After the request",
       title: "A response shaped with the same level of care.",
       lead:
-        "The request already gathers the key information the house needs to answer properly, prepare special occasions, and handle groups with clarity."
+        "The request already gathers the information the house needs to respond well, prepare special occasions, and orient group requests."
     },
-    implementationLabel: "What happens next",
+    implementationLabel: "Good to know",
     reservationJourney: [
       {
         title: "Choosing the moment",
@@ -130,8 +130,8 @@ const reservationContentByLocale = {
         copy: "For more than 8 guests, we recommend a dedicated request in order to shape the experience properly."
       },
       {
-        label: "Premium journey",
-        copy: "The form deliberately stays calm, legible, and desirable so the very first interaction already feels high-end."
+        label: "Thoughtful reply",
+        copy: "The form stays calm and direct so the very first interaction already feels clear, polished, and reassuring."
       },
       {
         label: "Special occasions",
@@ -147,7 +147,7 @@ const reservationContentByLocale = {
       eyebrow: "Hospitality",
       title: "The form does not replace the welcome: it prepares it.",
       intro:
-        "This block keeps the site elegant while still giving the house enough context to respond with precision.",
+        "A few well-chosen details are enough for the house to reply with attention, without making booking feel heavy.",
       image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
       imageAlt: "Glassware and soft light at Bleu Maree",
       imagePosition: "50% 50%",

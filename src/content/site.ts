@@ -38,7 +38,7 @@ const siteConfigByLocale = {
     location: "Biarritz",
     tagline: "L'Atlantique à table, dans un écrin de lumière.",
     description:
-      "Restaurant gastronomique premium à Biarritz, Bleu Marée célèbre les produits de la mer dans une expérience contemporaine, raffinée et immersive.",
+      "Restaurant gastronomique à Biarritz, Bleu Marée célèbre les produits de la mer dans une expérience contemporaine, raffinée et lumineuse.",
     url: "https://www.bleu-maree.fr",
     email: "abdelhakim.elakrouti@gmail.com",
     phoneDisplay: "+33 7 68 63 66 49",
@@ -68,7 +68,7 @@ const siteConfigByLocale = {
     location: "Biarritz",
     tagline: "The Atlantic at the table, in a setting shaped by light.",
     description:
-      "Premium gastronomic restaurant in Biarritz, Bleu Marée celebrates seafood through a contemporary, refined, and immersive dining experience.",
+      "Fine dining restaurant in Biarritz, Bleu Marée celebrates seafood through a contemporary, refined, and luminous dining experience.",
     url: "https://www.bleu-maree.fr",
     email: "abdelhakim.elakrouti@gmail.com",
     phoneDisplay: "+33 7 68 63 66 49",

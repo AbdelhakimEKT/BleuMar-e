@@ -18,12 +18,12 @@ const restaurantMetaCopy = {
   fr: {
     title: "Le restaurant",
     description:
-      "Decouvrez l'histoire, la philosophie culinaire et l'ambiance elegante de Bleu Maree, restaurant gastronomique premium a Biarritz."
+      "Découvrez l'univers de Bleu Marée à Biarritz: une cuisine tournée vers la mer, une salle lumineuse et un service tout en justesse."
   },
   en: {
     title: "The restaurant",
     description:
-      "Discover the story, culinary philosophy, and elegant atmosphere of Bleu Maree, a premium fine dining restaurant in Biarritz."
+      "Discover Bleu Maree in Biarritz: seafood-led cuisine, a luminous dining room, and service shaped with precision."
   }
 } as const;
 

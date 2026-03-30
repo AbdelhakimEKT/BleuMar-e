@@ -20,19 +20,19 @@ type HomeJourneyRailProps = {
 const journeyCopy = {
   fr: {
     eyebrow: "Expérience client",
-    title: "Le premium se sent dans le geste, puis dans le récit.",
+    title: "De l'arrivée à la dernière bouchée, tout doit sembler naturel.",
     lead:
-      "Une table d'exception se construit dans l'attention portée au détail: l'accueil, le rythme du service, le geste juste et le souvenir laissé après la dernière assiette.",
+      "Chez Bleu Marée, le souvenir ne tient pas à un seul plat. Il se construit dans l'accueil, la cadence du service, la justesse des accords et la façon dont la soirée se referme.",
     imageAlt: "Chef Bleu Marée au dressage",
-    action: "Préparer une réservation"
+    action: "Préparer votre venue"
   },
   en: {
     eyebrow: "Guest experience",
-    title: "Premium is felt first in the gesture, then in the narrative.",
+    title: "From arrival to the final bite, everything should feel effortless.",
     lead:
-      "An exceptional table is built through attention to detail: the welcome, the rhythm of service, the right gesture, and the memory left after the final plate.",
+      "At Bleu Maree, memory does not rely on a single plate. It is built through the welcome, the rhythm of service, the pairings, and the way the evening comes to a close.",
     imageAlt: "Bleu Maree chef plating",
-    action: "Prepare a booking"
+    action: "Plan your visit"
   }
 } as const;
 

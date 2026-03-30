@@ -21,20 +21,20 @@ const manifestoCopy = {
   fr: {
     mainAlt: "Service en salle chez Bleu Marée",
     detailAlt: "Détail de table chez Bleu Marée",
-    eyebrow: "Manifeste",
-    title: "Plus de silence, plus de lumière, plus de tenue.",
+    eyebrow: "La maison",
+    title: "Le calme, la lumière, la précision.",
     lead:
-      "Bleu Marée affirme une hospitalité précise, contemporaine et enveloppante. La salle, le service et le rythme du dîner composent une expérience pensée pour rester sobre, fluide et mémorable.",
-    action: "Découvrir la maison"
+      "Bleu Marée cultive une élégance lisible. La salle, le service et le rythme du dîner avancent dans le même sens: accueillir avec douceur, servir avec justesse, laisser une impression durable.",
+    action: "Découvrir le restaurant"
   },
   en: {
     mainAlt: "Dining room service at Bleu Maree",
     detailAlt: "Table detail at Bleu Maree",
-    eyebrow: "Manifesto",
-    title: "More silence, more light, more poise.",
+    eyebrow: "The house",
+    title: "Calm, light, and precision.",
     lead:
-      "Bleu Maree asserts a precise, contemporary, enveloping hospitality. The room, the service, and the rhythm of dinner compose an experience designed to remain restrained, fluid, and memorable.",
-    action: "Discover the house"
+      "Bleu Maree is built around legible elegance. The room, the service, and the rhythm of dinner all move in the same direction: welcoming softly, serving precisely, and leaving a lasting impression.",
+    action: "Discover the restaurant"
   }
 } as const;
 

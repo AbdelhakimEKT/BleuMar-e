@@ -29,22 +29,22 @@ type EditorialMenuExperienceProps = {
 const editorialCopy = {
   fr: {
     railLabel: "Navigation de la carte",
-    rhythmEyebrow: "Repères de lecture",
+    rhythmEyebrow: "Trois repères",
     rhythmCards: [
       {
-        label: "Déjeuner & service",
+        label: "Déjeuner",
         value: "Midi précis",
-        copy: "Une lecture nette, pensée pour séduire sans alourdir le tempo du déjeuner."
+        copy: "Une proposition courte, élégante et parfaitement tenue pour le service du midi."
       },
       {
-        label: "Parcours signature",
+        label: "Dégustation",
         value: "5 à 7 temps",
-        copy: "Les dégustations installent un vrai rythme de maison, entre iode, feu doux et finale claire."
+        copy: "Des parcours qui avancent par paliers, entre fraîcheur marine, profondeur et finale nette."
       },
       {
         label: "Cave & accords",
         value: "Accents atlantiques",
-        copy: "Les verres et les bouteilles prolongent la minéralité, jamais la démonstration."
+        copy: "Les verres prolongent la carte avec la même retenue que les assiettes."
       }
     ],
     labels: {
@@ -54,12 +54,12 @@ const editorialCopy = {
       cellar: "Cave & accords",
       event: "Moment signature"
     },
-    notesEyebrow: "Notes de maison",
-    notesTitle: "Une carte pensée comme un service, pas comme un catalogue.",
+    notesEyebrow: "Repères",
+    notesTitle: "Quelques indications pour choisir votre moment.",
     finaleEyebrow: "Réserver",
-    finaleTitle: "Choisir un moment, puis laisser la table prendre le relais.",
+    finaleTitle: "Choisir l'heure, nous confier le reste.",
     finaleCopy:
-      "Les menus changent avec les arrivages, les soirées et la lumière du service. La réservation permet ensuite d'affiner allergies, occasions et préférences.",
+      "Les menus évoluent avec les arrivages, les saisons et certains rendez-vous de la maison. La réservation permet ensuite de signaler allergies, occasions et préférences.",
     reserveLabel: "Réserver",
     contactLabel: "Demander la carte PDF",
     itemCount: {
@@ -72,22 +72,22 @@ const editorialCopy = {
   },
   en: {
     railLabel: "Menu navigation",
-    rhythmEyebrow: "Reading markers",
+    rhythmEyebrow: "Three markers",
     rhythmCards: [
       {
-        label: "Lunch & service",
+        label: "Lunch",
         value: "A precise midday pace",
-        copy: "A clean lunch reading designed to impress without weighing down the service."
+        copy: "A concise, elegant proposal designed for midday without heaviness."
       },
       {
-        label: "Signature journeys",
+        label: "Tasting",
         value: "5 to 7 courses",
-        copy: "The tasting paths set the house rhythm between iodine, soft fire, and a clear finale."
+        copy: "Paths that unfold in stages, between marine freshness, depth, and a clear ending."
       },
       {
         label: "Cellar & pairings",
         value: "Atlantic accents",
-        copy: "Glasses and bottles extend minerality rather than spectacle."
+        copy: "Glasses and bottles extend the menu with the same restraint as the plates."
       }
     ],
     labels: {
@@ -97,12 +97,12 @@ const editorialCopy = {
       cellar: "Cellar & pairings",
       event: "Signature moment"
     },
-    notesEyebrow: "House notes",
-    notesTitle: "A menu built like a service, never like a catalogue.",
+    notesEyebrow: "Guidance",
+    notesTitle: "A few pointers before choosing your moment.",
     finaleEyebrow: "Booking",
-    finaleTitle: "Choose the moment, then let the table take over.",
+    finaleTitle: "Choose the hour, then leave the rest to us.",
     finaleCopy:
-      "The menus move with arrivals, special evenings, and the light of service. Booking then makes room for allergies, occasions, and personal preferences.",
+      "Menus evolve with arrivals, the season, and certain house moments. Booking then leaves room for allergies, occasions, and personal preferences.",
     reserveLabel: "Book",
     contactLabel: "Request the PDF",
     itemCount: {

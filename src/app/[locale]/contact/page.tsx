@@ -21,7 +21,7 @@ const contactMetaCopy = {
   fr: {
     title: "Contact",
     description:
-      "Retrouvez les informations pratiques de Bleu Maree a Biarritz: acces, horaires, telephone, email et formulaire de contact."
+      "Retrouvez les informations pratiques de Bleu Marée à Biarritz: accès, horaires, téléphone, email et formulaire de contact."
   },
   en: {
     title: "Contact",

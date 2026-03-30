@@ -21,12 +21,12 @@ const reservationMetaCopy = {
   fr: {
     title: "Reservation",
     description:
-      "Reservez une table chez Bleu Maree a Biarritz grace a une experience claire, fluide et pensee pour le mobile."
+      "Réservez une table chez Bleu Marée à Biarritz et indiquez en quelques instants vos préférences, votre occasion ou vos remarques."
   },
   en: {
     title: "Booking",
     description:
-      "Book a table at Bleu Maree in Biarritz through a clear, smooth, mobile-first experience."
+      "Book a table at Bleu Maree in Biarritz and share your preferences, occasion, or notes in just a few moments."
   }
 } as const;
 

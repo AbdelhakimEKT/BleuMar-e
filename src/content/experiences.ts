@@ -14,7 +14,7 @@ const experiencesContentByLocale = {
       eyebrow: "À venir",
       title: "Des événements qui prolongent naturellement l'univers du restaurant.",
       lead:
-        "Chaque événement peut accueillir une date, une heure, une description, un visuel dédié et une action immédiate vers la réservation ou le contact."
+        "Dîners à thème, accords, privatisations et soirées signatures trouvent ici leur place, avec la même tenue que le reste de la maison."
     },
     upcomingExperiences: [
       {
@@ -74,9 +74,9 @@ const experiencesContentByLocale = {
     ],
     seasonality: {
       eyebrow: "Saisonnalité",
-      title: "Une page prête pour les temps forts du calendrier.",
+      title: "Des temps forts qui apparaissent au bon moment.",
       lead:
-        "Menus de fête, collaborations, soirées dégustation ou programmation saisonnière: la structure garde la main légère tout en restant très administrable."
+        "Menus de fête, collaborations, soirées dégustation ou rendez-vous de saison peuvent venir enrichir la maison sans la dénaturer."
     },
     seasonalMoments: [
       {
@@ -87,12 +87,12 @@ const experiencesContentByLocale = {
       {
         title: "Temps forts calendaires",
         copy:
-          "Fêtes, grands week-ends, Saint-Valentin ou moments de maison peuvent être valorisés sans alourdir le site."
+          "Fêtes, grands week-ends, Saint-Valentin ou moments de maison peuvent être annoncés avec clarté, sans alourdir l'ensemble."
       },
       {
-        title: "Archivage simple",
+        title: "Rythme maîtrisé",
         copy:
-          "Chaque expérience pourra être publiée, retirée ou déplacée en archive selon le besoin."
+          "Chaque expérience peut apparaître le temps juste, puis laisser la place à la suivante."
       }
     ]
   },
@@ -109,7 +109,7 @@ const experiencesContentByLocale = {
       eyebrow: "Coming up",
       title: "Events that naturally extend the restaurant's universe.",
       lead:
-        "Each event can hold a date, time, description, dedicated visual, and an immediate action toward booking or contact."
+        "Themed dinners, pairings, private events, and signature evenings all live here with the same sense of restraint as the rest of the house."
     },
     upcomingExperiences: [
       {
@@ -169,9 +169,9 @@ const experiencesContentByLocale = {
     ],
     seasonality: {
       eyebrow: "Seasonality",
-      title: "A page ready for the strongest moments of the calendar.",
+      title: "Highlights that appear at the right moment.",
       lead:
-        "Celebration menus, collaborations, tasting evenings, or seasonal programming: the structure stays light while remaining highly manageable."
+        "Celebration menus, collaborations, tasting evenings, and seasonal moments can enrich the house without changing its tone."
     },
     seasonalMoments: [
       {
@@ -182,12 +182,12 @@ const experiencesContentByLocale = {
       {
         title: "Calendar highlights",
         copy:
-          "Holidays, long weekends, Valentine's Day, or house-led moments can be highlighted without weighing down the site."
+          "Holidays, long weekends, Valentine's Day, or house-led moments can be announced clearly without making the overall experience feel heavier."
       },
       {
-        title: "Simple archiving",
+        title: "Controlled rhythm",
         copy:
-          "Each experience can be published, removed, or moved into an archive whenever needed."
+          "Each experience can appear for the right amount of time, then quietly make room for the next."
       }
     ]
   }

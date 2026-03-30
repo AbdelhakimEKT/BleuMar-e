@@ -19,12 +19,12 @@ const galleryMetaCopy = {
   fr: {
     title: "Galerie",
     description:
-      "Explorez la galerie Bleu Maree: salle, assiettes, ambiance et details premium d'un restaurant gastronomique a Biarritz."
+      "Explorez la galerie Bleu Marée: salle, assiettes, lumière et détails d'une table gastronomique à Biarritz."
   },
   en: {
     title: "Gallery",
     description:
-      "Explore the Bleu Maree gallery: dining room, plates, atmosphere, and premium details from a fine dining restaurant in Biarritz."
+      "Explore the Bleu Maree gallery: dining room, plates, light, and details from a fine dining table in Biarritz."
   }
 } as const;
 

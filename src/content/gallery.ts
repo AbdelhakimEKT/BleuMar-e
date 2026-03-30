@@ -735,132 +735,132 @@ const galleryContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "Galerie",
-      title: "Une photothèque pensée comme une montée en désir.",
+      title: "Lumière, gestes, assiettes: la maison en images.",
       intro:
-        "Salle, gestes, assiettes et détails travaillent ensemble pour donner envie avant même l'arrivée à table.",
+        "Salle, gestes, assiettes et détails racontent Bleu Marée dans ce qu'il a de plus sensible: la lumière, la matière et la tenue.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
       imagePosition: "50% 54%"
     },
     sectionIntro: {
-      eyebrow: "Sélection éditoriale",
-      title: "Chaque image a une fonction, pas seulement un joli rendu.",
+      eyebrow: "Sélection",
+      title: "Une traversée par la salle, le geste et la matière.",
       lead:
-        "La galerie assume une vraie hiérarchie: quelques images maîtresses pour installer l'univers, puis des séquences plus précises pour montrer le service, la cuisine et les détails."
+        "La galerie s'ouvre sur l'atmosphère, se rapproche du service, puis glisse vers les assiettes et les détails qui donnent son caractère à la maison."
     },
     openingFeature: {
       eyebrow: "Premier regard",
       title: "Une salle, un geste, une assiette: trois entrées dans le même monde.",
       lead:
-        "Le récit commence par l'atmosphère, se resserre sur le service, puis glisse vers la cuisine. Le reste de la galerie prolonge ensuite cette montée en intensité."
+        "D'abord la lumière de la salle, puis la concentration du service, enfin la précision de l'assiette. Le reste de la galerie prolonge ce mouvement."
     },
     sequences: {
       room: {
         eyebrow: "Salle",
         title: "L'espace donne immédiatement le ton.",
         lead:
-          "Lumière, horizon, circulation et respiration construisent une sensation de luxe calme avant même la première assiette."
+          "Lumière, horizon et respiration installent d'emblée une sensation de calme et d'élégance."
       },
       service: {
         eyebrow: "Service",
         title: "Le geste reste visible, mais jamais démonstratif.",
         lead:
-          "Les meilleurs visuels de service montrent la précision, la concentration et l'attention sans basculer dans la théâtralisation."
+          "Le service se lit dans la précision, la concentration et l'attention portée au moindre détail."
       },
       plates: {
         eyebrow: "Assiettes",
         title: "La cuisine parle par couches successives.",
         lead:
-          "Déjeuner, dégustation, plats de mer, viande ou desserts: les images doivent faire sentir la matière et la netteté du travail."
+          "Déjeuner, dégustation, plats de mer, viande ou desserts: chaque image cherche à faire sentir la matière, la cuisson et l'équilibre."
       },
       details: {
         eyebrow: "Détails",
-        title: "Le premium se joue aussi dans ce qui paraît secondaire.",
+        title: "Les détails prolongent l'expérience.",
         lead:
-          "Verrerie, linge, cave, bougie et reflets complètent l'expérience sans l'alourdir et renforcent la qualité perçue du lieu."
+          "Verrerie, linge, cave, bougie et reflets donnent au lieu sa profondeur sans jamais le charger."
       }
     } satisfies GallerySequenceCopy,
     archive: {
-      eyebrow: "Regards supplémentaires",
-      title: "Une seconde lecture, plus libre et plus dense.",
+      eyebrow: "Autres regards",
+      title: "D'autres cadrages pour prolonger la sensation.",
       lead:
-        "Les images restantes s'accrochent ici comme des plans complémentaires: plus serrés, plus calmes ou plus atmosphériques, sans casser la cohérence générale."
+        "Des plans plus serrés, plus calmes ou plus atmosphériques viennent ici compléter l'ensemble sans rompre son équilibre."
     },
     projectFollowUp: {
-      eyebrow: "Après l'image",
-      title: "Le visuel doit donner envie de réserver, pas seulement de regarder.",
+      eyebrow: "Et ensuite",
+      title: "Voir la maison, puis avoir envie d'y prendre place.",
       lead:
-        "Les pages clés gardent les visuels les plus forts. La galerie, elle, approfondit l'univers et accompagne le visiteur jusqu'à l'envie de passer à table.",
+        "La galerie prolonge la découverte et laisse place à l'envie de réserver, de revenir ou de partager l'adresse.",
       reserve: "Réserver une expérience",
       contact: "Contacter la maison",
-      notesTitle: "Direction photo",
+      notesTitle: "L'esprit Bleu Marée",
       notesCopy:
-        "La sélection évite les doublons trop faibles, donne une vraie place au service et garde plusieurs détails de matière pour préserver le raffinement du site."
+        "Une lumière retenue, des gestes précis, des assiettes lisibles et quelques détails de matière: tout ce qui fait la signature de Bleu Marée se retrouve ici."
     },
     galleryItems: buildGalleryItems("fr")
   },
   en: {
     pageHero: {
       eyebrow: "Gallery",
-      title: "A photo library designed as a rise in desire.",
+      title: "Light, gestures, and plates: the house in images.",
       intro:
-        "Room, gestures, plates, and details work together to create desire well before the guest arrives at the table.",
+        "Room, gestures, plates, and details tell the Bleu Maree story through light, materiality, and composure.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
       imagePosition: "50% 54%"
     },
     sectionIntro: {
-      eyebrow: "Editorial selection",
-      title: "Each image has a function, not just a polished look.",
+      eyebrow: "Selection",
+      title: "A progression through the room, the gesture, and the material.",
       lead:
-        "The gallery keeps a clear hierarchy: a few leading images to establish the universe, then more precise sequences to show service, cuisine, and material details."
+        "The gallery opens on atmosphere, moves closer to service, then slips into the plates and details that give the house its character."
     },
     openingFeature: {
       eyebrow: "First glance",
       title: "A room, a gesture, a plate: three entries into the same world.",
       lead:
-        "The story begins with atmosphere, narrows into service, then slides toward cuisine. The rest of the gallery extends that rise in intensity."
+        "First comes the light of the room, then the concentration of service, and finally the precision of the plate. The rest of the gallery extends that movement."
     },
     sequences: {
       room: {
         eyebrow: "Room",
         title: "The space sets the tone immediately.",
         lead:
-          "Light, horizon, circulation, and breathing room create a calm luxury before the first plate even arrives."
+          "Light, horizon, and breathing room establish a sense of calm and elegance before the first plate arrives."
       },
       service: {
         eyebrow: "Service",
         title: "The gesture remains visible, never performative.",
         lead:
-          "The strongest service visuals show precision, concentration, and attention without tipping into spectacle."
+          "Service reveals itself through precision, concentration, and attention to the smallest detail."
       },
       plates: {
         eyebrow: "Plates",
         title: "The cuisine speaks in successive layers.",
         lead:
-          "Lunch, tasting paths, seafood plates, meat, or desserts: the images need to make the material and exactness of the work felt."
+          "Lunch, tasting paths, seafood, meat, or desserts: each image should make the materiality, cooking, and balance felt."
       },
       details: {
         eyebrow: "Details",
-        title: "Premium also lives in what seems secondary.",
+        title: "Details extend the experience.",
         lead:
-          "Glassware, linen, cellar, candles, and reflections complete the experience without weighing it down and strengthen perceived quality."
+          "Glassware, linen, cellar, candles, and reflections give the place its depth without making it feel heavy."
       }
     } satisfies GallerySequenceCopy,
     archive: {
-      eyebrow: "Additional views",
-      title: "A second reading, denser and freer.",
+      eyebrow: "Further views",
+      title: "Other frames to extend the feeling.",
       lead:
-        "The remaining images live here as complementary frames: tighter, calmer, or more atmospheric without breaking overall coherence."
+        "Tighter, calmer, or more atmospheric frames sit here as complementary views without breaking coherence."
     },
     projectFollowUp: {
       eyebrow: "After the image",
-      title: "The visual should make you want to book, not only to look.",
+      title: "See the house, then want to take your place at the table.",
       lead:
-        "The key pages keep the strongest visuals. The gallery goes deeper, expands the atmosphere, and carries the visitor toward the desire to sit down at the table.",
+        "The gallery deepens the atmosphere and leaves room for the desire to book, return, or share the address.",
       reserve: "Book an experience",
       contact: "Contact the house",
-      notesTitle: "Photo direction",
+      notesTitle: "The Bleu Maree spirit",
       notesCopy:
-        "The selection avoids weaker duplicates, gives real space to service, and keeps several material details to preserve the refinement of the site."
+        "Held light, precise gestures, readable plates, and material detail: everything that defines Bleu Maree can be felt here."
     },
     galleryItems: buildGalleryItems("en")
   }

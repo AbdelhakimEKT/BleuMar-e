@@ -19,17 +19,17 @@ const menusContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "La carte",
-      title: "Une lecture de la mer, du feu et du rythme.",
+      title: "Une carte portée par l'Atlantique et la saison.",
       intro:
         "Du déjeuner précis aux parcours dégustation, la carte Bleu Marée suit les arrivages, les saisons et la lumière du service.",
       image: "/images/menu/bleu-maree-menu-scallops-signature.png",
       imagePosition: "50% 56%"
     },
     sectionIntro: {
-      eyebrow: "Lecture de service",
-      title: "Chaque chapitre de la carte ouvre une autre intensité.",
+      eyebrow: "À table",
+      title: "Du déjeuner aux grands parcours, chaque moment a sa place.",
       lead:
-        "Déjeuner net, parcours dégustation, assiettes à la carte, cave et accords: la page doit se lire comme un service, pas comme un catalogue."
+        "Déjeuner précis, assiettes à la carte, parcours dégustation, cave et accords: chacun trouve ici son rythme, sans perdre la cohérence de la maison."
     },
     seasonalitySplit: {
       eyebrow: "Selon arrivage",
@@ -37,8 +37,8 @@ const menusContentByLocale = {
       intro:
         "Certaines assiettes n'existent que le temps d'un arrivage, d'une mer plus calme ou d'un produit au sommet de sa tension.",
       paragraphs: [
-        "Les menus de fête, les accords spéciaux et les moments signatures peuvent apparaître puis disparaître sans casser la lecture générale.",
-        "Ce mouvement garde à Bleu Marée sa justesse: une maison qui travaille l'instant plutôt qu'une carte figée."
+        "Les menus de fête, les accords spéciaux et les moments signatures apparaissent lorsque la saison l'appelle, puis s'effacent sans alourdir l'ensemble.",
+        "C'est ce mouvement qui garde Bleu Marée juste: une maison attentive au moment plutôt qu'une carte figée."
       ],
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Détail de table Bleu Marée",
@@ -54,7 +54,7 @@ const menusContentByLocale = {
         subtitle: "Service du midi",
         priceHint: "39 € · 2 ou 3 temps",
         description:
-          "Une proposition plus concise, pensée pour un déjeuner gastronomique lisible et efficace.",
+          "Une proposition plus concise, pensée pour un déjeuner gastronomique net, élégant et sans lourdeur.",
         items: [
           {
             name: "Entrée du marché",
@@ -64,7 +64,7 @@ const menusContentByLocale = {
           },
           {
             name: "Poisson du jour ou viande du moment",
-            description: "Suggestion raffinée en fonction du service et du produit.",
+            description: "Suggestion du moment selon l'arrivage et l'inspiration du jour.",
             price: "28 €",
             tag: "Selon arrivage"
           },
@@ -80,7 +80,7 @@ const menusContentByLocale = {
         subtitle: "Parcours signature",
         priceHint: "95 €",
         description:
-          "Lecture concise de l'univers Bleu Marée, autour de la mer, de la saison et du tempo du service.",
+          "Un parcours concis pour retrouver l'esprit Bleu Marée à travers la mer, la saison et la justesse des cuissons.",
         items: [
           {
             name: "Huître, pomme verte, verjus",
@@ -117,7 +117,7 @@ const menusContentByLocale = {
         subtitle: "Expérience complète",
         priceHint: "135 €",
         description:
-          "Une progression plus ample pour les clients qui viennent vivre la maison dans sa forme la plus immersive.",
+          "Une progression plus ample pour celles et ceux qui veulent vivre la maison dans sa forme la plus généreuse.",
         items: [
           {
             name: "Mise en bouche marine",
@@ -216,7 +216,7 @@ const menusContentByLocale = {
         subtitle: "À la carte",
         priceHint: "De 36 € à 48 €",
         description:
-          "Une sélection courte pour les clients qui souhaitent compléter le récit marin par une séquence plus terrienne.",
+          "Une sélection courte pour prolonger la carte avec une séquence plus terrienne, sans rompre l'équilibre d'ensemble.",
         items: [
           {
             name: "Volaille fermière, jus réduit, légumes braisés",
@@ -260,7 +260,7 @@ const menusContentByLocale = {
         items: [
           {
             name: "Verres du moment",
-            description: "Sélection évolutive selon les services.",
+            description: "Sélection qui suit la carte, l'heure du repas et la saison.",
             price: "9 € à 18 €"
           },
           {
@@ -284,7 +284,7 @@ const menusContentByLocale = {
           },
           {
             name: "Accord 5 verres",
-            description: "Construction progressive, fraîcheur puis structure.",
+            description: "Progression en douceur, de la fraîcheur à la profondeur.",
             price: "68 €"
           },
           {
@@ -311,25 +311,25 @@ const menusContentByLocale = {
       }
     ],
     menuNotes: [
-      "Certaines préparations changent discrètement au fil des arrivages, sans rompre l'équilibre général du service.",
-      "Les accords peuvent prolonger la dégustation ou simplement accompagner un déjeuner plus court avec la même précision.",
+      "Certaines préparations changent discrètement avec les arrivages, sans jamais rompre l'équilibre de la carte.",
+      "Les accords peuvent prolonger la dégustation ou simplement accompagner un déjeuner plus court avec la même justesse.",
       "Les menus spéciaux n'apparaissent que lorsqu'ils ont un vrai rôle à jouer: fête, collaboration, soirée unique ou saison très courte."
     ]
   },
   en: {
     pageHero: {
       eyebrow: "Menus",
-      title: "A reading of sea, fire, and rhythm.",
+      title: "A menu shaped by the Atlantic and the season.",
       intro:
         "From a precise lunch to immersive tasting journeys, the Bleu Maree menu follows arrivals, seasons, and the light of service.",
       image: "/images/menu/bleu-maree-menu-scallops-signature.png",
       imagePosition: "50% 56%"
     },
     sectionIntro: {
-      eyebrow: "Service reading",
-      title: "Each chapter of the menu opens a different intensity.",
+      eyebrow: "At the table",
+      title: "From lunch to longer tastings, every moment has its place.",
       lead:
-        "Clean lunch, tasting journeys, a la carte plates, cellar, and pairings: the page should read like a service, never like a catalogue."
+        "Lunch, a la carte dishes, tasting paths, cellar, and pairings each follow their own rhythm while staying true to the house."
     },
     seasonalitySplit: {
       eyebrow: "According to market arrivals",
@@ -337,8 +337,8 @@ const menusContentByLocale = {
       intro:
         "Some plates only exist for the length of an arrival, a calmer sea, or a product reaching its sharpest point.",
       paragraphs: [
-        "Celebration menus, special pairings, and signature moments can appear and disappear without breaking the overall reading.",
-        "That movement keeps Bleu Maree accurate: a house that works with the moment rather than a frozen list."
+        "Celebration menus, special pairings, and signature moments appear when the season calls for them, then quietly make room again.",
+        "That movement is what keeps Bleu Maree accurate: a house that works with the moment rather than a fixed list."
       ],
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Bleu Maree table detail",
@@ -354,7 +354,7 @@ const menusContentByLocale = {
         subtitle: "Lunch service",
         priceHint: "EUR39 · 2 or 3 courses",
         description:
-          "A shorter proposal designed for a refined, efficient gastronomic lunch.",
+          "A shorter proposal designed for a refined lunch that stays elegant and direct.",
         items: [
           {
             name: "Market starter",
@@ -364,7 +364,7 @@ const menusContentByLocale = {
           },
           {
             name: "Fish of the day or meat of the moment",
-            description: "A refined suggestion according to service and product.",
+            description: "A daily suggestion shaped by arrivals and the tone of the day.",
             price: "EUR28",
             tag: "According to market arrivals"
           },
@@ -380,7 +380,7 @@ const menusContentByLocale = {
         subtitle: "Signature journey",
         priceHint: "EUR95",
         description:
-          "A concise reading of the Bleu Maree universe through the sea, the season, and the rhythm of service.",
+          "A concise path through the Bleu Maree universe, led by the sea, the season, and accurate cooking.",
         items: [
           {
             name: "Oyster, green apple, verjus",
@@ -417,7 +417,7 @@ const menusContentByLocale = {
         subtitle: "Complete experience",
         priceHint: "EUR135",
         description:
-          "A broader progression for guests who want to experience the house in its most immersive form.",
+          "A broader progression for guests who want to experience the house in its most generous form.",
         items: [
           {
             name: "Marine amuse-bouche",
@@ -516,7 +516,7 @@ const menusContentByLocale = {
         subtitle: "A la carte",
         priceHint: "From EUR36 to EUR48",
         description:
-          "A short selection for guests who want to complement the marine narrative with a more grounded sequence.",
+          "A short selection for guests who want to extend the menu with a more grounded sequence without losing balance.",
         items: [
           {
             name: "Free-range poultry, reduced jus, braised vegetables",
@@ -560,7 +560,7 @@ const menusContentByLocale = {
         items: [
           {
             name: "Glasses of the moment",
-            description: "An evolving selection according to service.",
+            description: "An evolving selection shaped by the menu, the hour, and the season.",
             price: "EUR9 to EUR18"
           },
           {
@@ -584,7 +584,7 @@ const menusContentByLocale = {
           },
           {
             name: "Five-glass pairing",
-            description: "A progressive construction, freshness first, then structure.",
+            description: "A gentle progression from freshness into depth.",
             price: "EUR68"
           },
           {
@@ -611,8 +611,8 @@ const menusContentByLocale = {
       }
     ],
     menuNotes: [
-      "Some preparations shift quietly with arrivals while preserving the overall balance of service.",
-      "Pairings can extend the tasting journey or simply accompany a shorter lunch with the same level of precision.",
+      "Some preparations shift quietly with arrivals while preserving the overall balance of the menu.",
+      "Pairings can extend the tasting experience or simply accompany a shorter lunch with the same level of care.",
       "Special menus only appear when they have a real role to play: celebration, collaboration, singular evening, or brief season."
     ]
   }
