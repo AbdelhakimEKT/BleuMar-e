@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 
 import { isLocale } from "@/i18n/config";
 import { getUiCopy } from "@/i18n/ui";
+import { isContactEmailConfigured, sendContactEmail } from "@/lib/contact-email";
 import { isValidEmail } from "@/lib/validation";
+
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as Record<string, string | undefined>;
@@ -24,13 +27,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: messages.invalidEmail }, { status: 400 });
   }
 
-  console.info("Bleu Maree contact request", {
-    name,
-    email,
-    subject,
-    phone,
-    message
-  });
+  if (!isContactEmailConfigured()) {
+    return NextResponse.json({ message: messages.deliveryUnavailable }, { status: 503 });
+  }
+
+  try {
+    await sendContactEmail({
+      locale,
+      name,
+      email,
+      subject,
+      phone,
+      message
+    });
+  } catch (error) {
+    console.error("Bleu Maree contact email failed", error);
+    return NextResponse.json({ message: messages.sendFailed }, { status: 500 });
+  }
 
   return NextResponse.json({
     message: messages.success

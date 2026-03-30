@@ -6,8 +6,9 @@ const experiencesContentByLocale = {
       eyebrow: "Expériences",
       title: "Soirées spéciales, moments rares et privatisations sur mesure.",
       intro:
-        "Le site prévoit une page dédiée aux temps forts de la maison, pensée pour être simple à alimenter et forte en désir.",
-      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png"
+        "Menus ponctuels, accords, privatisations et soirées signatures prennent ici une forme plus désirable, plus visuelle et plus immédiate.",
+      image: "/images/people/bleu-maree-team-service-in-action.jpg",
+      imagePosition: "50% 45%"
     },
     upcomingIntro: {
       eyebrow: "À venir",
@@ -23,7 +24,10 @@ const experiencesContentByLocale = {
         description:
           "Menu dégustation pensé avec un accord de quatre verres autour des reliefs salins, minéraux et fumés.",
         ctaLabel: "Réserver",
-        ctaHref: "/reservation"
+        ctaHref: "/reservation",
+        image: "/images/wines/bleu-maree-wine-pairing-scene-01.jpg",
+        imageAlt: "Accord mets et vins chez Bleu Marée",
+        imagePosition: "50% 55%"
       },
       {
         title: "Menu de fête privé",
@@ -32,7 +36,10 @@ const experiencesContentByLocale = {
         description:
           "Une proposition scénarisée pour anniversaires, célébrations et dîners marquants dans une atmosphère plus intime.",
         ctaLabel: "Nous contacter",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
+        image: "/images/details/bleu-maree-detail-table-setting-alt-01.jpg",
+        imageAlt: "Table dressée pour un dîner privé",
+        imagePosition: "50% 52%"
       },
       {
         title: "Privatisation maison",
@@ -41,7 +48,10 @@ const experiencesContentByLocale = {
         description:
           "Pour les entreprises, maisons de luxe ou événements privés souhaitant une expérience premium à Biarritz.",
         ctaLabel: "Demander un devis",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
+        image: "/images/experience/bleu-maree-service-in-dining-room.jpg",
+        imageAlt: "Service en salle pour une expérience privative",
+        imagePosition: "50% 50%"
       }
     ],
     privateDining: {
@@ -51,6 +61,7 @@ const experiencesContentByLocale = {
         "Bleu Marée peut accueillir des dîners de direction, des lancements ou des célébrations avec une qualité de service cohérente avec le positionnement premium.",
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Mise en scène de table premium",
+      imagePosition: "50% 52%",
       actions: {
         privatisation: "Demander une privatisation",
         reserve: "Réserver une table"
@@ -90,8 +101,9 @@ const experiencesContentByLocale = {
       eyebrow: "Experiences",
       title: "Special evenings, rare moments, and bespoke private dining.",
       intro:
-        "The site includes a dedicated page for the house's highlights, designed to stay easy to feed and rich in desire.",
-      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png"
+        "One-off menus, pairings, private dining, and signature evenings take on a more desirable, more visual, more immediate form here.",
+      image: "/images/people/bleu-maree-team-service-in-action.jpg",
+      imagePosition: "50% 45%"
     },
     upcomingIntro: {
       eyebrow: "Coming up",
@@ -107,7 +119,10 @@ const experiencesContentByLocale = {
         description:
           "A tasting menu shaped around a four-glass pairing of saline, mineral, and smoky notes.",
         ctaLabel: "Book",
-        ctaHref: "/reservation"
+        ctaHref: "/reservation",
+        image: "/images/wines/bleu-maree-wine-pairing-scene-01.jpg",
+        imageAlt: "Food and wine pairing at Bleu Maree",
+        imagePosition: "50% 55%"
       },
       {
         title: "Private celebration menu",
@@ -116,7 +131,10 @@ const experiencesContentByLocale = {
         description:
           "A scenographed proposal for anniversaries, celebrations, and memorable dinners in a more intimate atmosphere.",
         ctaLabel: "Contact us",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
+        image: "/images/details/bleu-maree-detail-table-setting-alt-01.jpg",
+        imageAlt: "Table set for a private celebration",
+        imagePosition: "50% 52%"
       },
       {
         title: "Full-house private dining",
@@ -125,7 +143,10 @@ const experiencesContentByLocale = {
         description:
           "For companies, luxury houses, or private events seeking a premium experience in Biarritz.",
         ctaLabel: "Request a proposal",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
+        image: "/images/experience/bleu-maree-service-in-dining-room.jpg",
+        imageAlt: "Dining room service for a private experience",
+        imagePosition: "50% 50%"
       }
     ],
     privateDining: {
@@ -135,6 +156,7 @@ const experiencesContentByLocale = {
         "Bleu Maree can host executive dinners, launches, or celebrations with a level of service consistent with its premium positioning.",
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Premium table staging",
+      imagePosition: "50% 52%",
       actions: {
         privatisation: "Request a private event",
         reserve: "Book a table"

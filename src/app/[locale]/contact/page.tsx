@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { EditorialSplit } from "@/components/blocks/editorial-split";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
@@ -54,6 +55,7 @@ export default async function LocalizedContactPage({ params }: ContactPageProps)
         title={content.pageHero.title}
         intro={content.pageHero.intro}
         image={content.pageHero.image}
+        imagePosition={content.pageHero.imagePosition}
       />
 
       <section className="section">
@@ -119,6 +121,31 @@ export default async function LocalizedContactPage({ params }: ContactPageProps)
           <Reveal>
             <ContactForm locale={locale} />
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section section-surface">
+        <div className="container">
+          <EditorialSplit
+            eyebrow={content.arrivalStory.eyebrow}
+            title={content.arrivalStory.title}
+            intro={content.arrivalStory.intro}
+            details={content.arrivalStory.details}
+            image={content.arrivalStory.image}
+            imageAlt={content.arrivalStory.imageAlt}
+            imagePosition={content.arrivalStory.imagePosition}
+            actions={[
+              {
+                href: siteConfig.mapUrl,
+                label: content.routeButton
+              },
+              {
+                href: withLocale(locale, "/reservation"),
+                label: content.reserveButton,
+                variant: "secondary"
+              }
+            ]}
+          />
         </div>
       </section>
     </>

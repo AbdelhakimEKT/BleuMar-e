@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { GalleryMosaic } from "@/components/blocks/gallery-mosaic";
+import { EditorialGallery } from "@/components/gallery/editorial-gallery";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
 import { PageHero } from "@/components/ui/page-hero";
@@ -52,6 +52,7 @@ export default async function LocalizedGalleryPage({ params }: GalleryPageProps)
         title={content.pageHero.title}
         intro={content.pageHero.intro}
         image={content.pageHero.image}
+        imagePosition={content.pageHero.imagePosition}
       />
 
       <section className="section">
@@ -64,7 +65,13 @@ export default async function LocalizedGalleryPage({ params }: GalleryPageProps)
             />
           </Reveal>
 
-          <GalleryMosaic items={galleryPageData.galleryItems} />
+          <EditorialGallery
+            locale={locale}
+            opening={content.openingFeature}
+            sequences={content.sequences}
+            archive={content.archive}
+            items={galleryPageData.galleryItems}
+          />
         </div>
       </section>
 
@@ -79,15 +86,15 @@ export default async function LocalizedGalleryPage({ params }: GalleryPageProps)
                 {content.projectFollowUp.reserve}
               </Link>
               <Link href={withLocale(locale, "/contact")} className="button-ghost">
-                {content.projectFollowUp.photoshoot}
+                {content.projectFollowUp.contact}
               </Link>
             </div>
           </Reveal>
 
           <Reveal>
             <div className="surface-card">
-              <p className="kicker">{content.projectFollowUp.adminTitle}</p>
-              <p className="microcopy">{content.projectFollowUp.adminCopy}</p>
+              <p className="kicker">{content.projectFollowUp.notesTitle}</p>
+              <p className="microcopy">{content.projectFollowUp.notesCopy}</p>
             </div>
           </Reveal>
         </div>

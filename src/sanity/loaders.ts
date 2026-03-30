@@ -2,6 +2,7 @@ import { cache } from "react";
 
 import { getExperiencesContent } from "@/content/experiences";
 import { getGalleryContent } from "@/content/gallery";
+import type { GalleryItem } from "@/content/gallery";
 import { getHomeContent } from "@/content/home";
 import { getMenusContent } from "@/content/menus";
 import { getSiteConfig } from "@/content/site";
@@ -209,7 +210,18 @@ export const getExperiencesPageData = cache(
               time: item.time ?? "",
               description: item.description ?? "",
               ctaLabel: item.ctaLabel ?? "Decouvrir",
-              ctaHref: item.ctaHref ?? "/contact"
+              ctaHref: item.ctaHref ?? "/contact",
+              image:
+                fallback.upcomingExperiences.find((entry) => entry.title === item.title)?.image ??
+                fallback.upcomingExperiences[0]?.image ??
+                "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+              imageAlt:
+                fallback.upcomingExperiences.find((entry) => entry.title === item.title)?.imageAlt ??
+                fallback.upcomingExperiences[0]?.imageAlt ??
+                "",
+              imagePosition:
+                fallback.upcomingExperiences.find((entry) => entry.title === item.title)
+                  ?.imagePosition ?? fallback.upcomingExperiences[0]?.imagePosition
             }))
           : fallback.upcomingExperiences,
       privateDiningPoints:
@@ -244,18 +256,41 @@ export const getGalleryPageData = cache(async (locale: Locale = "fr"): Promise<G
     };
   }
 
+  if (!Array.isArray(data.galleryItems) || data.galleryItems.length === 0) {
+    return {
+      galleryItems: fallback.galleryItems
+    };
+  }
+
+  const galleryItems: GalleryItem[] = [];
+  const maxLength = Math.max(data.galleryItems.length, fallback.galleryItems.length);
+
+  for (let index = 0; index < maxLength; index += 1) {
+    const fallbackItem =
+      fallback.galleryItems[index] ?? fallback.galleryItems[fallback.galleryItems.length - 1];
+
+    if (!fallbackItem) {
+      continue;
+    }
+
+    const item = data.galleryItems[index] ?? {};
+
+    galleryItems.push({
+      id: item._key ?? fallbackItem.id,
+      title: item.title ?? fallbackItem.title,
+      caption: item.caption ?? fallbackItem.caption,
+      alt: item.image?.alt ?? fallbackItem.alt,
+      fallbackImage: fallbackItem.fallbackImage ?? fallbackItem.image,
+      category: item.category ?? fallbackItem.category,
+      featured: typeof item.featured === "boolean" ? item.featured : fallbackItem.featured,
+      aspect: item.aspect ?? fallbackItem.aspect,
+      objectPosition: item.objectPosition ?? fallbackItem.objectPosition,
+      priority: typeof item.priority === "number" ? item.priority : fallbackItem.priority,
+      image: resolveSanityImageUrl(item.image, fallbackItem.image, 1600)
+    });
+  }
+
   return {
-    galleryItems:
-      Array.isArray(data.galleryItems) && data.galleryItems.length > 0
-        ? data.galleryItems.map((item: any, index: number) => ({
-            title: item.title ?? "",
-            caption: item.caption ?? "",
-            image: resolveSanityImageUrl(
-              item.image,
-              fallback.galleryItems[index]?.image ?? fallback.galleryItems[0].image,
-              1600
-            )
-          }))
-        : fallback.galleryItems
+    galleryItems: galleryItems.sort((left, right) => left.priority - right.priority)
   };
 });

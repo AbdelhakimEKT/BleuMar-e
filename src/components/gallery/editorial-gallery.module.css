@@ -1,0 +1,455 @@
+.experience {
+  display: grid;
+  gap: clamp(2.6rem, 4vw, 4.4rem);
+}
+
+.opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.openingMain,
+.openingSupport,
+.sequenceSection,
+.archiveSection {
+  min-width: 0;
+}
+
+.openingMain {
+  display: grid;
+  gap: 1rem;
+}
+
+.openingSupport {
+  display: grid;
+  gap: 1rem;
+  align-content: stretch;
+}
+
+.openingIntro,
+.sequenceHeader,
+.archiveHeader {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.openingTitle,
+.sequenceTitle {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+}
+
+.openingLead,
+.sequenceLead {
+  margin: 0;
+  max-width: 60ch;
+  color: rgba(245, 239, 228, 0.78);
+  line-height: 1.8;
+}
+
+.anchorRail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.anchorChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.82rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(245, 239, 228, 0.9);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.anchorChip:hover,
+.anchorChip:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(201, 165, 106, 0.34);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.anchorIndex {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.sequenceSection,
+.archiveSection {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.sequenceGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.24fr) minmax(320px, 0.76fr);
+  align-items: start;
+}
+
+.sequenceSecondary {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.archiveGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 24px 68px rgba(2, 12, 18, 0.3);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(201, 165, 106, 0.34);
+  box-shadow: 0 32px 80px rgba(2, 12, 18, 0.36);
+  outline: none;
+}
+
+.cardWide {
+  aspect-ratio: 16 / 8.8;
+}
+
+.cardLandscape {
+  aspect-ratio: 16 / 10.2;
+}
+
+.cardPortrait {
+  aspect-ratio: 4 / 5;
+}
+
+.cardSquare {
+  aspect-ratio: 1 / 1;
+}
+
+.cardFeature {
+  min-height: clamp(440px, 56vw, 660px);
+}
+
+.cardSupport {
+  min-height: clamp(250px, 26vw, 332px);
+}
+
+.cardPrimary {
+  min-height: clamp(340px, 42vw, 520px);
+}
+
+.cardArchive {
+  grid-column: span 4;
+  min-height: 0;
+}
+
+.cardImage {
+  object-fit: cover;
+  filter: saturate(1.02) contrast(1.04) brightness(0.98);
+  transform: scale(1.01);
+}
+
+.cardBasePhoto {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: saturate(0.98) contrast(1.02) brightness(0.94);
+  transform: scale(1.01);
+}
+
+.cardFallback {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(245, 239, 228, 0.08), rgba(245, 239, 228, 0.03)),
+    radial-gradient(circle at 30% 30%, rgba(201, 165, 106, 0.18), transparent 34%),
+    radial-gradient(circle at 70% 68%, rgba(96, 132, 154, 0.18), transparent 42%);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: auto 1rem 1rem 1rem;
+  z-index: 1;
+}
+
+.cardOverlayCompact {
+  inset: auto 0.8rem 0.8rem 0.8rem;
+}
+
+.cardCopy {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(5, 17, 25, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.cardCopyCompact {
+  display: inline-flex;
+  width: fit-content;
+  max-width: min(100%, 18rem);
+  padding: 0.72rem 0.88rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(5, 17, 25, 0.7), rgba(5, 17, 25, 0.52));
+}
+
+.cardTitle {
+  color: #f5efe4;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cardTitleCompact {
+  font-size: 0.84rem;
+  line-height: 1.25;
+}
+
+.cardCaption {
+  color: rgba(245, 239, 228, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.lightboxBackdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: rgba(4, 12, 18, 0.84);
+}
+
+.lightboxPanel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  width: min(1240px, calc(100vw - 32px));
+  margin: 4vh auto 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background: rgba(6, 20, 30, 0.92);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.34);
+}
+
+.lightboxFrame {
+  position: relative;
+  min-height: min(72vh, 760px);
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.lightboxMeta {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.lightboxTitle {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1;
+}
+
+.lightboxCaption {
+  margin: 0.55rem 0 0;
+  max-width: 58ch;
+  color: rgba(245, 239, 228, 0.78);
+  line-height: 1.75;
+}
+
+.lightboxCount {
+  color: rgba(245, 239, 228, 0.64);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lightboxControl {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 54px;
+  min-height: 54px;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(5, 17, 25, 0.54);
+  color: #f5efe4;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.lightboxControl:hover,
+.lightboxControl:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(201, 165, 106, 0.34);
+  background: rgba(12, 30, 42, 0.8);
+  outline: none;
+}
+
+.lightboxClose {
+  top: 1rem;
+  right: 1rem;
+}
+
+.lightboxPrev,
+.lightboxNext {
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.lightboxPrev:hover,
+.lightboxPrev:focus-visible,
+.lightboxNext:hover,
+.lightboxNext:focus-visible {
+  transform: translateY(calc(-50% - 2px));
+}
+
+.lightboxPrev {
+  left: 1rem;
+}
+
+.lightboxNext {
+  right: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .opening,
+  .sequenceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .openingSupport,
+  .sequenceSecondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .archiveGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cardArchive {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .openingSupport,
+  .sequenceSecondary,
+  .archiveGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardFeature {
+    min-height: 380px;
+  }
+
+  .cardPrimary {
+    min-height: 300px;
+  }
+
+  .cardSupport,
+  .cardArchive {
+    min-height: 240px;
+  }
+
+  .cardCopyCompact {
+    max-width: min(100%, 14rem);
+  }
+
+  .lightboxPanel {
+    width: min(calc(100vw - 18px), 1240px);
+    margin-top: 1.4vh;
+    padding: 0.9rem;
+  }
+
+  .lightboxFrame {
+    min-height: 52vh;
+  }
+
+  .lightboxMeta {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .lightboxClose {
+    top: 0.7rem;
+    right: 0.7rem;
+  }
+
+  .lightboxPrev,
+  .lightboxNext {
+    top: auto;
+    bottom: 5.8rem;
+    transform: none;
+  }
+
+  .lightboxPrev:hover,
+  .lightboxPrev:focus-visible,
+  .lightboxNext:hover,
+  .lightboxNext:focus-visible {
+    transform: translateY(-2px);
+  }
+}

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import { Reveal } from "@/components/ui/reveal";
@@ -12,6 +11,7 @@ type Action = {
   href: string;
   label: string;
   variant?: "primary" | "secondary" | "ghost";
+  download?: boolean;
 };
 
 type EditorialSplitProps = {
@@ -22,6 +22,7 @@ type EditorialSplitProps = {
   details?: Detail[];
   image: string;
   imageAlt: string;
+  imagePosition?: string;
   reverse?: boolean;
   actions?: Action[];
 };
@@ -40,6 +41,7 @@ export function EditorialSplit({
   details = [],
   image,
   imageAlt,
+  imagePosition,
   reverse = false,
   actions = []
 }: EditorialSplitProps) {
@@ -60,8 +62,8 @@ export function EditorialSplit({
 
         {details.length > 0 ? (
           <ul className="detail-list">
-            {details.map((detail) => (
-              <li key={detail.label}>
+            {details.map((detail, index) => (
+              <li key={`${detail.label}-${detail.copy}-${index}`}>
                 <span className="detail-title">{detail.label}</span>
                 <span className="detail-copy">{detail.copy}</span>
               </li>
@@ -72,13 +74,14 @@ export function EditorialSplit({
         {actions.length > 0 ? (
           <div className="cta-row">
             {actions.map((action) => (
-              <Link
+              <a
                 key={`${action.href}-${action.label}`}
                 href={action.href}
                 className={variantClassMap[action.variant ?? "primary"]}
+                download={action.download ? true : undefined}
               >
                 {action.label}
-              </Link>
+              </a>
             ))}
           </div>
         ) : null}
@@ -86,7 +89,14 @@ export function EditorialSplit({
 
       <Reveal>
         <div className="image-frame">
-          <Image src={image} alt={imageAlt} width={1600} height={1000} className="image-cover" />
+          <Image
+            src={image}
+            alt={imageAlt}
+            width={1600}
+            height={1000}
+            className="image-cover"
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          />
         </div>
       </Reveal>
     </div>

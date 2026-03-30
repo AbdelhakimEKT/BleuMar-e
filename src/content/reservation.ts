@@ -7,7 +7,8 @@ const reservationContentByLocale = {
       title: "Une demande de réservation pensée comme une évidence.",
       intro:
         "Le parcours privilégie la clarté, le calme et la précision: date, heure, couverts, occasion et remarques sont réunis dans une expérience premium, lisible et mobile.",
-      image: "/images/hero/bleu-maree-hero-dining-room-sunset.png"
+      image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+      imagePosition: "50% 56%"
     },
     infoIntro: {
       eyebrow: "Informations utiles",
@@ -17,12 +18,12 @@ const reservationContentByLocale = {
     },
     groupCta: "Demande de groupe ou privatisation",
     organizationIntro: {
-      eyebrow: "Back-office",
-      title: "Une logique simple, propre et administrable.",
+      eyebrow: "Après la demande",
+      title: "Une réponse pensée avec le même niveau de soin.",
       lead:
-        "Le site enregistre les demandes dans un back-office clair pour garder une démonstration crédible: chaque demande peut être suivie, confirmée ou annulée depuis l'admin."
+        "La demande rassemble déjà les informations utiles pour que la maison puisse répondre avec justesse, préparer les occasions spéciales et orienter les groupes."
     },
-    implementationLabel: "Fonctionnement",
+    implementationLabel: "Ce qui se passe ensuite",
     reservationJourney: [
       {
         title: "Choix du moment",
@@ -32,12 +33,12 @@ const reservationContentByLocale = {
       {
         title: "Demande enregistrée",
         copy:
-          "La demande est conçue pour être sauvegardée dans le back-office du restaurant, avec toutes les informations utiles à l'équipe."
+          "La maison retrouve ensuite la demande avec toutes les informations utiles: couverts, heure souhaitée, occasion, allergies et remarques."
       },
       {
         title: "Suivi côté maison",
         copy:
-          "Depuis l'admin, la maison peut retrouver les demandes, faire évoluer leur statut et préparer les réponses ou confirmations."
+          "L'équipe peut confirmer, reprendre contact ou orienter la demande vers une proposition plus adaptée si besoin."
       }
     ],
     reservationPractices: [
@@ -55,10 +56,33 @@ const reservationContentByLocale = {
       }
     ],
     zenchefSetupSteps: [
-      "Chaque demande crée une entrée structurée dans le back-office.",
-      "Le statut peut ensuite être suivi côté maison: nouvelle, confirmée ou annulée.",
-      "Une confirmation email peut être ajoutée ensuite si l'on veut pousser la démonstration encore plus loin."
-    ]
+      "La demande part déjà avec le bon niveau de détail pour éviter les allers-retours inutiles.",
+      "Les occasions particulières, groupes et allergies peuvent être relus avant confirmation.",
+      "Une confirmation ou une reprise de contact peut ensuite affiner l'expérience côté maison."
+    ],
+    hospitalityStory: {
+      eyebrow: "Hospitalité",
+      title: "Le formulaire ne remplace pas l'accueil: il le prépare.",
+      intro:
+        "Ce bloc garde l'élégance du site tout en donnant à la maison suffisamment de matière pour répondre avec précision.",
+      image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
+      imageAlt: "Verrerie et lumière douce chez Bleu Marée",
+      imagePosition: "50% 50%",
+      details: [
+        {
+          label: "Occasion",
+          copy: "Anniversaire, dîner à deux, repas professionnel ou demande de groupe peuvent être signalés dès le départ."
+        },
+        {
+          label: "Attention",
+          copy: "Allergies, préférences ou remarques restent lisibles pour permettre une réponse plus juste."
+        },
+        {
+          label: "Suite",
+          copy: "Si la demande mérite un échange plus précis, la maison peut reprendre contact dans le même ton calme et soigné."
+        }
+      ]
+    }
   },
   en: {
     pageHero: {
@@ -66,7 +90,8 @@ const reservationContentByLocale = {
       title: "A booking request designed to feel effortless.",
       intro:
         "The journey favors clarity, calm, and precision: date, time, party size, occasion, and notes are gathered in a premium, legible, mobile-first experience.",
-      image: "/images/hero/bleu-maree-hero-dining-room-sunset.png"
+      image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+      imagePosition: "50% 56%"
     },
     infoIntro: {
       eyebrow: "Useful information",
@@ -76,12 +101,12 @@ const reservationContentByLocale = {
     },
     groupCta: "Group booking or private dining request",
     organizationIntro: {
-      eyebrow: "Back-office",
-      title: "A simple, clean, manageable logic.",
+      eyebrow: "After the request",
+      title: "A response shaped with the same level of care.",
       lead:
-        "The site records requests in a clear back-office so the demo stays credible: each request can be tracked, confirmed, or cancelled from the admin."
+        "The request already gathers the key information the house needs to answer properly, prepare special occasions, and handle groups with clarity."
     },
-    implementationLabel: "How it works",
+    implementationLabel: "What happens next",
     reservationJourney: [
       {
         title: "Choosing the moment",
@@ -91,12 +116,12 @@ const reservationContentByLocale = {
       {
         title: "Request saved",
         copy:
-          "The request is designed to be saved in the restaurant back-office with all the information the team needs."
+          "The house then retrieves the request with the useful details already in place: guests, preferred time, occasion, allergens, and notes."
       },
       {
         title: "House-side follow-up",
         copy:
-          "From the admin, the house can find requests again, update their status, and prepare responses or confirmations."
+          "The team can confirm, get back in touch, or redirect the request toward a better-fit proposal when needed."
       }
     ],
     reservationPractices: [
@@ -114,10 +139,33 @@ const reservationContentByLocale = {
       }
     ],
     zenchefSetupSteps: [
-      "Each request creates a structured entry in the back-office.",
-      "The status can then be tracked house-side: new, confirmed, or cancelled.",
-      "A confirmation email can be added later if we want to push the demo further."
-    ]
+      "The request already contains enough detail to avoid unnecessary back-and-forth.",
+      "Special occasions, groups, and allergens can be reviewed before confirmation.",
+      "A reply or confirmation can then refine the experience house-side."
+    ],
+    hospitalityStory: {
+      eyebrow: "Hospitality",
+      title: "The form does not replace the welcome: it prepares it.",
+      intro:
+        "This block keeps the site elegant while still giving the house enough context to respond with precision.",
+      image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
+      imageAlt: "Glassware and soft light at Bleu Maree",
+      imagePosition: "50% 50%",
+      details: [
+        {
+          label: "Occasion",
+          copy: "Anniversary, dinner for two, business meal, or group request can all be signaled from the start."
+        },
+        {
+          label: "Attention",
+          copy: "Allergens, preferences, and key notes remain visible so the response can be more accurate."
+        },
+        {
+          label: "Follow-up",
+          copy: "If the request needs a more precise exchange, the house can get back in touch in the same calm, refined tone."
+        }
+      ]
+    }
   }
 };
 

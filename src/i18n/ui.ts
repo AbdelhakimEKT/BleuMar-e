@@ -27,13 +27,17 @@ const uiCopy = {
       subject: "Sujet",
       message: "Message",
       hint:
-        "Les messages envoyés ici sont validés côté serveur et prêts à être reliés à votre outil email ou CRM.",
+        "Le message est transmis dans un espace de suivi clair pour permettre une réponse plus rapide et plus attentive.",
       submit: "Envoyer le message",
       submitting: "Envoi..."
     },
     contactApi: {
       missingFields: "Merci de renseigner votre nom, votre email, le sujet et le message.",
       invalidEmail: "L'adresse email indiquée semble invalide.",
+      deliveryUnavailable:
+        "Le routage email n'est pas encore configuré sur cette instance. Ajoutez le mot de passe SMTP pour activer l'envoi réel.",
+      sendFailed:
+        "Le message n'a pas pu partir pour le moment. Réessayez dans un instant ou contactez la maison par téléphone.",
       success: "Merci, votre message a bien été transmis à l'équipe Bleu Marée."
     },
     reservationForm: {
@@ -57,7 +61,7 @@ const uiCopy = {
         private: "Privatisation"
       },
       hint:
-        "Les demandes enregistrées sont conçues pour apparaître dans le back-office du restaurant et suivre un statut clair.",
+        "La demande reste courte, lisible et suffisamment précise pour permettre une réponse soignée.",
       submit: "Envoyer la demande",
       submitting: "Envoi en cours...",
       storagePending:
@@ -73,7 +77,7 @@ const uiCopy = {
       saveFailed:
         "La demande n'a pas pu être enregistrée pour le moment. Réessayez dans un instant.",
       success:
-        "Votre demande a bien été enregistrée. Elle apparaît maintenant dans le back-office Bleu Marée."
+        "Votre demande a bien été enregistrée. L'équipe Bleu Marée peut maintenant la traiter avec toutes les informations utiles."
     },
     zenchef: {
       title: "Réservation V1 via le module officiel.",
@@ -152,13 +156,17 @@ const uiCopy = {
       subject: "Subject",
       message: "Message",
       hint:
-        "Messages sent here are validated server-side and ready to connect to your email tool or CRM.",
+        "The message is sent into a clear follow-up workspace so the house can answer with more attention and speed.",
       submit: "Send message",
       submitting: "Sending..."
     },
     contactApi: {
       missingFields: "Please provide your name, email, subject, and message.",
       invalidEmail: "The email address provided appears to be invalid.",
+      deliveryUnavailable:
+        "Email delivery is not configured on this instance yet. Add the SMTP password to enable live sending.",
+      sendFailed:
+        "The message could not be sent right now. Please try again in a moment or contact the house by phone.",
       success: "Thank you, your message has been sent to the Bleu Marée team."
     },
     reservationForm: {
@@ -182,7 +190,7 @@ const uiCopy = {
         private: "Private event"
       },
       hint:
-        "Saved requests are designed to appear in the restaurant back-office and follow a clear status.",
+        "The request stays short, legible, and precise enough to support a thoughtful response.",
       submit: "Send request",
       submitting: "Sending...",
       storagePending:
@@ -198,7 +206,7 @@ const uiCopy = {
       saveFailed:
         "The request could not be saved right now. Please try again in a moment.",
       success:
-        "Your request has been saved successfully. It now appears in the Bleu Marée back-office."
+        "Your request has been saved successfully. The Bleu Marée team can now review it with all the useful details in place."
     },
     zenchef: {
       title: "V1 booking through the official module.",

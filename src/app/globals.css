@@ -508,6 +508,25 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.event-card {
+  display: grid;
+  padding: 0;
+  overflow: hidden;
+}
+
+.event-card-media {
+  aspect-ratio: 16 / 11;
+  min-height: 260px;
+  border-radius: calc(var(--radius-md) - 4px) calc(var(--radius-md) - 4px) 0 0;
+  border-inline: 0;
+  border-top: 0;
+  box-shadow: none;
+}
+
+.event-card-body {
+  padding: 1.45rem 1.5rem 1.6rem;
+}
+
 .event-meta {
   display: flex;
   flex-wrap: wrap;
@@ -638,10 +657,10 @@ select {
 
 .fade-up {
   opacity: 0;
-  transform: translateY(38px) scale(0.985);
+  transform: translateY(24px) scale(0.992);
   transition:
-    opacity 880ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 880ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fade-up.is-visible {
@@ -716,6 +735,10 @@ select {
   .grid-four,
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .event-card-media {
+    min-height: 232px;
   }
 
   .button,

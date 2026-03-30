@@ -9,9 +9,10 @@ type PageHeroProps = {
   title: string;
   intro: string;
   image: string;
+  imagePosition?: string;
 };
 
-export function PageHero({ eyebrow, title, intro, image }: PageHeroProps) {
+export function PageHero({ eyebrow, title, intro, image, imagePosition }: PageHeroProps) {
   return (
     <section className={styles.hero}>
       <Image
@@ -21,6 +22,7 @@ export function PageHero({ eyebrow, title, intro, image }: PageHeroProps) {
         priority
         className={styles.background}
         sizes="100vw"
+        style={imagePosition ? { objectPosition: imagePosition } : undefined}
       />
       <div className={styles.overlay} />
       <div className={`container ${styles.inner}`}>

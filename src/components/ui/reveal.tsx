@@ -13,24 +13,41 @@ export function Reveal({ children, className }: RevealProps) {
 
   useEffect(() => {
     const node = ref.current;
+    let revealTimeout = 0;
 
     if (!node) {
       return undefined;
     }
 
+    if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    revealTimeout = window.setTimeout(() => {
+      setIsVisible(true);
+    }, 90);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          window.clearTimeout(revealTimeout);
           observer.disconnect();
         }
       },
-      { threshold: 0.18 }
+      {
+        rootMargin: "0px 0px 18% 0px",
+        threshold: 0.01
+      }
     );
 
     observer.observe(node);
 
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(revealTimeout);
+      observer.disconnect();
+    };
   }, []);
 
   return (

@@ -103,8 +103,14 @@ export const experiencesPageQuery = defineQuery(`
 export const galleryPageQuery = defineQuery(`
   *[_id == "galleryPage"][0]{
     galleryItems[]{
+      _key,
       title,
       caption,
+      category,
+      featured,
+      aspect,
+      objectPosition,
+      priority,
       image{
         alt,
         asset

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { EditorialSplit } from "@/components/blocks/editorial-split";
 import { ReservationRequestForm } from "@/components/forms/reservation-request-form";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
@@ -53,6 +54,7 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
         title={content.pageHero.title}
         intro={content.pageHero.intro}
         image={content.pageHero.image}
+        imagePosition={content.pageHero.imagePosition}
       />
 
       <section className="section">
@@ -136,6 +138,28 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
               </ul>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <EditorialSplit
+            eyebrow={content.hospitalityStory.eyebrow}
+            title={content.hospitalityStory.title}
+            intro={content.hospitalityStory.intro}
+            details={content.hospitalityStory.details}
+            image={content.hospitalityStory.image}
+            imageAlt={content.hospitalityStory.imageAlt}
+            imagePosition={content.hospitalityStory.imagePosition}
+            reverse
+            actions={[
+              {
+                href: withLocale(locale, "/contact"),
+                label: content.groupCta,
+                variant: "ghost"
+              }
+            ]}
+          />
         </div>
       </section>
     </>

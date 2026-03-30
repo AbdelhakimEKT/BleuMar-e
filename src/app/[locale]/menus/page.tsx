@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
 import { EditorialSplit } from "@/components/blocks/editorial-split";
-import { MenuSections } from "@/components/blocks/menu-sections";
-import { Reveal } from "@/components/ui/reveal";
-import { SectionIntro } from "@/components/ui/section-intro";
+import { EditorialMenuExperience } from "@/components/menus/editorial-menu-experience";
+import { getMenuPdfHref } from "@/content/menu-visuals";
 import { PageHero } from "@/components/ui/page-hero";
 import { getMenusContent } from "@/content/menus";
 import { resolveLocale } from "@/i18n/server";
@@ -44,6 +43,7 @@ export default async function LocalizedMenusPage({ params }: MenusPageProps) {
   const locale = await resolveLocale(params);
   const content = getMenusContent(locale);
   const menusPageData = await getMenusPageData(locale);
+  const pdfHref = getMenuPdfHref(locale);
 
   return (
     <>
@@ -52,31 +52,21 @@ export default async function LocalizedMenusPage({ params }: MenusPageProps) {
         title={content.pageHero.title}
         intro={content.pageHero.intro}
         image={content.pageHero.image}
+        imagePosition={content.pageHero.imagePosition}
       />
 
       <section className="section section-surface--light section--light">
         <div className="container stack">
-          <Reveal>
-            <SectionIntro
-              eyebrow={content.sectionIntro.eyebrow}
-              title={content.sectionIntro.title}
-              lead={content.sectionIntro.lead}
-            />
-          </Reveal>
-
-          <MenuSections sections={menusPageData.menuSections} />
-
-          <div className="grid-three">
-            {menusPageData.menuNotes.map((note) => (
-              <Reveal key={note}>
-                <div className="notice-panel">{note}</div>
-              </Reveal>
-            ))}
-          </div>
+          <EditorialMenuExperience
+            locale={locale}
+            intro={content.sectionIntro}
+            sections={menusPageData.menuSections}
+            notes={menusPageData.menuNotes}
+          />
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-surface">
         <div className="container">
           <EditorialSplit
             eyebrow={content.seasonalitySplit.eyebrow}
@@ -85,6 +75,7 @@ export default async function LocalizedMenusPage({ params }: MenusPageProps) {
             paragraphs={content.seasonalitySplit.paragraphs}
             image={content.seasonalitySplit.image}
             imageAlt={content.seasonalitySplit.imageAlt}
+            imagePosition={content.seasonalitySplit.imagePosition}
             actions={[
               {
                 href: withLocale(locale, "/reservation"),
@@ -92,9 +83,10 @@ export default async function LocalizedMenusPage({ params }: MenusPageProps) {
                 variant: "primary"
               },
               {
-                href: withLocale(locale, "/contact"),
+                href: pdfHref,
                 label: content.seasonalitySplit.actions.pdf,
-                variant: "ghost"
+                variant: "ghost",
+                download: true
               }
             ]}
           />

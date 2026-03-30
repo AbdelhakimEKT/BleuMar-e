@@ -7,7 +7,8 @@ const restaurantContentByLocale = {
       title: "Une maison où l'élégance reste vivante.",
       intro:
         "Histoire, vision culinaire, travail de l'équipe et atmosphère: le site structure un vrai récit de marque, plus humain et plus premium.",
-      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png"
+      image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+      imagePosition: "50% 54%"
     },
     storyContent: {
       eyebrow: "Notre histoire",
@@ -19,7 +20,8 @@ const restaurantContentByLocale = {
         "La salle prolonge cette approche avec une esthétique douce, minérale et lumineuse. L'expérience vise autant la justesse du goût que la qualité de présence: temps du service, lumière, circulation, silence, matière."
       ],
       image: "/images/people/bleu-maree-chef-portrait.jpg",
-      imageAlt: "Portrait du chef de Bleu Marée"
+      imageAlt: "Portrait du chef de Bleu Marée",
+      imagePosition: "50% 44%"
     },
     foundations: {
       eyebrow: "Fondations",
@@ -58,19 +60,41 @@ const restaurantContentByLocale = {
         copy: "Dîners à deux, rendez-vous professionnels, anniversaires et soirées sur mesure."
       }
     ],
+    visualMoments: [
+      {
+        label: "Salle",
+        image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+        alt: "Salle principale Bleu Marée à l'heure dorée",
+        position: "50% 54%"
+      },
+      {
+        label: "Service",
+        image: "/images/people/bleu-maree-team-service-in-action.jpg",
+        alt: "Équipe en préparation de service chez Bleu Marée",
+        position: "50% 46%"
+      },
+      {
+        label: "Détail",
+        image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
+        alt: "Verrerie et lumière tamisée chez Bleu Marée",
+        position: "50% 50%"
+      }
+    ],
     teamMoments: {
       title: "Une équipe orchestrée comme une salle de concert intime.",
       copy:
         "De la cuisine au service, chaque interaction vise la fluidité: bon tempo, bonne distance, bonne précision. Cette cohérence donne à Bleu Marée son ressenti premium sans surjeu.",
-      image: "/images/people/bleu-maree-team-portrait.jpg",
-      imageAlt: "Équipe Bleu Marée"
+      image: "/images/people/bleu-maree-team-service-in-action.jpg",
+      imageAlt: "Équipe Bleu Marée en service",
+      imagePosition: "50% 46%"
     },
     craftsmanshipMoments: {
       title: "Le geste et la matière restent visibles.",
       copy:
         "Le dressage, la chauffe, l'accord et le dernier geste au passe racontent autant que la carte. Le raffinement tient ici à la maîtrise, pas à l'effet.",
-      image: "/images/experience/bleu-maree-plating-action.jpg",
-      imageAlt: "Dressage en cuisine chez Bleu Marée"
+      image: "/images/experience/bleu-maree-chef-plating-closeup.jpg",
+      imageAlt: "Dressage précis en cuisine chez Bleu Marée",
+      imagePosition: "50% 52%"
     },
     actions: {
       reserve: "Réserver une table",
@@ -84,7 +108,8 @@ const restaurantContentByLocale = {
       title: "A house where elegance stays alive.",
       intro:
         "Story, culinary vision, team craft, and atmosphere: the site builds a true brand narrative, more human and more premium.",
-      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png"
+      image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+      imagePosition: "50% 54%"
     },
     storyContent: {
       eyebrow: "Our story",
@@ -96,7 +121,8 @@ const restaurantContentByLocale = {
         "The dining room extends this approach through a soft, mineral, and luminous aesthetic. The experience aims as much for accuracy of taste as for quality of presence: service tempo, light, circulation, silence, and materiality."
       ],
       image: "/images/people/bleu-maree-chef-portrait.jpg",
-      imageAlt: "Portrait of the Bleu Maree chef"
+      imageAlt: "Portrait of the Bleu Maree chef",
+      imagePosition: "50% 44%"
     },
     foundations: {
       eyebrow: "Foundations",
@@ -135,19 +161,41 @@ const restaurantContentByLocale = {
         copy: "Dinner for two, business meetings, anniversaries, and bespoke evenings."
       }
     ],
+    visualMoments: [
+      {
+        label: "Room",
+        image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+        alt: "Bleu Maree main dining room at golden hour",
+        position: "50% 54%"
+      },
+      {
+        label: "Service",
+        image: "/images/people/bleu-maree-team-service-in-action.jpg",
+        alt: "Team preparing service at Bleu Maree",
+        position: "50% 46%"
+      },
+      {
+        label: "Detail",
+        image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
+        alt: "Glassware and low light at Bleu Maree",
+        position: "50% 50%"
+      }
+    ],
     teamMoments: {
       title: "A team orchestrated like an intimate concert hall.",
       copy:
         "From kitchen to service, every interaction aims for flow: the right tempo, the right distance, the right precision. That coherence is what gives Bleu Maree its premium feeling without overplaying it.",
-      image: "/images/people/bleu-maree-team-portrait.jpg",
-      imageAlt: "Bleu Maree team"
+      image: "/images/people/bleu-maree-team-service-in-action.jpg",
+      imageAlt: "Bleu Maree team in service",
+      imagePosition: "50% 46%"
     },
     craftsmanshipMoments: {
       title: "Gesture and material remain visible.",
       copy:
         "Plating, heat, pairing, and the final pass all tell as much of the story as the menu itself. Refinement here comes from mastery, not effect.",
-      image: "/images/experience/bleu-maree-plating-action.jpg",
-      imageAlt: "Plating in the Bleu Maree kitchen"
+      image: "/images/experience/bleu-maree-chef-plating-closeup.jpg",
+      imageAlt: "Precise plating in the Bleu Maree kitchen",
+      imagePosition: "50% 52%"
     },
     actions: {
       reserve: "Book a table",

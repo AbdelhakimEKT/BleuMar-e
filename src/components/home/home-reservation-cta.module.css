@@ -3,13 +3,35 @@
 }
 
 .layout {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: end;
+  padding: clamp(1.8rem, 3vw, 2.8rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 34px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(6, 20, 30, 0.96), rgba(16, 39, 56, 0.94)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.14), transparent 28%),
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
+}
+
+.layout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 18, 28, 0.16), transparent 45%),
+    radial-gradient(circle at 18% 22%, rgba(245, 239, 228, 0.08), transparent 26%);
+  pointer-events: none;
 }
 
 .copyColumn {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 1.4rem;
 }
@@ -24,7 +46,7 @@
 .lead {
   max-width: 35rem;
   margin: 0;
-  color: rgba(219, 227, 230, 0.82);
+  color: rgba(231, 236, 238, 0.88);
   line-height: 1.82;
 }
 
@@ -36,6 +58,8 @@
 }
 
 .card {
+  position: relative;
+  z-index: 1;
   padding: 1.7rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 30px;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import { EditorialSplit } from "@/components/blocks/editorial-split";
 import { Reveal } from "@/components/ui/reveal";
@@ -52,6 +53,7 @@ export default async function LocalizedExperiencesPage({ params }: ExperiencesPa
         title={content.pageHero.title}
         intro={content.pageHero.intro}
         image={content.pageHero.image}
+        imagePosition={content.pageHero.imagePosition}
       />
 
       <section className="section">
@@ -67,8 +69,19 @@ export default async function LocalizedExperiencesPage({ params }: ExperiencesPa
           <div className="event-grid">
             {experiencesPageData.upcomingExperiences.map((event) => (
               <Reveal key={event.title}>
-                <article className="surface-card">
-                  <div className="stack">
+                <article className="surface-card event-card">
+                  <div className="event-card-media image-frame">
+                    <Image
+                      src={event.image}
+                      alt={event.imageAlt}
+                      fill
+                      className="image-cover"
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                      style={event.imagePosition ? { objectPosition: event.imagePosition } : undefined}
+                    />
+                  </div>
+
+                  <div className="stack event-card-body">
                     <div className="event-meta">
                       <span>{event.date}</span>
                       <span>{event.time}</span>
@@ -100,6 +113,7 @@ export default async function LocalizedExperiencesPage({ params }: ExperiencesPa
             }))}
             image={content.privateDining.image}
             imageAlt={content.privateDining.imageAlt}
+            imagePosition={content.privateDining.imagePosition}
             actions={[
               {
                 href: withLocale(locale, "/contact"),

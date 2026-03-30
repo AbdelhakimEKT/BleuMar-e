@@ -19,31 +19,33 @@ const menusContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "La carte",
-      title: "Des menus lisibles, désirables et simples à faire évoluer.",
+      title: "Une lecture de la mer, du feu et du rythme.",
       intro:
-        "La structure de cette page est pensée pour une mise à jour régulière: catégories claires, mentions de saison, prix visibles et futur branchement à un CMS.",
-      image: "/images/menu/bleu-maree-menu-scallops-signature.png"
+        "Du déjeuner précis aux parcours dégustation, la carte Bleu Marée suit les arrivages, les saisons et la lumière du service.",
+      image: "/images/menu/bleu-maree-menu-scallops-signature.png",
+      imagePosition: "50% 56%"
     },
     sectionIntro: {
-      eyebrow: "Menus & cave",
-      title: "Une carte conçue pour séduire autant que pour être administrée facilement.",
+      eyebrow: "Lecture de service",
+      title: "Chaque chapitre de la carte ouvre une autre intensité.",
       lead:
-        "Les sections sont séparées proprement pour préparer la suite: affichage conditionnel, tags “nouveau” ou “de saison”, PDF et synchronisation future avec un back-office."
+        "Déjeuner net, parcours dégustation, assiettes à la carte, cave et accords: la page doit se lire comme un service, pas comme un catalogue."
     },
     seasonalitySplit: {
-      eyebrow: "Saisonnalité",
-      title: "La carte vit avec les arrivages, pas avec une structure figée.",
+      eyebrow: "Selon arrivage",
+      title: "La carte reste vivante, guidée par le marché et la saison.",
       intro:
-        "Ce socle permet déjà d'introduire des suggestions temporaires, des menus de fête, des sélections de vins ou une carte déjeuner distincte sans alourdir l'interface.",
+        "Certaines assiettes n'existent que le temps d'un arrivage, d'une mer plus calme ou d'un produit au sommet de sa tension.",
       paragraphs: [
-        "Le contenu est centralisé dans des modules dédiés afin de faciliter la migration vers un CMS headless ou un back-office léger.",
-        "Pour la mise en ligne, il suffira de remplacer les propositions de démonstration par votre carte réelle et vos prix définitifs."
+        "Les menus de fête, les accords spéciaux et les moments signatures peuvent apparaître puis disparaître sans casser la lecture générale.",
+        "Ce mouvement garde à Bleu Marée sa justesse: une maison qui travaille l'instant plutôt qu'une carte figée."
       ],
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Détail de table Bleu Marée",
+      imagePosition: "50% 52%",
       actions: {
         reserve: "Réserver",
-        pdf: "Demander le PDF"
+        pdf: "Télécharger la carte PDF"
       }
     },
     menuSections: [
@@ -309,39 +311,41 @@ const menusContentByLocale = {
       }
     ],
     menuNotes: [
-      "La structure de carte suit désormais vos familles de contenus réelles: déjeuner, dégustation, entrées, mer, viandes, desserts, vins et accords.",
-      "Les mentions “de saison”, “selon arrivage” et “événement” sont déjà prévues pour être pilotées depuis le futur back-office.",
-      "Une version PDF et un lien de menu Zenchef pourront être associés à chaque service si vous activez cette option dans Zenchef."
+      "Certaines préparations changent discrètement au fil des arrivages, sans rompre l'équilibre général du service.",
+      "Les accords peuvent prolonger la dégustation ou simplement accompagner un déjeuner plus court avec la même précision.",
+      "Les menus spéciaux n'apparaissent que lorsqu'ils ont un vrai rôle à jouer: fête, collaboration, soirée unique ou saison très courte."
     ]
   },
   en: {
     pageHero: {
       eyebrow: "Menus",
-      title: "Menus that stay clear, desirable, and easy to evolve.",
+      title: "A reading of sea, fire, and rhythm.",
       intro:
-        "This page structure is designed for regular updates: clear categories, seasonal mentions, visible pricing, and a future CMS connection.",
-      image: "/images/menu/bleu-maree-menu-scallops-signature.png"
+        "From a precise lunch to immersive tasting journeys, the Bleu Maree menu follows arrivals, seasons, and the light of service.",
+      image: "/images/menu/bleu-maree-menu-scallops-signature.png",
+      imagePosition: "50% 56%"
     },
     sectionIntro: {
-      eyebrow: "Menus & cellar",
-      title: "A menu designed to seduce while remaining easy to manage.",
+      eyebrow: "Service reading",
+      title: "Each chapter of the menu opens a different intensity.",
       lead:
-        "The sections are separated cleanly to prepare what comes next: conditional display, seasonal tags, PDFs, and future back-office synchronization."
+        "Clean lunch, tasting journeys, a la carte plates, cellar, and pairings: the page should read like a service, never like a catalogue."
     },
     seasonalitySplit: {
-      eyebrow: "Seasonality",
-      title: "The menu moves with arrivals, not with a fixed structure.",
+      eyebrow: "According to market arrivals",
+      title: "The menu stays alive, guided by market rhythm and season.",
       intro:
-        "This foundation already makes room for temporary suggestions, celebration menus, wine selections, or a distinct lunch offering without weighing down the interface.",
+        "Some plates only exist for the length of an arrival, a calmer sea, or a product reaching its sharpest point.",
       paragraphs: [
-        "Content is centralized in dedicated modules to ease the move to a headless CMS or a lightweight back-office.",
-        "For launch, the sample dishes only need to be replaced with your real menu and final pricing."
+        "Celebration menus, special pairings, and signature moments can appear and disappear without breaking the overall reading.",
+        "That movement keeps Bleu Maree accurate: a house that works with the moment rather than a frozen list."
       ],
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Bleu Maree table detail",
+      imagePosition: "50% 52%",
       actions: {
         reserve: "Book",
-        pdf: "Request the PDF"
+        pdf: "Download the menu PDF"
       }
     },
     menuSections: [
@@ -607,9 +611,9 @@ const menusContentByLocale = {
       }
     ],
     menuNotes: [
-      "The menu structure now follows your real content families: lunch, tasting, starters, seafood, meats, desserts, wines, and pairings.",
-      "The tags \"seasonal\", \"according to market arrivals\", and \"event\" are already prepared for future back-office management.",
-      "A PDF version and a Zenchef menu link can later be attached to each service if you enable that option in Zenchef."
+      "Some preparations shift quietly with arrivals while preserving the overall balance of service.",
+      "Pairings can extend the tasting journey or simply accompany a shorter lunch with the same level of precision.",
+      "Special menus only appear when they have a real role to play: celebration, collaboration, singular evening, or brief season."
     ]
   }
 };

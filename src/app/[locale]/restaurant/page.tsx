@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { EditorialSplit } from "@/components/blocks/editorial-split";
+import { ImageTriptych } from "@/components/blocks/image-triptych";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
 import { PageHero } from "@/components/ui/page-hero";
@@ -49,6 +50,7 @@ export default async function LocalizedRestaurantPage({ params }: RestaurantPage
         title={content.pageHero.title}
         intro={content.pageHero.intro}
         image={content.pageHero.image}
+        imagePosition={content.pageHero.imagePosition}
       />
 
       <section className="section">
@@ -60,8 +62,15 @@ export default async function LocalizedRestaurantPage({ params }: RestaurantPage
             paragraphs={content.storyContent.paragraphs}
             image={content.storyContent.image}
             imageAlt={content.storyContent.imageAlt}
+            imagePosition={content.storyContent.imagePosition}
             actions={[{ href: withLocale(locale, "/reservation"), label: content.actions.reserve }]}
           />
+
+          <div className="page-spacer" />
+
+          <Reveal>
+            <ImageTriptych items={content.visualMoments} />
+          </Reveal>
         </div>
       </section>
 
@@ -93,6 +102,7 @@ export default async function LocalizedRestaurantPage({ params }: RestaurantPage
             intro={content.teamMoments.copy}
             image={content.teamMoments.image}
             imageAlt={content.teamMoments.imageAlt}
+            imagePosition={content.teamMoments.imagePosition}
             details={content.atmosphereDetails}
           />
 
@@ -103,6 +113,7 @@ export default async function LocalizedRestaurantPage({ params }: RestaurantPage
             intro={content.craftsmanshipMoments.copy}
             image={content.craftsmanshipMoments.image}
             imageAlt={content.craftsmanshipMoments.imageAlt}
+            imagePosition={content.craftsmanshipMoments.imagePosition}
             reverse
             actions={[
               {

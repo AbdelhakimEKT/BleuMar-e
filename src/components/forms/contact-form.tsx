@@ -19,6 +19,7 @@ type ContactFormProps = {
 
 export function ContactForm({ locale }: ContactFormProps) {
   const copy = getUiCopy(locale).contactForm;
+  const messages = getUiCopy(locale).contactApi;
   const [status, setStatus] = useState<Status>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -31,23 +32,27 @@ export function ContactForm({ locale }: ContactFormProps) {
 
     startTransition(() => {
       void (async () => {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
 
-        const data = (await response.json()) as { message: string };
+          const data = (await response.json()) as { message: string };
 
-        if (!response.ok) {
-          setStatus({ tone: "error", message: data.message });
-          return;
+          if (!response.ok) {
+            setStatus({ tone: "error", message: data.message });
+            return;
+          }
+
+          form.reset();
+          setStatus({ tone: "success", message: data.message });
+        } catch {
+          setStatus({ tone: "error", message: messages.sendFailed });
         }
-
-        form.reset();
-        setStatus({ tone: "success", message: data.message });
       })();
     });
   };
