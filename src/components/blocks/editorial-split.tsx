@@ -12,6 +12,7 @@ type Action = {
   label: string;
   variant?: "primary" | "secondary" | "ghost";
   download?: boolean;
+  className?: string;
 };
 
 type EditorialSplitProps = {
@@ -79,7 +80,7 @@ export function EditorialSplit({
               <a
                 key={`${action.href}-${action.label}`}
                 href={action.href}
-                className={variantClassMap[action.variant ?? "primary"]}
+                className={`${variantClassMap[action.variant ?? "primary"]} ${action.className ?? ""}`.trim()}
                 download={action.download ? true : undefined}
               >
                 {action.label}
@@ -94,8 +95,7 @@ export function EditorialSplit({
           <Image
             src={image}
             alt={imageAlt}
-            width={1600}
-            height={1000}
+            fill
             sizes="(max-width: 1080px) 100vw, 44vw"
             loading="eager"
             className="image-cover"
