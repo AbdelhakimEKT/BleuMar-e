@@ -122,7 +122,7 @@ select {
 .section--light .detail-list,
 .section--light .microcopy,
 .section--light .kicker {
-  color: rgba(16, 39, 56, 0.82);
+  color: rgba(16, 39, 56, 0.9);
 }
 
 .section-surface {
@@ -360,7 +360,21 @@ select {
 
 .section--light .detail-copy,
 .section--light .contact-copy {
-  color: rgba(16, 39, 56, 0.78);
+  color: rgba(16, 39, 56, 0.9);
+}
+
+.section--light .button-ghost {
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(16, 39, 56, 0.18);
+  box-shadow: 0 14px 32px rgba(16, 39, 56, 0.08);
+  color: #102738;
+}
+
+.section--light .button-ghost:hover,
+.section--light .button-ghost:focus-visible {
+  background: rgba(16, 39, 56, 0.08);
+  border-color: rgba(16, 39, 56, 0.28);
+  color: #102738;
 }
 
 .image-frame {
