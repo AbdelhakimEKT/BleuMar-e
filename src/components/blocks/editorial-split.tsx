@@ -25,6 +25,7 @@ type EditorialSplitProps = {
   imagePosition?: string;
   reverse?: boolean;
   actions?: Action[];
+  className?: string;
 };
 
 const variantClassMap = {
@@ -43,10 +44,11 @@ export function EditorialSplit({
   imageAlt,
   imagePosition,
   reverse = false,
-  actions = []
+  actions = [],
+  className
 }: EditorialSplitProps) {
   return (
-    <div className="split-layout" data-reverse={reverse}>
+    <div className={`split-layout ${className ?? ""}`.trim()} data-reverse={reverse}>
       <Reveal className="stack">
         {eyebrow ? <div className="eyebrow">{eyebrow}</div> : null}
         <h2 className="section-title">{title}</h2>

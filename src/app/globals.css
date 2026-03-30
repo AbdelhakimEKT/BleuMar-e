@@ -410,6 +410,36 @@ select {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 }
 
+.reservation-hospitality > .fade-up:first-child {
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(8, 22, 33, 0.92), rgba(9, 25, 37, 0.84)),
+    radial-gradient(circle at top, rgba(214, 181, 125, 0.08), transparent 42%);
+  box-shadow: 0 26px 60px rgba(5, 14, 22, 0.32);
+}
+
+.reservation-hospitality > .fade-up:first-child .eyebrow,
+.reservation-hospitality > .fade-up:first-child .detail-title {
+  color: #d6b57d;
+}
+
+.reservation-hospitality > .fade-up:first-child .section-title {
+  color: #f6f1e7;
+}
+
+.reservation-hospitality > .fade-up:first-child .lead,
+.reservation-hospitality > .fade-up:first-child .detail-copy,
+.reservation-hospitality > .fade-up:first-child .microcopy,
+.reservation-hospitality > .fade-up:first-child .prose {
+  color: rgba(246, 241, 231, 0.88);
+}
+
+.reservation-hospitality > .fade-up:first-child .button {
+  min-width: min(100%, 320px);
+}
+
 .stack {
   display: grid;
   gap: 1.2rem;

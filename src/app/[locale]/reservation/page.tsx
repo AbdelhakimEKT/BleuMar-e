@@ -144,6 +144,7 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
       <section className="section section-surface">
         <div className="container">
           <EditorialSplit
+            className="reservation-hospitality"
             eyebrow={content.hospitalityStory.eyebrow}
             title={content.hospitalityStory.title}
             intro={content.hospitalityStory.intro}
