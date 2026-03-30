@@ -64,7 +64,7 @@ const contactContentByLocale = {
       title: "Une arrivée pensée pour rester simple, même quand le dîner ne l'est pas.",
       intro:
         "Qu'il s'agisse d'une réservation, d'une demande particulière ou d'un simple besoin pratique, tout doit rester clair, fluide et immédiat.",
-      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png",
+      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.jpg",
       imageAlt: "Salle Bleu Marée face à l'Atlantique",
       imagePosition: "50% 54%",
       details: [
@@ -146,7 +146,7 @@ const contactContentByLocale = {
       title: "An arrival designed to stay simple, even when dinner is not.",
       intro:
         "Whether it is a booking, a special request, or a practical question, everything should remain clear, fluid, and immediate.",
-      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png",
+      image: "/images/hero/bleu-maree-hero-atlantic-dining-room.jpg",
       imageAlt: "Bleu Maree dining room facing the Atlantic",
       imagePosition: "50% 54%",
       details: [

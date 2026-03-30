@@ -54,7 +54,7 @@ const galleryBlueprint: GalleryItemBlueprint[] = [
   },
   {
     id: "room-sunset",
-    image: "/images/hero/bleu-maree-hero-dining-room-sunset.png",
+    image: "/images/hero/bleu-maree-hero-dining-room-sunset.jpg",
     category: "room",
     featured: true,
     aspect: "landscape",
@@ -63,7 +63,7 @@ const galleryBlueprint: GalleryItemBlueprint[] = [
   },
   {
     id: "room-atlantic",
-    image: "/images/hero/bleu-maree-hero-atlantic-dining-room.png",
+    image: "/images/hero/bleu-maree-hero-atlantic-dining-room.jpg",
     category: "room",
     featured: false,
     aspect: "landscape",
@@ -144,7 +144,7 @@ const galleryBlueprint: GalleryItemBlueprint[] = [
   },
   {
     id: "plate-crudo-signature",
-    image: "/images/menu/bleu-maree-menu-crudo-signature.png",
+    image: "/images/menu/bleu-maree-menu-crudo-signature.jpg",
     category: "plates",
     featured: true,
     aspect: "landscape",
@@ -189,7 +189,7 @@ const galleryBlueprint: GalleryItemBlueprint[] = [
   },
   {
     id: "plate-scallops-signature",
-    image: "/images/menu/bleu-maree-menu-scallops-signature.png",
+    image: "/images/menu/bleu-maree-menu-scallops-signature.jpg",
     category: "plates",
     featured: false,
     aspect: "landscape",

@@ -22,7 +22,7 @@ const menusContentByLocale = {
       title: "Une carte portée par l'Atlantique et la saison.",
       intro:
         "Du déjeuner précis aux parcours dégustation, la carte Bleu Marée suit les arrivages, les saisons et la lumière du service.",
-      image: "/images/menu/bleu-maree-menu-scallops-signature.png",
+      image: "/images/menu/bleu-maree-menu-scallops-signature.jpg",
       imagePosition: "50% 56%"
     },
     sectionIntro: {
@@ -322,7 +322,7 @@ const menusContentByLocale = {
       title: "A menu shaped by the Atlantic and the season.",
       intro:
         "From a precise lunch to immersive tasting journeys, the Bleu Maree menu follows arrivals, seasons, and the light of service.",
-      image: "/images/menu/bleu-maree-menu-scallops-signature.png",
+      image: "/images/menu/bleu-maree-menu-scallops-signature.jpg",
       imagePosition: "50% 56%"
     },
     sectionIntro: {

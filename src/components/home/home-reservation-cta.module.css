@@ -15,7 +15,7 @@
   background:
     linear-gradient(135deg, rgba(6, 20, 30, 0.96), rgba(16, 39, 56, 0.94)),
     radial-gradient(circle at top right, rgba(201, 165, 106, 0.14), transparent 28%),
-    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.svg") center/cover;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
 }
 
@@ -65,7 +65,7 @@
   border-radius: 30px;
   background:
     linear-gradient(180deg, rgba(5, 18, 28, 0.7), rgba(5, 18, 28, 0.88)),
-    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.svg") center/cover;
   box-shadow: 0 26px 90px rgba(0, 0, 0, 0.22);
 }
 

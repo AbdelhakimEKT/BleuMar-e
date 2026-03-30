@@ -134,7 +134,7 @@ select {
 .section-surface--light {
   background:
     linear-gradient(180deg, rgba(245, 239, 228, 0.96), rgba(237, 231, 220, 0.96)),
-    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.svg") center/cover;
 }
 
 .eyebrow {
@@ -415,7 +415,7 @@ select {
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(113, 123, 131, 0.98), rgba(100, 111, 120, 0.98)),
-    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.svg") center/cover;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }

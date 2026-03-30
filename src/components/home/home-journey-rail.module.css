@@ -1,7 +1,7 @@
 .section {
   background:
     linear-gradient(180deg, rgba(4, 16, 24, 0.56), rgba(4, 16, 24, 0.88)),
-    url("/images/backgrounds/bleu-maree-abstract-marine-premium.png") center/cover;
+    url("/images/backgrounds/bleu-maree-abstract-marine-premium.svg") center/cover;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }

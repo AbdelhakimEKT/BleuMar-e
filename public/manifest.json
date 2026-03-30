@@ -36,7 +36,7 @@
     {
       "id": "hero-dining-room-sunset",
       "type": "image",
-      "path": "./images/hero/bleu-maree-hero-dining-room-sunset.png",
+      "path": "./images/hero/bleu-maree-hero-dining-room-sunset.jpg",
       "format": "png",
       "width": 1920,
       "height": 1080,
@@ -46,7 +46,7 @@
     {
       "id": "hero-atlantic-dining-room",
       "type": "image",
-      "path": "./images/hero/bleu-maree-hero-atlantic-dining-room.png",
+      "path": "./images/hero/bleu-maree-hero-atlantic-dining-room.jpg",
       "format": "png",
       "width": 1920,
       "height": 1080,
@@ -56,7 +56,7 @@
     {
       "id": "menu-crudo-signature",
       "type": "image",
-      "path": "./images/menu/bleu-maree-menu-crudo-signature.png",
+      "path": "./images/menu/bleu-maree-menu-crudo-signature.jpg",
       "format": "png",
       "width": 1920,
       "height": 1080,
@@ -66,7 +66,7 @@
     {
       "id": "menu-scallops-signature",
       "type": "image",
-      "path": "./images/menu/bleu-maree-menu-scallops-signature.png",
+      "path": "./images/menu/bleu-maree-menu-scallops-signature.jpg",
       "format": "png",
       "width": 1920,
       "height": 1080,

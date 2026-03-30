@@ -123,12 +123,12 @@ export function getChapterVisualConfig(title: string, tone: ChapterTone): Chapte
     return {
       images: [
         {
-          src: "/images/menu/bleu-maree-menu-crudo-signature.png",
+          src: "/images/menu/bleu-maree-menu-crudo-signature.jpg",
           position: "50% 54%"
         }
       ],
       fallbackImage: {
-        src: "/images/menu/bleu-maree-menu-scallops-signature.png",
+        src: "/images/menu/bleu-maree-menu-scallops-signature.jpg",
         position: "50% 54%"
       }
     };

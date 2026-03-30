@@ -44,7 +44,7 @@ export function createMetadata({
       type: "website",
       images: [
         {
-          url: "/images/hero/bleu-maree-hero-dining-room-sunset.png",
+          url: "/images/hero/bleu-maree-hero-dining-room-sunset.jpg",
           width: 1920,
           height: 1080,
           alt:
@@ -58,7 +58,7 @@ export function createMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: ["/images/hero/bleu-maree-hero-dining-room-sunset.png"]
+      images: ["/images/hero/bleu-maree-hero-dining-room-sunset.jpg"]
     }
   };
 }
@@ -86,6 +86,6 @@ export function createRestaurantSchema(locale: Locale = "fr") {
     telephone: siteConfig.phoneRaw,
     email: siteConfig.email,
     url: new URL(withLocale(locale, "/"), siteConfig.url).toString(),
-    image: `${siteConfig.url}/images/hero/bleu-maree-hero-dining-room-sunset.png`
+    image: `${siteConfig.url}/images/hero/bleu-maree-hero-dining-room-sunset.jpg`
   };
 }
