@@ -26,6 +26,39 @@ const contactContentByLocale = {
       "Un lien direct permet d'ouvrir l'itinéraire en un geste et de rejoindre la maison sans détour.",
     routeButton: "Ouvrir l'itinéraire",
     reserveButton: "Réserver",
+    faq: {
+      eyebrow: "Questions fréquentes",
+      title: "Les réponses utiles avant de venir à table.",
+      lead:
+        "Parking, accessibilité, groupes ou demandes particulières: les points pratiques les plus fréquents sont réunis ici."
+    },
+    faqItems: [
+      {
+        question: "Où se garer à proximité du restaurant ?",
+        answer:
+          "Plusieurs parkings publics sont accessibles à quelques minutes à pied. Pour un dîner plus confortable, nous conseillons d'arriver légèrement en avance, surtout en haute saison à Biarritz."
+      },
+      {
+        question: "Le restaurant est-il accessible aux personnes à mobilité réduite ?",
+        answer:
+          "Oui, nous pouvons accueillir les personnes à mobilité réduite. Pour préparer la table dans les meilleures conditions, il est préférable de nous le signaler au moment de la réservation ou par téléphone."
+      },
+      {
+        question: "Peut-on signaler des allergies ou un régime alimentaire ?",
+        answer:
+          "Oui. Allergies, intolérances ou préférences alimentaires peuvent être indiquées dès la réservation ou via le formulaire de contact afin que l'équipe puisse vous répondre avec précision."
+      },
+      {
+        question: "Accueillez-vous les groupes ou les privatisations ?",
+        answer:
+          "Oui. À partir de 8 couverts, nous recommandons une demande dédiée afin d'organiser le rythme du repas, les menus et les attentions particulières dans les meilleures conditions."
+      },
+      {
+        question: "Faut-il préciser une occasion spéciale ?",
+        answer:
+          "Anniversaire, dîner à deux, rendez-vous professionnel ou autre moment particulier: plus nous avons l'information tôt, plus nous pouvons préparer une attention juste et discrète."
+      }
+    ],
     arrivalStory: {
       eyebrow: "Venir à Bleu Marée",
       title: "Une arrivée pensée pour rester simple, même quand le dîner ne l'est pas.",
@@ -75,6 +108,39 @@ const contactContentByLocale = {
       "A direct link opens the route in one move and keeps arrival simple.",
     routeButton: "Open directions",
     reserveButton: "Book",
+    faq: {
+      eyebrow: "Frequently asked questions",
+      title: "Useful answers before coming to the table.",
+      lead:
+        "Parking, accessibility, groups, and special requests: the most common practical questions are gathered here."
+    },
+    faqItems: [
+      {
+        question: "Where can guests park near the restaurant?",
+        answer:
+          "Several public parking options are available within a short walking distance. For a smoother arrival, we recommend coming slightly early, especially during the busy season in Biarritz."
+      },
+      {
+        question: "Is the restaurant accessible for guests with reduced mobility?",
+        answer:
+          "Yes. We can welcome guests with reduced mobility, and we recommend mentioning it while booking or by phone so the team can prepare the table in the best conditions."
+      },
+      {
+        question: "Can allergies or dietary preferences be mentioned in advance?",
+        answer:
+          "Yes. Allergies, intolerances, or dietary preferences can be shared during the booking request or through the contact form so the team can respond accurately."
+      },
+      {
+        question: "Do you welcome groups or private events?",
+        answer:
+          "Yes. From 8 guests onward, we recommend a dedicated request so the team can shape the pace of the meal, the menus, and any special attentions properly."
+      },
+      {
+        question: "Should a special occasion be mentioned in advance?",
+        answer:
+          "Birthday, dinner for two, business meal, or any other special moment: the earlier we know, the better we can prepare something precise and discreet."
+      }
+    ],
     arrivalStory: {
       eyebrow: "Arriving at Bleu Maree",
       title: "An arrival designed to stay simple, even when dinner is not.",

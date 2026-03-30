@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { EditorialSplit } from "@/components/blocks/editorial-split";
+import { FaqList } from "@/components/blocks/faq-list";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
@@ -145,6 +146,17 @@ export default async function LocalizedContactPage({ params }: ContactPageProps)
                 variant: "secondary"
               }
             ]}
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <FaqList
+            eyebrow={content.faq.eyebrow}
+            title={content.faq.title}
+            lead={content.faq.lead}
+            items={content.faqItems}
           />
         </div>
       </section>
