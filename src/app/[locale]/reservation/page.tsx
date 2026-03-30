@@ -141,7 +141,7 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-surface--light section--light">
         <div className="container">
           <EditorialSplit
             eyebrow={content.hospitalityStory.eyebrow}
