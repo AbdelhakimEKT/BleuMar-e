@@ -436,8 +436,30 @@ select {
   color: rgba(246, 241, 231, 0.88);
 }
 
-.reservation-hospitality > .fade-up:first-child .button {
+.reservation-hospitality > .fade-up:first-child .detail-copy,
+.reservation-hospitality > .fade-up:first-child .lead {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.reservation-hospitality > .fade-up:first-child .button,
+.reservation-hospitality > .fade-up:first-child a.button {
   min-width: min(100%, 320px);
+  background: linear-gradient(135deg, #e0ba79 0%, #c8964d 100%) !important;
+  border: 1px solid rgba(224, 186, 121, 0.95) !important;
+  box-shadow:
+    0 18px 34px rgba(8, 22, 33, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  color: #0a1824 !important;
+  font-weight: 800;
+}
+
+.reservation-hospitality > .fade-up:first-child .button:hover,
+.reservation-hospitality > .fade-up:first-child .button:focus-visible,
+.reservation-hospitality > .fade-up:first-child a.button:hover,
+.reservation-hospitality > .fade-up:first-child a.button:focus-visible {
+  background: linear-gradient(135deg, #e8c68b 0%, #d5a55e 100%) !important;
+  color: #08131c !important;
+  transform: translateY(-2px);
 }
 
 .stack {
