@@ -2,7 +2,7 @@
   position: relative;
   padding: 4rem 0 2rem;
   background:
-    linear-gradient(180deg, rgba(3, 13, 20, 0.12), rgba(3, 13, 20, 0.92)),
+    linear-gradient(180deg, rgba(3, 13, 20, 0.08), rgba(3, 13, 20, 0.9)),
     url("/images/backgrounds/bleu-maree-abstract-marine-premium.svg") center/cover;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -23,7 +23,7 @@
 .logo {
   width: min(100%, 280px);
   border-radius: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
 }
 
 .linksBlock {

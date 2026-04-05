@@ -1,0 +1,258 @@
+.storySection {
+  padding-top: clamp(4.8rem, 8vw, 7rem);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 5vw, 4.6rem);
+  align-items: start;
+}
+
+.storyIntro,
+.foundationsIntro,
+.duoCopy {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.statement,
+.duoTitle {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.9rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: 0.01em;
+}
+
+.lead,
+.duoLead {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba(219, 227, 230, 0.86);
+  font-size: 1.04rem;
+  line-height: 1.82;
+}
+
+.quotePanel {
+  max-width: 24rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(201, 165, 106, 0.48);
+}
+
+.quotePanel p {
+  margin: 0;
+  color: rgba(245, 239, 228, 0.94);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.18;
+}
+
+.prose {
+  display: grid;
+  gap: 0.95rem;
+  max-width: 32rem;
+}
+
+.prose p {
+  margin: 0;
+  color: rgba(219, 227, 230, 0.8);
+  line-height: 1.84;
+}
+
+.visualBlock {
+  align-self: stretch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.contactButton {
+  background: rgba(255, 255, 255, 0.54);
+  border-color: rgba(16, 39, 56, 0.18);
+  box-shadow: 0 14px 28px rgba(16, 39, 56, 0.08);
+  color: #102738;
+}
+
+.contactButton:hover,
+.contactButton:focus-visible {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(16, 39, 56, 0.28);
+  color: #102738;
+}
+
+.foundationsSection {
+  overflow: hidden;
+}
+
+.foundationsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(2rem, 5vw, 4.2rem);
+  align-items: start;
+}
+
+.pillars {
+  display: grid;
+  gap: 0;
+}
+
+.pillar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.3rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pillar:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pillarIndex {
+  color: rgba(201, 165, 106, 0.74);
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 0.95;
+}
+
+.pillarCopy {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.pillarCopy h3,
+.pillarCopy p {
+  margin: 0;
+}
+
+.pillarCopy h3 {
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.pillarCopy p {
+  color: rgba(219, 227, 230, 0.78);
+  line-height: 1.78;
+}
+
+.atmospherePanel {
+  align-self: start;
+  display: grid;
+  gap: 1rem;
+  padding: 1.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(7, 24, 35, 0.48), rgba(7, 24, 35, 0.64)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.08), transparent 30%);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.16);
+}
+
+.panelLabel {
+  margin: 0;
+  color: rgba(201, 165, 106, 0.88);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.atmosphereList {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atmosphereList li {
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.atmosphereList li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.atmosphereList span {
+  color: rgba(201, 165, 106, 0.84);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.atmosphereList strong {
+  color: rgba(245, 239, 228, 0.92);
+  font-weight: 500;
+  line-height: 1.72;
+}
+
+.closingSection {
+  overflow: hidden;
+}
+
+.closingStack {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.duoBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.mediaBlock {
+  align-self: stretch;
+}
+
+.figure {
+  min-height: clamp(360px, 40vw, 540px);
+}
+
+.figureImage {
+  object-fit: cover;
+}
+
+@media (max-width: 1080px) {
+  .storyGrid,
+  .foundationsGrid,
+  .duoBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .statement,
+  .duoTitle {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .storySection {
+    padding-top: 4rem;
+  }
+
+  .pillar {
+    grid-template-columns: 1fr;
+  }
+
+  .figure {
+    min-height: 320px;
+  }
+
+  .actions {
+    align-items: stretch;
+  }
+}

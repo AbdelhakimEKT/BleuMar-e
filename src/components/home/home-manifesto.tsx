@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Reveal } from "@/components/ui/reveal";
 import type { Locale } from "@/i18n/config";
 import { withLocale } from "@/i18n/routing";
 
+import { HomeReveal } from "./home-reveal";
 import styles from "./home-manifesto.module.css";
 
 type PhilosophyHighlight = {
@@ -22,19 +22,21 @@ const manifestoCopy = {
     mainAlt: "Service en salle chez Bleu Marée",
     detailAlt: "Détail de table chez Bleu Marée",
     eyebrow: "La maison",
-    title: "Le calme, la lumière, la précision.",
+    title: "Une table qui n'élève jamais la voix.",
     lead:
-      "Bleu Marée cultive une élégance lisible. La salle, le service et le rythme du dîner avancent dans le même sens: accueillir avec douceur, servir avec justesse, laisser une impression durable.",
-    action: "Découvrir le restaurant"
+      "La salle accueille. Le service règle le tempo. On sent qu'une main tient tout. Rien n'est raide.",
+    quote: "La maison n'a rien à prouver. Elle a quelque chose à tenir.",
+    action: "Découvrir la maison"
   },
   en: {
     mainAlt: "Dining room service at Bleu Maree",
     detailAlt: "Table detail at Bleu Maree",
     eyebrow: "The house",
-    title: "Calm, light, and precision.",
+    title: "A table that never raises its voice.",
     lead:
-      "Bleu Maree is built around legible elegance. The room, the service, and the rhythm of dinner all move in the same direction: welcoming softly, serving precisely, and leaving a lasting impression.",
-    action: "Discover the restaurant"
+      "The room welcomes. Service sets the tempo. You can feel a hand holding everything together. Nothing is rigid.",
+    quote: "The house has nothing to prove. It has something to hold.",
+    action: "Discover the house"
   }
 } as const;
 
@@ -44,7 +46,7 @@ export function HomeManifesto({ highlights, locale }: HomeManifestoProps) {
   return (
     <section className={`section ${styles.section}`}>
       <div className={`container ${styles.layout}`}>
-        <Reveal className={styles.mediaColumn}>
+        <HomeReveal className={styles.mediaColumn} variant="soft">
           <figure className={styles.mainImage} data-cursor-label="Service">
             <Image
               src="/images/people/bleu-maree-team-service-in-action.jpg"
@@ -64,13 +66,17 @@ export function HomeManifesto({ highlights, locale }: HomeManifestoProps) {
               className={styles.image}
             />
           </figure>
-        </Reveal>
+        </HomeReveal>
 
         <div className={styles.storyColumn}>
-          <Reveal className={styles.introBlock}>
+          <HomeReveal className={styles.introBlock} delay={0.06}>
             <div className="eyebrow">{copy.eyebrow}</div>
             <h2 className={styles.title}>{copy.title}</h2>
             <p className={styles.lead}>{copy.lead}</p>
+
+            <div className={styles.quotePanel}>
+              <p>{copy.quote}</p>
+            </div>
 
             <Link
               href={withLocale(locale, "/restaurant")}
@@ -79,17 +85,21 @@ export function HomeManifesto({ highlights, locale }: HomeManifestoProps) {
             >
               {copy.action}
             </Link>
-          </Reveal>
+          </HomeReveal>
 
           <div className={styles.storyList}>
             {highlights.map((item, index) => (
-              <Reveal key={item.title} className={styles.storyRow}>
+              <HomeReveal
+                key={item.title}
+                className={styles.storyRow}
+                delay={0.1 + index * 0.06}
+              >
                 <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span>
                 <div className={styles.storyCopy}>
                   <h3>{item.title}</h3>
                   <p>{item.copy}</p>
                 </div>
-              </Reveal>
+              </HomeReveal>
             ))}
           </div>
         </div>

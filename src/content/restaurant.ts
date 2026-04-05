@@ -3,61 +3,67 @@ import type { Locale } from "@/i18n/config";
 const restaurantContentByLocale = {
   fr: {
     pageHero: {
-      eyebrow: "Le restaurant",
-      title: "Une maison où l'élégance reste vivante.",
+      eyebrow: "La maison",
+      title: "Ici, tout est tenu.",
       intro:
-        "À Bleu Marée, la cuisine, la salle et le service avancent dans le même souffle: une table marine contemporaine, lumineuse et profondément hospitalière.",
+        "Salle, service, lumière, rythme. On sent qu'une main tient la maison.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
-      imagePosition: "50% 54%"
+      imagePosition: "50% 54%",
+      markers: [],
+      noteLabel: "Ce que l'on remarque vite",
+      note:
+        "Du calme. De la netteté. Et quelqu'un qui tient vraiment la ligne."
     },
     storyContent: {
-      eyebrow: "Notre histoire",
-      title: "Une maison pensée comme une mise au point.",
+      eyebrow: "La tenue",
+      title: "La salle reçoit. Le service règle le tempo. Le reste peut vivre.",
       intro:
-        "Bleu Marée est né d'une envie simple: offrir à Biarritz une table marine contemporaine où la sophistication reste lisible, sensible et profondément hospitalière.",
+        "On entre, et l'on comprend vite que rien n'est laissé au hasard.",
+      quote: "On reconnaît une maison à ce qu'elle n'appuie jamais.",
       paragraphs: [
-        "La cuisine s'ancre dans les produits de la mer, sans folklore. Les sauces sont courtes, les assaisonnements précis, les dressages aérés. Chaque assiette cherche l'intensité sans jamais perdre la sensation de calme.",
-        "La salle prolonge cette approche avec une esthétique douce, minérale et lumineuse. L'expérience vise autant la justesse du goût que la qualité de présence: temps du service, lumière, circulation, silence, matière."
+        "On n'a pas demandé à la salle d'impressionner. On lui a demandé d'apaiser.",
+        "Le service et la cuisine avancent dans la même idée: tenir le goût, laisser la table respirer."
       ],
       image: "/images/people/bleu-maree-chef-portrait.jpg",
       imageAlt: "Portrait du chef de Bleu Marée",
       imagePosition: "50% 44%"
     },
     foundations: {
-      eyebrow: "Fondations",
-      title: "Trois repères pour comprendre la maison.",
+      eyebrow: "Trois choses",
+      title: "La matière, la lumière, la distance. Puis l'humain.",
       lead:
-        "Bleu Marée tient sur quelques convictions simples: la qualité du produit, la précision du geste et une élégance qui ne se donne jamais en spectacle."
+        "Le reste tient dans leur équilibre, et dans une attention qui ne se montre pas."
     },
     sourcingPillars: [
       {
-        title: "Atlantique & proximité",
+        title: "La mer d'abord",
         copy:
-          "Une sélection attentive de produits marins, complétée par des partenaires régionaux pour les légumes, herbes, pains et accords."
+          "L'Atlantique donne le ton. Le reste suit."
       },
       {
-        title: "Cuisine de précision",
+        title: "Le geste net",
         copy:
-          "Une gastronomie française contemporaine, claire dans ses goûts, tenue dans ses sauces et précise dans ses cuissons."
+          "Cuissons, sauces, assaisonnements, dressages: rien ne parle plus fort que le goût."
       },
       {
-        title: "Élégance sans froideur",
+        title: "La bonne distance",
         copy:
-          "Le luxe est traité ici comme une qualité de sensation: plus de respiration, plus de soin, plus d'attention portée au détail."
+          "Le service approche quand il le faut, puis rend la soirée à ceux qui la vivent."
       }
     ],
     atmosphereDetails: [
       {
-        label: "Ambiance",
-        copy: "Lignes épurées, matières claires, lumière travaillée et présence constante de l'Atlantique."
+        label: "Déjeuner",
+        copy: "Plus clair, plus ouvert, toujours tenu."
       },
       {
-        label: "Équipe",
-        copy: "Une brigade resserrée, attentive, formée à un service précis et discret."
+        label: "Soir",
+        copy: "Plus dense, plus feutré, sans perdre la netteté."
       },
       {
         label: "Occasions",
-        copy: "Dîners à deux, rendez-vous professionnels, anniversaires et soirées sur mesure."
+        copy:
+          "Un déjeuner choisi, un dîner à deux, une célébration discrète: la maison reçoit sans changer de ton."
       }
     ],
     visualMoments: [
@@ -81,17 +87,17 @@ const restaurantContentByLocale = {
       }
     ],
     teamMoments: {
-      title: "Une équipe qui sert avec netteté, sans jamais hausser le ton.",
+      title: "Le service ne s'interpose jamais.",
       copy:
-        "De la cuisine à la salle, chaque interaction cherche la fluidité: le bon tempo, la bonne distance, le bon geste. C'est cette cohérence qui donne à Bleu Marée sa présence.",
-      image: "/images/people/bleu-maree-team-service-in-action.jpg",
-      imageAlt: "Équipe Bleu Marée en service",
-      imagePosition: "50% 46%"
+        "Il accueille comme s'il vous attendait. Il observe, il règle, puis il s'efface.",
+      image: "/images/experience/bleu-maree-service-in-dining-room.jpg",
+      imageAlt: "Service en salle chez Bleu Marée",
+      imagePosition: "50% 48%"
     },
     craftsmanshipMoments: {
-      title: "Le geste et la matière restent visibles.",
+      title: "En cuisine, le geste reste lisible.",
       copy:
-        "Le dressage, la chauffe, l'accord et le dernier geste au passe racontent autant que la carte. Le raffinement tient ici à la maîtrise, pas à l'effet.",
+        "Produit, cuisson, sauce, assaisonnement. Si le geste cherche à se faire admirer, il a déjà trop parlé.",
       image: "/images/experience/bleu-maree-chef-plating-closeup.jpg",
       imageAlt: "Dressage précis en cuisine chez Bleu Marée",
       imagePosition: "50% 52%"
@@ -99,66 +105,72 @@ const restaurantContentByLocale = {
     actions: {
       reserve: "Réserver une table",
       experiences: "Voir les expériences",
-      contact: "Nous écrire"
+      contact: "Contact"
     }
   },
   en: {
     pageHero: {
-      eyebrow: "The restaurant",
-      title: "A house where elegance stays alive.",
+      eyebrow: "The house",
+      title: "Everything is held here.",
       intro:
-        "At Bleu Maree, cuisine, room, and service move in the same breath: a contemporary seafood table that feels luminous, precise, and deeply hospitable.",
+        "Room, service, light, rhythm. You can feel a hand holding the house together.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
-      imagePosition: "50% 54%"
+      imagePosition: "50% 54%",
+      markers: [],
+      noteLabel: "What stands out quickly",
+      note:
+        "Calm. Clarity. And someone truly holding the line."
     },
     storyContent: {
-      eyebrow: "Our story",
-      title: "A house designed like a careful calibration.",
+      eyebrow: "The hold",
+      title: "The room receives. Service sets the tempo. The rest can breathe.",
       intro:
-        "Bleu Maree was born from a simple ambition: to offer Biarritz a contemporary seafood table where sophistication remains readable, sensitive, and deeply hospitable.",
+        "You enter, and you quickly understand that nothing has been left to chance.",
+      quote: "You recognise a house by what it never pushes.",
       paragraphs: [
-        "The cuisine is rooted in seafood without folklore. Sauces stay short, seasoning stays precise, plating stays airy. Every dish seeks intensity without ever losing its sense of calm.",
-        "The dining room extends this approach through a soft, mineral, and luminous aesthetic. The experience aims as much for accuracy of taste as for quality of presence: service tempo, light, circulation, silence, and materiality."
+        "The room was not asked to impress. It was asked to settle people.",
+        "Service and kitchen move inside the same idea: hold the taste, let the table breathe."
       ],
       image: "/images/people/bleu-maree-chef-portrait.jpg",
       imageAlt: "Portrait of the Bleu Maree chef",
       imagePosition: "50% 44%"
     },
     foundations: {
-      eyebrow: "Foundations",
-      title: "Three markers to understand the house.",
+      eyebrow: "Three things",
+      title: "Ingredient, light, distance. Then the human touch.",
       lead:
-        "Bleu Maree rests on a few simple convictions: the quality of the ingredient, the precision of the gesture, and an elegance that never needs to perform."
+        "Everything else rests on their balance, and on an attention that never shows off."
     },
     sourcingPillars: [
       {
-        title: "Atlantic sourcing & proximity",
+        title: "Sea first",
         copy:
-          "A careful selection of seafood, complemented by regional partners for vegetables, herbs, breads, and pairings."
+          "The Atlantic sets the tone. Everything else follows."
       },
       {
-        title: "Precision cuisine",
+        title: "Clean gesture",
         copy:
-          "A contemporary French gastronomy rooted in clarity of flavor, controlled sauces, and accurate cooking."
+          "Cooking, sauces, seasoning, plating: nothing speaks louder than taste."
       },
       {
-        title: "Elegance without distance",
+        title: "The right distance",
         copy:
-          "Luxury is treated here as a quality of sensation: more breathing room, more care, more attention to detail."
+          "Service comes close when needed, then gives the evening back to the people living it."
       }
     ],
     atmosphereDetails: [
       {
-        label: "Atmosphere",
-        copy: "Clean lines, pale materials, carefully shaped light, and the constant presence of the Atlantic."
+        label: "Lunch",
+        copy: "Clearer, more open, always held."
       },
       {
-        label: "Team",
-        copy: "A focused brigade trained for precise, discreet service."
+        label: "Evening",
+        copy: "Denser, quieter, without losing clarity."
       },
       {
         label: "Occasions",
-        copy: "Dinner for two, business meetings, anniversaries, and bespoke evenings."
+        copy:
+          "A chosen lunch, dinner for two, a discreet celebration: the house receives without changing its tone."
       }
     ],
     visualMoments: [
@@ -182,17 +194,17 @@ const restaurantContentByLocale = {
       }
     ],
     teamMoments: {
-      title: "A team that serves with clarity and never raises its voice.",
+      title: "Service never steps in front.",
       copy:
-        "From kitchen to dining room, every interaction aims for flow: the right tempo, the right distance, the right gesture. That coherence is what gives Bleu Maree its presence.",
-      image: "/images/people/bleu-maree-team-service-in-action.jpg",
-      imageAlt: "Bleu Maree team in service",
-      imagePosition: "50% 46%"
+        "It welcomes as if it had been waiting for you. It observes, adjusts, then steps back.",
+      image: "/images/experience/bleu-maree-service-in-dining-room.jpg",
+      imageAlt: "Bleu Maree dining room service",
+      imagePosition: "50% 48%"
     },
     craftsmanshipMoments: {
-      title: "Gesture and material remain visible.",
+      title: "In the kitchen, the gesture stays legible.",
       copy:
-        "Plating, heat, pairing, and the final pass all tell as much of the story as the menu itself. Refinement here comes from mastery, not effect.",
+        "Ingredient, cooking, sauce, seasoning. If the gesture asks to be admired, it is already speaking too loudly.",
       image: "/images/experience/bleu-maree-chef-plating-closeup.jpg",
       imageAlt: "Precise plating in the Bleu Maree kitchen",
       imagePosition: "50% 52%"
@@ -200,7 +212,7 @@ const restaurantContentByLocale = {
     actions: {
       reserve: "Book a table",
       experiences: "View experiences",
-      contact: "Write to us"
+      contact: "Contact"
     }
   }
 };

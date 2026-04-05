@@ -1,0 +1,160 @@
+.section {
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.82fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.copy {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.title {
+  max-width: 11ch;
+  margin: 0;
+  color: rgba(16, 39, 56, 0.98);
+  font-family: var(--display);
+  font-size: clamp(2.95rem, 5.4vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba(16, 39, 56, 0.78);
+  font-size: 1.06rem;
+  line-height: 1.86;
+}
+
+.lineList {
+  display: grid;
+  gap: 0;
+}
+
+.lineItem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(16, 39, 56, 0.12);
+  color: rgba(16, 39, 56, 0.94);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2.2vw, 1.92rem);
+  line-height: 1.08;
+}
+
+.lineItem:last-child {
+  border-bottom: 1px solid rgba(16, 39, 56, 0.12);
+}
+
+.lineIndex {
+  color: rgba(183, 136, 71, 0.82);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1;
+}
+
+.closingBlock {
+  display: grid;
+  gap: 0.45rem;
+  padding-left: 1.15rem;
+  border-left: 1px solid rgba(183, 136, 71, 0.4);
+}
+
+.closing,
+.signature {
+  margin: 0;
+}
+
+.closing {
+  color: rgba(16, 39, 56, 0.9);
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1.18;
+}
+
+.signature {
+  color: rgba(16, 39, 56, 0.62);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+}
+
+.mediaColumn {
+  position: relative;
+  min-height: 680px;
+  display: grid;
+  align-items: end;
+}
+
+.figure {
+  position: absolute;
+  inset: 0 0 3.6rem 4rem;
+  overflow: hidden;
+  border-radius: 34px;
+  box-shadow: 0 30px 90px rgba(12, 28, 39, 0.18);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.captionPanel {
+  position: relative;
+  z-index: 1;
+  max-width: 22rem;
+  padding: 1.35rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(6, 20, 30, 0.66), rgba(6, 20, 30, 0.8)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.12), transparent 34%);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.captionPanel p {
+  margin: 0;
+  color: rgba(245, 239, 228, 0.88);
+  line-height: 1.76;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaColumn {
+    min-height: 540px;
+  }
+
+  .figure {
+    inset: 0 0 3rem 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .title {
+    max-width: 10ch;
+  }
+
+  .lineItem {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaColumn {
+    min-height: 460px;
+  }
+}

@@ -19,26 +19,30 @@ const menusContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "La carte",
-      title: "Une carte portée par l'Atlantique et la saison.",
+      title: "La carte suit la mer, l'heure et l'envie.",
       intro:
-        "Du déjeuner précis aux parcours dégustation, la carte Bleu Marée suit les arrivages, les saisons et la lumière du service.",
+        "Déjeuner, assiettes, parcours dégustation, cave et accords. Chaque heure de table trouve ici sa vérité.",
       image: "/images/menu/bleu-maree-menu-scallops-signature.jpg",
-      imagePosition: "50% 56%"
+      imagePosition: "50% 56%",
+      markers: [],
+      noteLabel: "La promesse de la carte",
+      note:
+        "La carte doit donner faim avant de donner des raisons."
     },
     sectionIntro: {
       eyebrow: "À table",
-      title: "Du déjeuner aux grands parcours, chaque moment a sa place.",
+      title: "Chaque moment de table parle avec la même voix.",
       lead:
-        "Déjeuner précis, assiettes à la carte, parcours dégustation, cave et accords: chacun trouve ici son rythme, sans perdre la cohérence de la maison."
+        "Déjeuner, dégustation, cave et accords restent dans le même monde tout en changeant de cadence."
     },
     seasonalitySplit: {
       eyebrow: "Selon arrivage",
-      title: "La carte reste vivante, guidée par le marché et la saison.",
+      title: "La carte change quand le produit l'exige.",
       intro:
-        "Certaines assiettes n'existent que le temps d'un arrivage, d'une mer plus calme ou d'un produit au sommet de sa tension.",
+        "Certaines assiettes n'appartiennent qu'à un arrivage, à une lumière, à une saison courte.",
       paragraphs: [
-        "Les menus de fête, les accords spéciaux et les moments signatures apparaissent lorsque la saison l'appelle, puis s'effacent sans alourdir l'ensemble.",
-        "C'est ce mouvement qui garde Bleu Marée juste: une maison attentive au moment plutôt qu'une carte figée."
+        "Un plat entre à la carte quand il tient vraiment la maison. Pas avant.",
+        "C'est ce mouvement qui garde la carte juste, vivante, jamais automatique."
       ],
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Détail de table Bleu Marée",
@@ -311,34 +315,38 @@ const menusContentByLocale = {
       }
     ],
     menuNotes: [
-      "Certaines préparations changent discrètement avec les arrivages, sans jamais rompre l'équilibre de la carte.",
-      "Les accords peuvent prolonger la dégustation ou simplement accompagner un déjeuner plus court avec la même justesse.",
-      "Les menus spéciaux n'apparaissent que lorsqu'ils ont un vrai rôle à jouer: fête, collaboration, soirée unique ou saison très courte."
+      "Une assiette peut sortir. Si elle manque de justesse, elle ne revient pas.",
+      "Le vin n'est jamais là pour montrer qu'il sait. Il sert la table.",
+      "Les menus spéciaux n'apparaissent que lorsqu'ils déplacent vraiment la maison: fête, collaboration, saison très courte."
     ]
   },
   en: {
     pageHero: {
       eyebrow: "Menus",
-      title: "A menu shaped by the Atlantic and the season.",
+      title: "The menu follows sea, hour, and appetite.",
       intro:
-        "From a precise lunch to immersive tasting journeys, the Bleu Maree menu follows arrivals, seasons, and the light of service.",
+        "Lunch, a la carte plates, tasting journeys, cellar, and pairings. Each dining hour finds its truth here.",
       image: "/images/menu/bleu-maree-menu-scallops-signature.jpg",
-      imagePosition: "50% 56%"
+      imagePosition: "50% 56%",
+      markers: [],
+      noteLabel: "What the menu promises",
+      note:
+        "The menu should create hunger before it creates reasons."
     },
     sectionIntro: {
       eyebrow: "At the table",
-      title: "From lunch to longer tastings, every moment has its place.",
+      title: "Each dining moment speaks with the same voice.",
       lead:
-        "Lunch, a la carte dishes, tasting paths, cellar, and pairings each follow their own rhythm while staying true to the house."
+        "Lunch, tasting, cellar, and pairings each shift pace while staying unmistakably part of the same house."
     },
     seasonalitySplit: {
       eyebrow: "According to market arrivals",
-      title: "The menu stays alive, guided by market rhythm and season.",
+      title: "The menu changes when the ingredient asks it to.",
       intro:
-        "Some plates only exist for the length of an arrival, a calmer sea, or a product reaching its sharpest point.",
+        "Some plates belong only to an arrival, a light, or a brief season.",
       paragraphs: [
-        "Celebration menus, special pairings, and signature moments appear when the season calls for them, then quietly make room again.",
-        "That movement is what keeps Bleu Maree accurate: a house that works with the moment rather than a fixed list."
+        "A dish enters the menu when it truly holds the house. Not before.",
+        "That movement is what keeps the menu accurate, alive, and never automatic."
       ],
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Bleu Maree table detail",
@@ -611,9 +619,9 @@ const menusContentByLocale = {
       }
     ],
     menuNotes: [
-      "Some preparations shift quietly with arrivals while preserving the overall balance of the menu.",
-      "Pairings can extend the tasting experience or simply accompany a shorter lunch with the same level of care.",
-      "Special menus only appear when they have a real role to play: celebration, collaboration, singular evening, or brief season."
+      "A plate may leave. If it lacks accuracy, it does not return.",
+      "Wine is never there to show what it knows. It serves the table.",
+      "Special menus appear only when they genuinely move the house: celebration, collaboration, very short season."
     ]
   }
 };

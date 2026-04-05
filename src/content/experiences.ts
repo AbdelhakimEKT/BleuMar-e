@@ -3,18 +3,21 @@ import type { Locale } from "@/i18n/config";
 const experiencesContentByLocale = {
   fr: {
     pageHero: {
-      eyebrow: "Expériences",
-      title: "Soirées spéciales, moments rares et privatisations sur mesure.",
+      eyebrow: "Rendez-vous",
+      title: "Rares, parce que tout n'a pas sa place ici.",
       intro:
-        "Menus ponctuels, accords, privatisations et soirées signatures prennent ici une forme plus désirable, plus visuelle et plus immédiate.",
+        "Bleu Marée n'ajoute rien pour faire nombre. Un moment n'apparaît ici que s'il tient vraiment la maison.",
       image: "/images/people/bleu-maree-team-service-in-action.jpg",
-      imagePosition: "50% 45%"
+      imagePosition: "50% 45%",
+      markers: [],
+      noteLabel: "La ligne",
+      note: "Une date existe quand elle mérite vraiment la salle."
     },
     upcomingIntro: {
-      eyebrow: "À venir",
-      title: "Des événements qui prolongent naturellement l'univers du restaurant.",
+      eyebrow: "Le principe",
+      title: "Ici, rien n'est ajouté pour occuper le calendrier.",
       lead:
-        "Dîners à thème, accords, privatisations et soirées signatures trouvent ici leur place, avec la même tenue que le reste de la maison."
+        "Le calendrier ne décide pas. La maison oui. Un rendez-vous ouvre seulement lorsqu'il apporte du relief sans changer le ton."
     },
     upcomingExperiences: [
       {
@@ -22,7 +25,7 @@ const experiencesContentByLocale = {
         date: "Jeudi soir",
         time: "20h00",
         description:
-          "Menu dégustation pensé avec un accord de quatre verres autour des reliefs salins, minéraux et fumés.",
+          "Un parcours salin, minéral, fumé. Quatre verres pour prolonger la mer sans jamais la couvrir.",
         ctaLabel: "Réserver",
         ctaHref: "/reservation",
         image: "/images/wines/bleu-maree-wine-pairing-scene-01.jpg",
@@ -34,7 +37,7 @@ const experiencesContentByLocale = {
         date: "Sur demande",
         time: "Capacité limitée",
         description:
-          "Une proposition scénarisée pour anniversaires, célébrations et dîners marquants dans une atmosphère plus intime.",
+          "Pour un déjeuner ou un dîner qui demande plus d'intimité, plus de temps, moins de spectacle.",
         ctaLabel: "Nous contacter",
         ctaHref: "/contact",
         image: "/images/details/bleu-maree-detail-table-setting-alt-01.jpg",
@@ -46,7 +49,7 @@ const experiencesContentByLocale = {
         date: "Déjeuner ou dîner",
         time: "Étude personnalisée",
         description:
-          "Pour les entreprises, maisons de luxe ou événements privés souhaitant une expérience premium à Biarritz.",
+          "Pour une maison, une marque ou un cercle privé qui veut recevoir ici sans défaire le lieu.",
         ctaLabel: "Demander un devis",
         ctaHref: "/contact",
         image: "/images/experience/bleu-maree-service-in-dining-room.jpg",
@@ -55,10 +58,10 @@ const experiencesContentByLocale = {
       }
     ],
     privateDining: {
-      eyebrow: "Privatisation",
-      title: "Une scénographie discrète pour les événements privés.",
+      eyebrow: "Recevoir ici",
+      title: "Recevoir ici demande plus d'égard que de décor.",
       intro:
-        "Bleu Marée peut accueillir des dîners de direction, des lancements ou des célébrations avec une qualité de service cohérente avec le positionnement premium.",
+        "Déjeuners, dîners, lancements ou célébrations trouvent leur place ici lorsqu'ils acceptent le rythme de la salle, de la cuisine et du service.",
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Mise en scène de table premium",
       imagePosition: "50% 52%",
@@ -68,48 +71,51 @@ const experiencesContentByLocale = {
       }
     },
     privateDiningPoints: [
-      "Accueil sur mesure, menus dédiés et accords personnalisés.",
-      "Configuration adaptable pour comités restreints, lancements ou dîners signature.",
-      "Accompagnement par l'équipe pour le tempo, les attentions et les contraintes de service."
+      "Le nombre de convives reste tenu pour préserver le rythme du service et de la salle.",
+      "Menu, cave et tempo sont composés dans la même ligne que la maison.",
+      "Chaque attention utile est prévue. Rien n'est ajouté pour faire événement."
     ],
     seasonality: {
-      eyebrow: "Saisonnalité",
-      title: "Des temps forts qui apparaissent au bon moment.",
+      eyebrow: "Rareté",
+      title: "Quelques dates seulement. Et c'est suffisant.",
       lead:
-        "Menus de fête, collaborations, soirées dégustation ou rendez-vous de saison peuvent venir enrichir la maison sans la dénaturer."
+        "La rareté protège le désir, la lecture et le caractère de la maison."
     },
     seasonalMoments: [
       {
-        title: "Menu de saison",
+        title: "Apparition juste",
         copy:
-          "Une carte qui suit les arrivages et les textures du moment plutôt qu'une promesse figée."
+          "Une date n'existe que si le produit, la saison ou l'occasion la commandent vraiment."
       },
       {
-        title: "Temps forts calendaires",
+        title: "Peu d'annonces",
         copy:
-          "Fêtes, grands week-ends, Saint-Valentin ou moments de maison peuvent être annoncés avec clarté, sans alourdir l'ensemble."
+          "La lecture reste nette parce que la maison ne se disperse pas en multiples formats."
       },
       {
-        title: "Rythme maîtrisé",
+        title: "Même ligne",
         copy:
-          "Chaque expérience peut apparaître le temps juste, puis laisser la place à la suivante."
+          "Même lumière, même précision, même distance de service, quel que soit le moment."
       }
     ]
   },
   en: {
     pageHero: {
-      eyebrow: "Experiences",
-      title: "Special evenings, rare moments, and bespoke private dining.",
+      eyebrow: "Appointments",
+      title: "Rare, because not everything belongs here.",
       intro:
-        "One-off menus, pairings, private dining, and signature evenings take on a more desirable, more visual, more immediate form here.",
+        "Bleu Maree adds nothing just to fill a calendar. A moment appears here only if it fully holds the house.",
       image: "/images/people/bleu-maree-team-service-in-action.jpg",
-      imagePosition: "50% 45%"
+      imagePosition: "50% 45%",
+      markers: [],
+      noteLabel: "The line",
+      note: "A date exists only when it truly deserves the room."
     },
     upcomingIntro: {
-      eyebrow: "Coming up",
-      title: "Events that naturally extend the restaurant's universe.",
+      eyebrow: "The principle",
+      title: "Nothing is added here just to occupy the calendar.",
       lead:
-        "Themed dinners, pairings, private events, and signature evenings all live here with the same sense of restraint as the rest of the house."
+        "The calendar does not decide. The house does. An appointment opens only when it adds depth without shifting the tone."
     },
     upcomingExperiences: [
       {
@@ -117,7 +123,7 @@ const experiencesContentByLocale = {
         date: "Thursday evening",
         time: "8:00 pm",
         description:
-          "A tasting menu shaped around a four-glass pairing of saline, mineral, and smoky notes.",
+          "A saline, mineral, smoky journey. Four glasses that extend the sea without ever covering it.",
         ctaLabel: "Book",
         ctaHref: "/reservation",
         image: "/images/wines/bleu-maree-wine-pairing-scene-01.jpg",
@@ -129,7 +135,7 @@ const experiencesContentByLocale = {
         date: "On request",
         time: "Limited capacity",
         description:
-          "A scenographed proposal for anniversaries, celebrations, and memorable dinners in a more intimate atmosphere.",
+          "For a lunch or dinner that calls for more intimacy, more time, and less spectacle.",
         ctaLabel: "Contact us",
         ctaHref: "/contact",
         image: "/images/details/bleu-maree-detail-table-setting-alt-01.jpg",
@@ -141,7 +147,7 @@ const experiencesContentByLocale = {
         date: "Lunch or dinner",
         time: "Tailored study",
         description:
-          "For companies, luxury houses, or private events seeking a premium experience in Biarritz.",
+          "For a house, brand, or private circle that wants to host here without undoing the place.",
         ctaLabel: "Request a proposal",
         ctaHref: "/contact",
         image: "/images/experience/bleu-maree-service-in-dining-room.jpg",
@@ -150,10 +156,10 @@ const experiencesContentByLocale = {
       }
     ],
     privateDining: {
-      eyebrow: "Private dining",
-      title: "A discreet stagecraft for private events.",
+      eyebrow: "Hosting here",
+      title: "Hosting here asks for more regard than decor.",
       intro:
-        "Bleu Maree can host executive dinners, launches, or celebrations with a level of service consistent with its premium positioning.",
+        "Lunches, dinners, launches, or celebrations find their place here when they accept the rhythm of the room, the kitchen, and the service.",
       image: "/images/details/bleu-maree-detail-table-setting.jpg",
       imageAlt: "Premium table staging",
       imagePosition: "50% 52%",
@@ -163,31 +169,31 @@ const experiencesContentByLocale = {
       }
     },
     privateDiningPoints: [
-      "Tailored welcome, dedicated menus, and custom pairings.",
-      "Flexible setup for small committees, launches, or signature dinners.",
-      "Support from the team on tempo, guest attentions, and service constraints."
+      "Guest count stays deliberately held to preserve the rhythm of the room and the service.",
+      "Menu, cellar, and pacing are shaped in the same line as the house.",
+      "Every useful attention is planned. Nothing is added just to create an event."
     ],
     seasonality: {
-      eyebrow: "Seasonality",
-      title: "Highlights that appear at the right moment.",
+      eyebrow: "Rarity",
+      title: "Only a few dates. And that is enough.",
       lead:
-        "Celebration menus, collaborations, tasting evenings, and seasonal moments can enrich the house without changing its tone."
+        "Rarity protects desire, clarity, and the character of the house."
     },
     seasonalMoments: [
       {
-        title: "Seasonal menu",
+        title: "Precise appearance",
         copy:
-          "A menu that follows arrivals and textures of the moment rather than a fixed promise."
+          "A date exists only if product, season, or occasion genuinely call for it."
       },
       {
-        title: "Calendar highlights",
+        title: "Few announcements",
         copy:
-          "Holidays, long weekends, Valentine's Day, or house-led moments can be announced clearly without making the overall experience feel heavier."
+          "The page stays clear because the house refuses to scatter into too many formats."
       },
       {
-        title: "Controlled rhythm",
+        title: "Same line",
         copy:
-          "Each experience can appear for the right amount of time, then quietly make room for the next."
+          "Same light, same precision, same service distance, whatever the moment."
       }
     ]
   }

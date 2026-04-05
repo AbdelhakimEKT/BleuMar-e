@@ -70,6 +70,20 @@
   line-height: 1.88;
 }
 
+.quotePanel {
+  max-width: 28rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid rgba(201, 165, 106, 0.46);
+}
+
+.quotePanel p {
+  margin: 0;
+  color: rgba(245, 239, 228, 0.92);
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.2;
+}
+
 .storyList {
   display: grid;
   gap: 0;

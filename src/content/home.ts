@@ -3,34 +3,36 @@ import type { Locale } from "@/i18n/config";
 const homeContentByLocale = {
   fr: {
     heroContent: {
-      eyebrow: "Restaurant gastronomique à Biarritz",
-      title: "La mer prend une forme plus rare.",
+      eyebrow: "Maison de gastronomie française contemporaine",
+      title: "La mer attire. La maison retient.",
       intro:
-        "Bleu Marée compose une cuisine française contemporaine inspirée par l'Atlantique, la saison et les grands produits. Chaque service est pensé comme une traversée lente, lumineuse et précise.",
+        "La mer arrive nette. Le service laisse la table respirer. Le reste se sent.",
       primaryCta: { href: "/reservation", label: "Réserver une table" },
       secondaryCta: { href: "/menus", label: "Découvrir la carte" },
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+      houseNote:
+        "Ici, rien n'est là pour impressionner. Tout est là pour tenir la soirée.",
       highlights: [
-        "Vue inspirée par l'océan",
-        "Cuisine française contemporaine",
-        "Service du soir"
+        "La mer suit l'arrivage, pas la pose",
+        "Une lumière qui calme avant de séduire",
+        "Un service qui sait se retirer"
       ]
     },
     philosophyHighlights: [
       {
-        title: "Produit noble, geste juste",
+        title: "La mer n'a pas besoin d'effet",
         copy:
-          "Poissons, crustacés et légumes sont travaillés avec précision pour laisser la matière première parler avant l'effet."
+          "Quand le produit tient, la maison le laisse parler sans hausser le ton."
       },
       {
-        title: "Rythme de la saison",
+        title: "Le rythme compte autant que l'assiette",
         copy:
-          "La carte évolue avec les marées, les arrivages et l'énergie du moment, pour garder une signature toujours vivante."
+          "On doit se sentir accueilli avant même la première bouchée, puis porté jusqu'au dernier verre."
       },
       {
-        title: "Hospitalité enveloppante",
+        title: "Le soin sans théâtre",
         copy:
-          "Une atmosphère calme, contemporaine et chaleureuse qui accompagne aussi bien un dîner d'exception qu'une célébration discrète."
+          "La précision se remarque après coup. Sur le moment, elle simplifie tout."
       }
     ],
     signatureDishes: [
@@ -61,57 +63,59 @@ const homeContentByLocale = {
     ],
     guestJourney: [
       {
-        title: "Un accueil à tempo juste",
+        title: "L'arrivée doit déjà rassurer",
         copy:
-          "L'arrivée se fait dans une lumière feutrée, avec une attention immédiate portée à l'occasion, au tempo du dîner et aux attentes de la table."
+          "Réserver, entrer, s'installer: tout doit sembler simple, net, presque déjà connu."
       },
       {
-        title: "Une carte qui déroule sa cadence",
+        title: "Le repas monte sans brusquer",
         copy:
-          "Les menus avancent avec naturel, entre fraîcheur, relief et profondeur, en laissant toujours une place à la surprise."
+          "Fraîcheur, relief, profondeur: la carte gagne en intensité sans jamais faire sentir l'effort."
       },
       {
-        title: "Un souvenir qui reste",
+        title: "La finale laisse plus qu'un goût",
         copy:
-          "Service précis, accords sensibles et dernière note bien tenue: la table laisse une impression qui dépasse le dîner."
+          "Ce qui reste n'est pas une démonstration, mais une soirée entière tenue avec justesse."
       }
     ],
     curatedImpressions: [
-      "À Biarritz, une table où l'iode rencontre le calme.",
-      "Une adresse contemporaine où chaque détail paraît à sa place.",
-      "La sensation d'un dîner précis, lumineux, que l'on a envie de revivre."
+      "On sort d'ici avec plus qu'un goût: une tenue.",
+      "Une adresse rare, parce qu'elle reste humaine jusque dans la retenue.",
+      "Un dîner qui ne cherche jamais à plaire trop vite."
     ]
   },
   en: {
     heroContent: {
-      eyebrow: "Fine dining restaurant in Biarritz",
-      title: "The sea takes on a rarer form.",
+      eyebrow: "Contemporary French gastronomic house",
+      title: "The sea draws you in. The house makes you stay.",
       intro:
-        "Bleu Marée shapes a contemporary French cuisine inspired by the Atlantic, the season, and noble ingredients. Every service is conceived as a slow, luminous, and precise crossing.",
+        "The sea arrives clear. Service lets the table breathe. The rest is simply felt.",
       primaryCta: { href: "/reservation", label: "Book a table" },
       secondaryCta: { href: "/menus", label: "Explore the menu" },
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
+      houseNote:
+        "Nothing here is made to impress. Everything is made to hold the evening.",
       highlights: [
-        "Ocean-inspired dining room",
-        "Contemporary French cuisine",
-        "Evening service"
+        "The sea follows arrivals, not display",
+        "A light that calms before it seduces",
+        "Service that knows how to step back"
       ]
     },
     philosophyHighlights: [
       {
-        title: "Noble ingredients, precise gesture",
+        title: "The sea does not need effect",
         copy:
-          "Fish, shellfish, and vegetables are handled with precision so the ingredient speaks before the effect."
+          "When the ingredient holds, the house lets it speak without raising the tone."
       },
       {
-        title: "Seasonal rhythm",
+        title: "Rhythm matters as much as the plate",
         copy:
-          "The menu evolves with tides, arrivals, and the mood of the moment, keeping the signature alive."
+          "You should feel welcomed before the first bite, then carried through to the last glass."
       },
       {
-        title: "Enveloping hospitality",
+        title: "Care without theatre",
         copy:
-          "A calm, contemporary, and warm atmosphere designed for both exceptional dinners and intimate celebrations."
+          "Precision is noticed afterwards. In the moment, it simply makes everything easier."
       }
     ],
     signatureDishes: [
@@ -142,25 +146,25 @@ const homeContentByLocale = {
     ],
     guestJourney: [
       {
-        title: "A perfectly paced welcome",
+        title: "Arrival should already reassure",
         copy:
-          "Arrival unfolds in soft light, with immediate attention paid to the occasion, the pace of dinner, and the table’s preferences."
+          "Booking, arriving, and settling in should all feel simple, clear, and almost already familiar."
       },
       {
-        title: "A menu that carries its own rhythm",
+        title: "The meal builds without pushing",
         copy:
-          "Menus unfold naturally through freshness, relief, and depth while always leaving room for surprise."
+          "Freshness, depth, relief: the menu gains intensity without ever making the evening feel effortful."
       },
       {
-        title: "A memory that stays",
+        title: "The finish leaves more than flavour",
         copy:
-          "Precise service, thoughtful pairings, and a well-held final note turn dinner into something memorable."
+          "What lingers is not a chef's trick, but a whole evening carried with accuracy."
       }
     ],
     curatedImpressions: [
-      "The address where Biarritz, sea air, and quiet elegance meet.",
-      "A contemporary table where every detail feels measured just right.",
-      "The feeling of a dinner that breathes and draws you back."
+      "You leave with more than flavour. You leave with a sense of hold.",
+      "A rare address because it stays human even in restraint.",
+      "A dinner that never tries to please too quickly."
     ]
   }
 };

@@ -16,18 +16,18 @@ const uiCopy = {
     openingHoursHeading: "Horaires",
     addressLabel: "Adresse",
     contactLabel: "Contact",
-    footerTagline: "Bleu Marée · Biarritz · Expérience gastronomique premium",
+    footerTagline: "Bleu Marée · Biarritz · Une maison ouverte pour recevoir juste",
     contactForm: {
       title: "Écrire à la maison",
       intro:
-        "Pour une privatisation, une demande presse ou une occasion particulière, l'équipe peut vous répondre rapidement depuis ce formulaire.",
+        "Pour une privatisation, une demande presse ou une occasion particulière, la maison vous répond depuis ce formulaire avec le même soin que celui porté à la table.",
       name: "Nom",
       email: "Email",
       phone: "Téléphone",
       subject: "Sujet",
       message: "Message",
       hint:
-        "Le message est transmis directement à l'équipe pour permettre une réponse plus rapide et plus attentive.",
+        "Le message est transmis directement à l'équipe afin de permettre une réponse attentive, claire et sans détour.",
       submit: "Envoyer le message",
       submitting: "Envoi..."
     },
@@ -43,7 +43,7 @@ const uiCopy = {
     reservationForm: {
       title: "Réserver une table",
       intro:
-        "Choisissez votre moment, indiquez vos préférences et laissez la maison revenir vers vous avec une réponse claire et rapide.",
+        "Date, heure, couverts, puis l'essentiel. La maison revient ensuite vers vous.",
       name: "Nom et prénom",
       email: "Email",
       phone: "Téléphone",
@@ -61,11 +61,11 @@ const uiCopy = {
         private: "Privatisation"
       },
       hint:
-        "La demande reste courte, lisible et suffisamment précise pour permettre une réponse soignée.",
+        "Une demande courte suffit. Le reste se règle ensuite avec la maison.",
       submit: "Envoyer la demande",
       submitting: "Envoi en cours...",
       storagePending:
-        "L'enregistrement des demandes n'est pas encore activé sur cette version. Le parcours reste prêt pour une vraie sauvegarde côté back-office."
+        "La demande garde déjà le bon niveau d'information pour permettre une reprise de contact claire et soignée."
     },
     reservationApi: {
       missingFields:
@@ -145,18 +145,18 @@ const uiCopy = {
     openingHoursHeading: "Opening hours",
     addressLabel: "Address",
     contactLabel: "Contact",
-    footerTagline: "Bleu Marée · Biarritz · Premium gastronomic experience",
+    footerTagline: "Bleu Marée · Biarritz · A house opened to receive people well",
     contactForm: {
       title: "Write to the house",
       intro:
-        "For a private event, a press request, or a special occasion, the team can respond quickly through this form.",
+        "For a private event, a press request, or a special occasion, the house can respond through this form with the same care found at the table.",
       name: "Name",
       email: "Email",
       phone: "Phone",
       subject: "Subject",
       message: "Message",
       hint:
-        "The message is sent directly to the team so the house can reply with more attention and speed.",
+        "The message is sent directly to the team so the house can reply attentively, clearly, and without friction.",
       submit: "Send message",
       submitting: "Sending..."
     },
@@ -172,7 +172,7 @@ const uiCopy = {
     reservationForm: {
       title: "Book a table",
       intro:
-        "Choose your moment, share your preferences, and let the house come back to you with a clear and timely response.",
+        "Date, time, guests, then only what matters. The house comes back to you after that.",
       name: "Full name",
       email: "Email",
       phone: "Phone",
@@ -190,11 +190,11 @@ const uiCopy = {
         private: "Private event"
       },
       hint:
-        "The request stays short, legible, and precise enough to support a thoughtful response.",
+        "A short request is enough. The rest is then refined with the house.",
       submit: "Send request",
       submitting: "Sending...",
       storagePending:
-        "Live request storage is not enabled on this version yet. The journey is still ready for real back-office saving."
+        "The request already carries the right level of detail for a clear and polished follow-up."
     },
     reservationApi: {
       missingFields:

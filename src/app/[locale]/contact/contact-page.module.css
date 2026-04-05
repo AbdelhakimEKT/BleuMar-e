@@ -1,0 +1,318 @@
+.overviewSection,
+.hospitalitySection,
+.faqSection {
+  overflow: hidden;
+}
+
+.overviewGrid,
+.hospitalityGrid,
+.faqGrid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.6rem);
+  align-items: start;
+}
+
+.overviewGrid,
+.faqGrid {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.hospitalityGrid {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+}
+
+.overviewCopy,
+.storyCopy,
+.faqIntro {
+  display: grid;
+  gap: 1rem;
+}
+
+.overviewPanels,
+.contactColumn,
+.storyColumn {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: inherit;
+  font-family: var(--display);
+  font-size: clamp(2.9rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: 0.01em;
+}
+
+.sectionLead {
+  max-width: 35rem;
+  margin: 0;
+  color: inherit;
+  font-size: 1.04rem;
+  line-height: 1.82;
+  opacity: 0.84;
+}
+
+.overviewLine,
+.arrivalLine,
+.faqLine {
+  margin: 0.4rem 0 0;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  line-height: 1.16;
+}
+
+.overviewLine,
+.faqLine {
+  max-width: 28rem;
+  color: rgba(16, 39, 56, 0.88);
+}
+
+.arrivalLine {
+  max-width: 24rem;
+  padding-left: 1.15rem;
+  border-left: 1px solid rgba(201, 165, 106, 0.42);
+  color: rgba(245, 239, 228, 0.92);
+}
+
+.infoPanel,
+.hoursPanel,
+.directPanel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.55rem;
+  border-radius: 28px;
+}
+
+.infoPanel,
+.hoursPanel {
+  border: 1px solid rgba(16, 39, 56, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.58)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.12), transparent 28%);
+  box-shadow: 0 22px 60px rgba(16, 39, 56, 0.08);
+  color: #102738;
+}
+
+.directPanel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(7, 24, 35, 0.46), rgba(7, 24, 35, 0.64)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.08), transparent 30%);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.16);
+}
+
+.panelLabel {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.contactList,
+.hoursList,
+.detailList {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contactList li,
+.hoursList li,
+.detailList li {
+  display: grid;
+  gap: 0.32rem;
+  padding-top: 1rem;
+}
+
+.contactList li + li,
+.hoursList li + li {
+  border-top: 1px solid rgba(16, 39, 56, 0.12);
+}
+
+.detailList li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contactList li:first-child,
+.hoursList li:first-child,
+.detailList li:first-child {
+  padding-top: 0;
+}
+
+.contactList span,
+.hoursList span,
+.detailList span {
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.contactList strong,
+.hoursList strong {
+  color: #102738;
+  font-weight: 500;
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.detailList strong {
+  color: rgba(245, 239, 228, 0.9);
+  font-weight: 500;
+  line-height: 1.76;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.figure {
+  min-height: clamp(320px, 38vw, 500px);
+}
+
+.figureImage {
+  object-fit: cover;
+}
+
+.directLead {
+  max-width: 28rem;
+  margin: 0;
+  color: rgba(219, 227, 230, 0.82);
+  line-height: 1.76;
+}
+
+.directLinks {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.directLink {
+  display: grid;
+  gap: 0.28rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.directLink:hover,
+.directLink:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(201, 165, 106, 0.34);
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+
+.directLink span {
+  color: rgba(201, 165, 106, 0.86);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.directLink strong {
+  color: rgba(245, 239, 228, 0.92);
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.formWrap {
+  display: block;
+}
+
+.faqItems {
+  display: grid;
+  gap: 1rem;
+}
+
+.faqItem {
+  border: 1px solid rgba(16, 39, 56, 0.12);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(247, 242, 233, 0.62)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.08), transparent 30%);
+  box-shadow: 0 18px 48px rgba(16, 39, 56, 0.08);
+  overflow: hidden;
+}
+
+.faqQuestion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.9rem;
+  list-style: none;
+  cursor: pointer;
+  padding: 1.2rem 1.35rem;
+  color: #102738;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.faqItem[open] .faqQuestion::after {
+  content: "−";
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 1.35rem 1.3rem;
+  color: rgba(16, 39, 56, 0.78);
+  line-height: 1.76;
+}
+
+@media (max-width: 1080px) {
+  .overviewGrid,
+  .hospitalityGrid,
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .figure {
+    min-height: 280px;
+  }
+
+  .actions {
+    align-items: stretch;
+  }
+
+  .faqQuestion {
+    padding: 1rem 1.05rem;
+  }
+
+  .faqAnswer {
+    padding: 0 1.05rem 1.05rem;
+  }
+}

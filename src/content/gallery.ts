@@ -6,6 +6,7 @@ export type GalleryAspect = "wide" | "landscape" | "portrait" | "square";
 export type GalleryItem = {
   id: string;
   title: string;
+  compactLabel?: string;
   caption: string;
   alt: string;
   image: string;
@@ -28,6 +29,7 @@ type GallerySequenceCopy = Record<
 
 type GalleryTranslation = {
   title: string;
+  compactLabel?: string;
   caption: string;
   alt: string;
 };
@@ -369,11 +371,13 @@ const galleryTranslations: Record<Locale, Record<string, GalleryTranslation>> = 
     },
     "room-sunset": {
       title: "Tables face au coucher du soleil",
+      compactLabel: "Coucher du soleil",
       caption: "Une respiration plus calme, presque suspendue, avant le service du soir.",
       alt: "Tables dressées devant les baies vitrées au coucher du soleil"
     },
     "room-atlantic": {
       title: "Lecture architecturale de la salle",
+      compactLabel: "Horizon",
       caption: "Lignes nettes, horizon visible et sensation d'espace parfaitement tenue.",
       alt: "Salle élégante ouverte sur l'Atlantique"
     },
@@ -424,16 +428,19 @@ const galleryTranslations: Record<Locale, Record<string, GalleryTranslation>> = 
     },
     "plate-lunch-starter": {
       title: "Entrée de déjeuner",
+      compactLabel: "Déjeuner",
       caption: "Une ouverture plus légère, précise et lumineuse.",
       alt: "Entrée légère du déjeuner chez Bleu Marée"
     },
     "plate-tasting-amuse": {
       title: "Ouverture de dégustation",
+      compactLabel: "Ouverture",
       caption: "Un premier geste court, vif, précis.",
       alt: "Amuse-bouche du menu dégustation"
     },
     "plate-tasting-cold": {
       title: "Temps froid du parcours",
+      compactLabel: "Temps froid",
       caption: "L'iode et la fraîcheur s'installent avant la profondeur.",
       alt: "Assiette froide du menu dégustation"
     },
@@ -546,11 +553,13 @@ const galleryTranslations: Record<Locale, Record<string, GalleryTranslation>> = 
     },
     "room-sunset": {
       title: "Tables facing the sunset",
+      compactLabel: "Sunset",
       caption: "A quieter, almost suspended moment before dinner service.",
       alt: "Tables set in front of the windows at sunset"
     },
     "room-atlantic": {
       title: "Architectural reading of the room",
+      compactLabel: "Horizon",
       caption: "Clear lines, visible horizon, and a perfectly held sense of space.",
       alt: "Elegant dining room opening toward the Atlantic"
     },
@@ -601,16 +610,19 @@ const galleryTranslations: Record<Locale, Record<string, GalleryTranslation>> = 
     },
     "plate-lunch-starter": {
       title: "Lunch starter",
+      compactLabel: "Lunch",
       caption: "A lighter opening, precise and luminous.",
       alt: "Light lunch starter at Bleu Maree"
     },
     "plate-tasting-amuse": {
       title: "Tasting opening",
+      compactLabel: "Opening",
       caption: "A short, vivid, precise first gesture.",
       alt: "Amuse-bouche from the tasting menu"
     },
     "plate-tasting-cold": {
       title: "Cold tasting course",
+      compactLabel: "Cold course",
       caption: "Iodine and freshness settle in before the deeper notes.",
       alt: "Cold plate from the tasting menu"
     },
@@ -724,6 +736,7 @@ function buildGalleryItems(locale: Locale): GalleryItem[] {
     return {
       ...item,
       title: translation.title,
+      compactLabel: translation.compactLabel,
       caption: translation.caption,
       alt: translation.alt,
       fallbackImage: item.image
@@ -735,132 +748,140 @@ const galleryContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "Galerie",
-      title: "Lumière, gestes, assiettes: la maison en images.",
+      title: "La maison, quand elle se laisse voir.",
       intro:
-        "Salle, gestes, assiettes et détails racontent Bleu Marée dans ce qu'il a de plus sensible: la lumière, la matière et la tenue.",
+        "La lumière, le geste, l'assiette, puis ce qui reste après. Ici, les images ne décorent pas. Elles retiennent.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
-      imagePosition: "50% 54%"
+      imagePosition: "50% 54%",
+      markers: [],
+      noteLabel: "Ce qu'on regarde",
+      note:
+        "Pas des preuves. Des traces."
     },
     sectionIntro: {
       eyebrow: "Sélection",
-      title: "Une traversée par la salle, le geste et la matière.",
+      title: "Tout n'a pas besoin d'être montré pour être senti.",
       lead:
-        "La galerie s'ouvre sur l'atmosphère, se rapproche du service, puis glisse vers les assiettes et les détails qui donnent son caractère à la maison."
+        "La galerie s'ouvre sur la salle, se rapproche du geste, puis s'attarde sur la matière. Le reste tient dans la mémoire."
     },
     openingFeature: {
       eyebrow: "Premier regard",
-      title: "Une salle, un geste, une assiette: trois entrées dans le même monde.",
+      title: "D'abord la salle. Puis le geste. Puis la matière.",
       lead:
-        "D'abord la lumière de la salle, puis la concentration du service, enfin la précision de l'assiette. Le reste de la galerie prolonge ce mouvement."
+        "Trois images suffisent pour entrer dans la maison. Le reste ne fait que prolonger."
     },
     sequences: {
       room: {
         eyebrow: "Salle",
-        title: "L'espace donne immédiatement le ton.",
+        title: "Le lieu précède tout.",
         lead:
-          "Lumière, horizon et respiration installent d'emblée une sensation de calme et d'élégance."
+          "Avant l'assiette, il y a l'espace, la lumière et cette façon très calme de tenir l'horizon."
       },
       service: {
         eyebrow: "Service",
-        title: "Le geste reste visible, mais jamais démonstratif.",
+        title: "Le geste donne la mesure.",
         lead:
-          "Le service se lit dans la précision, la concentration et l'attention portée au moindre détail."
+          "Rien n'est théâtral ici. La précision, la distance juste et la concentration suffisent."
       },
       plates: {
         eyebrow: "Assiettes",
-        title: "La cuisine parle par couches successives.",
+        title: "L'assiette ne cherche pas l'effet.",
         lead:
-          "Déjeuner, dégustation, plats de mer, viande ou desserts: chaque image cherche à faire sentir la matière, la cuisson et l'équilibre."
+          "Elle laisse d'abord voir le produit, puis la cuisson, puis le travail de fond. C'est assez."
       },
       details: {
         eyebrow: "Détails",
-        title: "Les détails prolongent l'expérience.",
+        title: "Ce sont les détails qui font rester le regard.",
         lead:
-          "Verrerie, linge, cave, bougie et reflets donnent au lieu sa profondeur sans jamais le charger."
+          "Verre, linge, reflets, cave et lumière finissent de faire la maison sans jamais la surcharger."
       }
     } satisfies GallerySequenceCopy,
     archive: {
-      eyebrow: "Autres regards",
-      title: "D'autres cadrages pour prolonger la sensation.",
+      eyebrow: "Derniers regards",
+      title: "Quelques cadrages encore. Pas davantage.",
       lead:
-        "Des plans plus serrés, plus calmes ou plus atmosphériques viennent ici compléter l'ensemble sans rompre son équilibre."
+        "Quelques images restent pour prolonger la sensation, sans transformer la page en inventaire."
     },
     projectFollowUp: {
       eyebrow: "Et ensuite",
-      title: "Voir la maison, puis avoir envie d'y prendre place.",
+      title: "Voir la maison, puis y entrer.",
       lead:
-        "La galerie prolonge la découverte et laisse place à l'envie de réserver, de revenir ou de partager l'adresse.",
-      reserve: "Réserver une expérience",
+        "Une image juste n'épuise rien. Elle laisse simplement l'envie de réserver, de revenir ou de garder l'adresse en tête.",
+      reserve: "Réserver une table",
       contact: "Contacter la maison",
       notesTitle: "L'esprit Bleu Marée",
       notesCopy:
-        "Une lumière retenue, des gestes précis, des assiettes lisibles et quelques détails de matière: tout ce qui fait la signature de Bleu Marée se retrouve ici."
+        "Une lumière tenue, des gestes précis, une matière lisible. C'est largement suffisant pour reconnaître la maison."
     },
     galleryItems: buildGalleryItems("fr")
   },
   en: {
     pageHero: {
       eyebrow: "Gallery",
-      title: "Light, gestures, and plates: the house in images.",
+      title: "The house, when it lets itself be seen.",
       intro:
-        "Room, gestures, plates, and details tell the Bleu Maree story through light, materiality, and composure.",
+        "Light, gesture, the plate, then what remains after. The images do not decorate here. They hold.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
-      imagePosition: "50% 54%"
+      imagePosition: "50% 54%",
+      markers: [],
+      noteLabel: "What is being looked at",
+      note:
+        "Not proofs. Traces."
     },
     sectionIntro: {
       eyebrow: "Selection",
-      title: "A progression through the room, the gesture, and the material.",
+      title: "Not everything needs to be shown to be felt.",
       lead:
-        "The gallery opens on atmosphere, moves closer to service, then slips into the plates and details that give the house its character."
+        "The gallery opens through the room, moves toward the gesture, then lingers over material. The rest stays in memory."
     },
     openingFeature: {
       eyebrow: "First glance",
-      title: "A room, a gesture, a plate: three entries into the same world.",
+      title: "First the room. Then the gesture. Then the material.",
       lead:
-        "First comes the light of the room, then the concentration of service, and finally the precision of the plate. The rest of the gallery extends that movement."
+        "Three images are enough to enter the house. The rest only extends the feeling."
     },
     sequences: {
       room: {
         eyebrow: "Room",
-        title: "The space sets the tone immediately.",
+        title: "The place comes first.",
         lead:
-          "Light, horizon, and breathing room establish a sense of calm and elegance before the first plate arrives."
+          "Before the plate, there is the space, the light, and this very calm way of holding the horizon."
       },
       service: {
         eyebrow: "Service",
-        title: "The gesture remains visible, never performative.",
+        title: "The gesture sets the measure.",
         lead:
-          "Service reveals itself through precision, concentration, and attention to the smallest detail."
+          "Nothing becomes theatrical here. Precision, the right distance, and concentration are enough."
       },
       plates: {
         eyebrow: "Plates",
-        title: "The cuisine speaks in successive layers.",
+        title: "The plate does not chase effect.",
         lead:
-          "Lunch, tasting paths, seafood, meat, or desserts: each image should make the materiality, cooking, and balance felt."
+          "It lets the product appear first, then the cooking, then the deeper work behind it. That is enough."
       },
       details: {
         eyebrow: "Details",
-        title: "Details extend the experience.",
+        title: "Details are what keep the eye in place.",
         lead:
-          "Glassware, linen, cellar, candles, and reflections give the place its depth without making it feel heavy."
+          "Glass, linen, reflections, cellar, and light complete the house without ever overloading it."
       }
     } satisfies GallerySequenceCopy,
     archive: {
-      eyebrow: "Further views",
-      title: "Other frames to extend the feeling.",
+      eyebrow: "Final frames",
+      title: "A few more frames. No more than that.",
       lead:
-        "Tighter, calmer, or more atmospheric frames sit here as complementary views without breaking coherence."
+        "A handful of images remain to extend the feeling without turning the page into an inventory."
     },
     projectFollowUp: {
       eyebrow: "After the image",
-      title: "See the house, then want to take your place at the table.",
+      title: "See the house, then step into it.",
       lead:
-        "The gallery deepens the atmosphere and leaves room for the desire to book, return, or share the address.",
-      reserve: "Book an experience",
+        "A right image does not exhaust anything. It simply leaves the desire to book, return, or keep the address in mind.",
+      reserve: "Book a table",
       contact: "Contact the house",
       notesTitle: "The Bleu Maree spirit",
       notesCopy:
-        "Held light, precise gestures, readable plates, and material detail: everything that defines Bleu Maree can be felt here."
+        "Held light, precise gestures, readable material. That is already enough to recognise the house."
     },
     galleryItems: buildGalleryItems("en")
   }

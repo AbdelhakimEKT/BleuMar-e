@@ -43,6 +43,19 @@ type GalleryCardProps = {
 
 const categoryOrder: GalleryCategory[] = ["room", "service", "plates", "details"];
 
+const categoryDisplayConfig: Record<
+  GalleryCategory,
+  {
+    limit: number;
+    tone: "light" | "dark";
+  }
+> = {
+  room: { limit: 2, tone: "light" },
+  service: { limit: 3, tone: "dark" },
+  plates: { limit: 4, tone: "dark" },
+  details: { limit: 2, tone: "light" }
+};
+
 const galleryUi = {
   fr: {
     open: "Ouvrir l'image",
@@ -91,6 +104,7 @@ function GalleryCard({
   const [displaySrc, setDisplaySrc] = useState(item.image);
   const copy = galleryUi[locale];
   const isCompact = variant === "support" || variant === "secondary" || variant === "archive";
+  const compactTitle = item.compactLabel ?? item.title;
 
   useEffect(() => {
     setDisplaySrc(item.image);
@@ -158,7 +172,7 @@ function GalleryCard({
       <div className={`${styles.cardOverlay} ${isCompact ? styles.cardOverlayCompact : ""}`}>
         <div className={`${styles.cardCopy} ${isCompact ? styles.cardCopyCompact : ""}`}>
           <span className={`${styles.cardTitle} ${isCompact ? styles.cardTitleCompact : ""}`}>
-            {item.title}
+            {isCompact ? compactTitle : item.title}
           </span>
           {!isCompact ? <span className={styles.cardCaption}>{item.caption}</span> : null}
         </div>
@@ -238,16 +252,15 @@ export function EditorialGallery({
   const sequenceSelections = useMemo(
     () =>
       categoryOrder.map((category) => {
+        const config = categoryDisplayConfig[category];
         const categoryItems = orderedItems.filter((item) => item.category === category);
         const withoutOpening = categoryItems.filter((item) => !openingIds.has(item.id));
-        const selectedItems = (withoutOpening.length > 0 ? withoutOpening : categoryItems).slice(
-          0,
-          category === "plates" ? 5 : 4
-        );
+        const selectedItems = (withoutOpening.length > 0 ? withoutOpening : categoryItems).slice(0, config.limit);
 
         return {
           category,
-          items: selectedItems
+          items: selectedItems,
+          tone: config.tone
         };
       }),
     [openingIds, orderedItems]
@@ -261,7 +274,9 @@ export function EditorialGallery({
 
   const archiveItems = useMemo(
     () =>
-      orderedItems.filter((item) => !openingIds.has(item.id) && !sequenceIds.has(item.id)),
+      orderedItems
+        .filter((item) => !openingIds.has(item.id) && !sequenceIds.has(item.id))
+        .slice(0, 6),
     [openingIds, orderedItems, sequenceIds]
   );
 
@@ -375,18 +390,7 @@ export function EditorialGallery({
         </Reveal>
       ) : null}
 
-      <Reveal>
-        <nav className={styles.anchorRail} aria-label={locale === "fr" ? "Séquences visuelles" : "Visual sequences"}>
-          {categoryOrder.map((category, index) => (
-            <a key={category} href={`#gallery-${category}`} className={styles.anchorChip}>
-              <span className={styles.anchorIndex}>{(index + 1).toString().padStart(2, "0")}</span>
-              <span>{sequences[category].eyebrow}</span>
-            </a>
-          ))}
-        </nav>
-      </Reveal>
-
-      {sequenceSelections.map(({ category, items: categoryItems }) => {
+      {sequenceSelections.map(({ category, items: categoryItems, tone }, index) => {
         if (categoryItems.length === 0) {
           return null;
         }
@@ -396,9 +400,19 @@ export function EditorialGallery({
 
         return (
           <Reveal key={category}>
-            <section id={`gallery-${category}`} className={styles.sequenceSection}>
+            <section
+              id={`gallery-${category}`}
+              className={[
+                styles.sequenceSection,
+                tone === "light" ? styles.sequenceLight : styles.sequenceDark,
+                index % 2 === 1 ? styles.sequenceReverse : ""
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
               <div className={styles.sequenceHeader}>
-                <div>
+                <div className={styles.sequenceIntro}>
+                  <span className={styles.sequenceIndex}>{String(index + 1).padStart(2, "0")}</span>
                   <p className="eyebrow">{copyForCategory.eyebrow}</p>
                   <h3 className={styles.sequenceTitle}>{copyForCategory.title}</h3>
                 </div>
@@ -406,7 +420,9 @@ export function EditorialGallery({
               </div>
 
               <div className={styles.sequenceGrid}>
-                <GalleryCard item={primary} locale={locale} variant="primary" onOpen={setActiveId} />
+                <div className={styles.sequencePrimary}>
+                  <GalleryCard item={primary} locale={locale} variant="primary" onOpen={setActiveId} />
+                </div>
 
                 {secondary.length > 0 ? (
                   <div className={styles.sequenceSecondary}>
@@ -429,7 +445,7 @@ export function EditorialGallery({
 
       {archiveItems.length > 0 ? (
         <Reveal>
-          <section className={styles.archiveSection}>
+          <section className={`${styles.archiveSection} ${styles.archiveLight}`}>
             <div className={styles.archiveHeader}>
               <p className="eyebrow">{archive.eyebrow}</p>
               <h3 className={styles.sequenceTitle}>{archive.title}</h3>

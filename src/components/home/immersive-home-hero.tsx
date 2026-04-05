@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-import { Reveal } from "@/components/ui/reveal";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+
 import type { Locale } from "@/i18n/config";
 import { withLocale } from "@/i18n/routing";
 
@@ -14,12 +17,11 @@ type HeroContent = {
   primaryCta: { href: string; label: string };
   secondaryCta: { href: string; label: string };
   image: string;
+  houseNote: string;
   highlights: string[];
 };
 
 type ImmersiveHomeHeroProps = {
-  brandName: string;
-  location: string;
   content: HeroContent;
   locale: Locale;
 };
@@ -27,68 +29,106 @@ type ImmersiveHomeHeroProps = {
 const homeHeroCopy = {
   fr: {
     imageAlt: "Salle Bleu Marée baignée dans une lumière du soir",
-    detailAlt: "Table Bleu Marée dans une lumière de soirée",
-    serviceNote: "Selon arrivage",
-    serviceCopy:
-      "Une cuisine dictée par la saison, l'iode et le geste, pensée pour faire monter le désir avant même la réservation.",
-    highlightLabel: "Rythme de la maison",
-    ribbon: [
-      "Cuisine française contemporaine",
-      "Produits de la mer",
-      "Biarritz",
-      "Menu dégustation",
-      "Accords mets et vins",
-      "Occasions spéciales"
-    ]
+    noteLabel: "Ce que l'on sent d'abord",
+    noteTitle: "Une soirée tenue, jamais figée."
   },
   en: {
     imageAlt: "Bleu Maree dining room bathed in evening light",
-    detailAlt: "Bleu Maree table in evening light",
-    serviceNote: "According to market arrivals",
-    serviceCopy:
-      "A cuisine guided by season, iodine, and gesture, designed to build desire before the booking itself.",
-    highlightLabel: "House rhythm",
-    ribbon: [
-      "Contemporary French cuisine",
-      "Seafood",
-      "Biarritz",
-      "Tasting menu",
-      "Food and wine pairings",
-      "Special occasions"
-    ]
+    noteLabel: "What you feel first",
+    noteTitle: "An evening held, never frozen."
   }
 } as const;
 
+const heroEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 export function ImmersiveHomeHero({
-  brandName,
-  location,
   content,
   locale
 }: ImmersiveHomeHeroProps) {
   const copy = homeHeroCopy[locale];
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+
+  const backgroundScale = useSpring(useTransform(scrollYProgress, [0, 0.32], [1, 1.06]), {
+    stiffness: 120,
+    damping: 26,
+    mass: 0.8
+  });
+  const backgroundY = useSpring(useTransform(scrollYProgress, [0, 0.32], [0, 44]), {
+    stiffness: 110,
+    damping: 30,
+    mass: 0.8
+  });
+  const asideY = useSpring(useTransform(scrollYProgress, [0, 0.32], [0, -18]), {
+    stiffness: 100,
+    damping: 28,
+    mass: 0.85
+  });
+  const asideOpacity = useSpring(useTransform(scrollYProgress, [0, 0.28], [1, 0.78]), {
+    stiffness: 110,
+    damping: 28,
+    mass: 0.9
+  });
 
   return (
     <section className={styles.hero}>
-      <Image
-        src={content.image}
-        alt={copy.imageAlt}
-        fill
-        priority
-        sizes="100vw"
-        className={styles.background}
-      />
+      <motion.div
+        className={styles.backgroundWrap}
+        style={
+          reduceMotion
+            ? undefined
+            : {
+                scale: backgroundScale,
+                y: backgroundY
+              }
+        }
+      >
+        <Image
+          src={content.image}
+          alt={copy.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className={styles.background}
+        />
+      </motion.div>
       <div className={styles.overlay} />
 
       <div className={`container ${styles.inner}`}>
-        <Reveal className={styles.copy}>
-          <p className={styles.brandLine}>
-            {brandName} <span>•</span> {location}
-          </p>
-          <div className="eyebrow">{content.eyebrow}</div>
-          <h1 className={styles.title}>{content.title}</h1>
-          <p className={styles.intro}>{content.intro}</p>
+        <div className={styles.copy}>
+          <motion.div
+            className="eyebrow"
+            initial={reduceMotion ? false : { opacity: 0, y: 20, filter: "blur(10px)" }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: heroEase, delay: 0.06 }}
+          >
+            {content.eyebrow}
+          </motion.div>
 
-          <div className={styles.ctaRow}>
+          <motion.h1
+            className={styles.title}
+            initial={reduceMotion ? false : { opacity: 0, y: 34, filter: "blur(16px)" }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.95, ease: heroEase, delay: 0.13 }}
+          >
+            {content.title}
+          </motion.h1>
+
+          <motion.p
+            className={styles.intro}
+            initial={reduceMotion ? false : { opacity: 0, y: 22, filter: "blur(12px)" }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.82, ease: heroEase, delay: 0.22 }}
+          >
+            {content.intro}
+          </motion.p>
+
+          <motion.div
+            className={styles.ctaRow}
+            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.78, ease: heroEase, delay: 0.3 }}
+          >
             <Link
               href={withLocale(locale, content.primaryCta.href)}
               className="button"
@@ -103,42 +143,40 @@ export function ImmersiveHomeHero({
             >
               {content.secondaryCta.label}
             </Link>
-          </div>
+          </motion.div>
 
-          <div className={styles.serviceNote}>
-            <span className={styles.serviceNoteLabel}>{copy.serviceNote}</span>
-            <p>{copy.serviceCopy}</p>
-          </div>
-        </Reveal>
-
-        <Reveal className={styles.meta}>
-          <div className={styles.metaPanel}>
-            <p className={styles.highlightLabel}>{copy.highlightLabel}</p>
-            <ul className={styles.highlightList}>
-              {content.highlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <figure className={styles.detailFrame} data-cursor-label="Ambiance">
-            <Image
-              src="/images/details/bleu-maree-detail-table-setting-alt-02.jpg"
-              alt={copy.detailAlt}
-              fill
-              sizes="(max-width: 980px) 100vw, 22vw"
-              className={styles.frameImage}
-            />
-          </figure>
-        </Reveal>
-      </div>
-
-      <div className={styles.ribbon}>
-        <div className={styles.ribbonTrack}>
-          {copy.ribbon.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
+          <motion.ul
+            className={styles.signalRail}
+            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.82, ease: heroEase, delay: 0.36 }}
+          >
+            {content.highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </motion.ul>
         </div>
+
+        <motion.aside
+          className={styles.aside}
+          initial={reduceMotion ? false : { opacity: 0, x: 22, y: 24, filter: "blur(14px)" }}
+          animate={reduceMotion ? undefined : { opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.92, ease: heroEase, delay: 0.3 }}
+          style={
+            reduceMotion
+              ? undefined
+              : {
+                  y: asideY,
+                  opacity: asideOpacity
+                }
+          }
+        >
+          <div className={styles.notePanel}>
+            <p className={styles.noteLabel}>{copy.noteLabel}</p>
+            <h2 className={styles.noteTitle}>{copy.noteTitle}</h2>
+            <p className={styles.noteCopy}>{content.houseNote}</p>
+          </div>
+        </motion.aside>
       </div>
     </section>
   );

@@ -1,18 +1,17 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { EditorialSplit } from "@/components/blocks/editorial-split";
-import { FaqList } from "@/components/blocks/faq-list";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Reveal } from "@/components/ui/reveal";
-import { SectionIntro } from "@/components/ui/section-intro";
 import { PageHero } from "@/components/ui/page-hero";
 import { getContactContent } from "@/content/contact";
 import { resolveLocale } from "@/i18n/server";
 import { withLocale } from "@/i18n/routing";
-import { getUiCopy } from "@/i18n/ui";
 import { createMetadata } from "@/lib/metadata";
 import { getSiteSettingsData } from "@/sanity/loaders";
+
+import styles from "./contact-page.module.css";
 
 type ContactPageProps = {
   params: Promise<{ locale: string }>;
@@ -31,6 +30,33 @@ const contactMetaCopy = {
   }
 } as const;
 
+const contactPageCopy = {
+  fr: {
+    overviewLine: "Adresse, horaires, téléphone. Le reste suit.",
+    practicalLabel: "Repères directs",
+    hoursLabel: "Horaires",
+    directLabel: "Parler à la maison",
+    directLead:
+      "Téléphone et email restent là, sans détour ni attente inutile.",
+    arrivalLine: "Le bon repère change déjà la soirée.",
+    faqLine: "L'essentiel, sans faire attendre.",
+    phoneLabel: "Appeler",
+    emailLabel: "Écrire"
+  },
+  en: {
+    overviewLine: "Address, opening hours, phone. The rest follows.",
+    practicalLabel: "Direct bearings",
+    hoursLabel: "Opening hours",
+    directLabel: "Speak to the house",
+    directLead:
+      "Phone and email remain here with no detour and no needless waiting.",
+    arrivalLine: "The right bearing already changes the evening.",
+    faqLine: "The essentials, without making anyone wait.",
+    phoneLabel: "Call",
+    emailLabel: "Write"
+  }
+} as const;
+
 export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
   const locale = await resolveLocale(params);
   const copy = contactMetaCopy[locale];
@@ -46,7 +72,7 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
 export default async function LocalizedContactPage({ params }: ContactPageProps) {
   const locale = await resolveLocale(params);
   const content = getContactContent(locale);
-  const ui = getUiCopy(locale);
+  const copy = contactPageCopy[locale];
   const siteConfig = await getSiteSettingsData(locale);
 
   return (
@@ -57,107 +83,155 @@ export default async function LocalizedContactPage({ params }: ContactPageProps)
         intro={content.pageHero.intro}
         image={content.pageHero.image}
         imagePosition={content.pageHero.imagePosition}
+        markers={content.pageHero.markers}
+        noteLabel={content.pageHero.noteLabel}
+        note={content.pageHero.note}
       />
 
-      <section className="section">
-        <div className="container grid-two">
-          <Reveal className="stack">
-            <SectionIntro
-              eyebrow={content.infoIntro.eyebrow}
-              title={content.infoIntro.title}
-              lead={content.infoIntro.lead}
-            />
+      <section
+        className={`section section-surface--light section--light ${styles.overviewSection}`}
+      >
+        <div className={`container ${styles.overviewGrid}`}>
+          <Reveal className={styles.overviewCopy}>
+            <div className="eyebrow">{content.infoIntro.eyebrow}</div>
+            <h2 className={styles.sectionTitle}>{content.infoIntro.title}</h2>
+            <p className={styles.sectionLead}>{content.infoIntro.lead}</p>
+            <p className={styles.overviewLine}>{copy.overviewLine}</p>
+          </Reveal>
 
-            <div className="surface-card">
-              <ul className="contact-list">
+          <div className={styles.overviewPanels}>
+            <Reveal className={styles.infoPanel}>
+              <p className={styles.panelLabel}>{copy.practicalLabel}</p>
+              <ul className={styles.contactList}>
                 <li>
-                  <span className="contact-label">{content.labels.address}</span>
-                  <span className="contact-copy">
+                  <span>{content.labels.address}</span>
+                  <strong>
                     {siteConfig.addressLineOne}
                     <br />
                     {siteConfig.addressLineTwo}
-                  </span>
+                  </strong>
                 </li>
                 <li>
-                  <span className="contact-label">{content.labels.phone}</span>
-                  <span className="contact-copy">
+                  <span>{content.labels.phone}</span>
+                  <strong>
                     <a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phoneDisplay}</a>
-                  </span>
+                  </strong>
                 </li>
                 <li>
-                  <span className="contact-label">{content.labels.email}</span>
-                  <span className="contact-copy">
+                  <span>{content.labels.email}</span>
+                  <strong>
                     <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-                  </span>
+                  </strong>
                 </li>
                 <li>
-                  <span className="contact-label">{content.labels.access}</span>
-                  <span className="contact-copy">{content.accessCopy}</span>
+                  <span>{content.labels.access}</span>
+                  <strong>{content.accessCopy}</strong>
                 </li>
               </ul>
-            </div>
+            </Reveal>
 
-            <div className="surface-card">
-              <p className="kicker">{ui.openingHoursHeading}</p>
-              <ul className="detail-list">
+            <Reveal className={styles.hoursPanel}>
+              <p className={styles.panelLabel}>{copy.hoursLabel}</p>
+              <ul className={styles.hoursList}>
                 {siteConfig.openingHours.map((item) => (
                   <li key={item.day}>
-                    <span className="detail-title">{item.day}</span>
-                    <span className="detail-copy">{item.hours}</span>
+                    <span>{item.day}</span>
+                    <strong>{item.hours}</strong>
                   </li>
                 ))}
               </ul>
-            </div>
 
-            <div className="cta-row">
-              <Link href={siteConfig.mapUrl} className="button" target="_blank" rel="noreferrer">
-                {content.routeButton}
-              </Link>
-              <Link href={withLocale(locale, "/reservation")} className="button-secondary">
-                {content.reserveButton}
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <ContactForm locale={locale} />
-          </Reveal>
+              <div className={styles.actions}>
+                <Link href={siteConfig.mapUrl} className="button" target="_blank" rel="noreferrer">
+                  {content.routeButton}
+                </Link>
+                <Link href={withLocale(locale, "/reservation")} className="button-ghost">
+                  {content.reserveButton}
+                </Link>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      <section className="section section-surface">
-        <div className="container">
-          <EditorialSplit
-            eyebrow={content.arrivalStory.eyebrow}
-            title={content.arrivalStory.title}
-            intro={content.arrivalStory.intro}
-            details={content.arrivalStory.details}
-            image={content.arrivalStory.image}
-            imageAlt={content.arrivalStory.imageAlt}
-            imagePosition={content.arrivalStory.imagePosition}
-            actions={[
-              {
-                href: siteConfig.mapUrl,
-                label: content.routeButton
-              },
-              {
-                href: withLocale(locale, "/reservation"),
-                label: content.reserveButton,
-                variant: "secondary"
-              }
-            ]}
-          />
+      <section className={`section section-surface ${styles.hospitalitySection}`}>
+        <div className={`container ${styles.hospitalityGrid}`}>
+          <div className={styles.storyColumn}>
+            <Reveal className={styles.storyCopy}>
+              <div className="eyebrow">{content.arrivalStory.eyebrow}</div>
+              <h2 className={styles.sectionTitle}>{content.arrivalStory.title}</h2>
+              <p className={styles.sectionLead}>{content.arrivalStory.intro}</p>
+              <p className={styles.arrivalLine}>{copy.arrivalLine}</p>
+
+              <ul className={styles.detailList}>
+                {content.arrivalStory.details.map((item) => (
+                  <li key={item.label}>
+                    <span>{item.label}</span>
+                    <strong>{item.copy}</strong>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            <Reveal className={styles.arrivalVisual}>
+              <figure className={`image-frame ${styles.figure}`}>
+                <Image
+                  src={content.arrivalStory.image}
+                  alt={content.arrivalStory.imageAlt}
+                  fill
+                  sizes="(max-width: 1080px) 100vw, 48vw"
+                  className={`image-cover ${styles.figureImage}`}
+                  style={{ objectPosition: content.arrivalStory.imagePosition }}
+                />
+              </figure>
+            </Reveal>
+          </div>
+
+          <div className={styles.contactColumn}>
+            <Reveal className={styles.directPanel}>
+              <p className={styles.panelLabel}>{copy.directLabel}</p>
+              <p className={styles.directLead}>{copy.directLead}</p>
+
+              <div className={styles.directLinks}>
+                <a href={`tel:${siteConfig.phoneRaw}`} className={styles.directLink}>
+                  <span>{copy.phoneLabel}</span>
+                  <strong>{siteConfig.phoneDisplay}</strong>
+                </a>
+                <a href={`mailto:${siteConfig.email}`} className={styles.directLink}>
+                  <span>{copy.emailLabel}</span>
+                  <strong>{siteConfig.email}</strong>
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal className={styles.formWrap}>
+              <ContactForm locale={locale} />
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <FaqList
-            eyebrow={content.faq.eyebrow}
-            title={content.faq.title}
-            lead={content.faq.lead}
-            items={content.faqItems}
-          />
+      <section
+        className={`section section-surface--light section--light ${styles.faqSection}`}
+      >
+        <div className={`container ${styles.faqGrid}`}>
+          <Reveal className={styles.faqIntro}>
+            <div className="eyebrow">{content.faq.eyebrow}</div>
+            <h2 className={styles.sectionTitle}>{content.faq.title}</h2>
+            <p className={styles.sectionLead}>{content.faq.lead}</p>
+            <p className={styles.faqLine}>{copy.faqLine}</p>
+          </Reveal>
+
+          <div className={styles.faqItems}>
+            {content.faqItems.map((item) => (
+              <Reveal key={item.question}>
+                <details className={styles.faqItem}>
+                  <summary className={styles.faqQuestion}>{item.question}</summary>
+                  <p className={styles.faqAnswer}>{item.answer}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </>

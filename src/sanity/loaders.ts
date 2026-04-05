@@ -86,6 +86,7 @@ export const getHomePageData = cache(async (locale: Locale = "fr"): Promise<Home
       eyebrow: data.heroEyebrow ?? fallback.heroContent.eyebrow,
       title: data.heroTitle ?? fallback.heroContent.title,
       intro: data.heroIntro ?? fallback.heroContent.intro,
+      houseNote: fallback.heroContent.houseNote,
       primaryCta: {
         href: data.primaryCta?.href ?? fallback.heroContent.primaryCta.href,
         label: data.primaryCta?.label ?? fallback.heroContent.primaryCta.label

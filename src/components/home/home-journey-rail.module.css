@@ -31,6 +31,19 @@
   line-height: 1.82;
 }
 
+.asidePanel {
+  max-width: 36rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(201, 165, 106, 0.42);
+}
+
+.asidePanel p {
+  margin: 0;
+  color: rgba(245, 239, 228, 0.88);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
 .heroFrame {
   position: relative;
   min-height: clamp(360px, 52vw, 620px);
@@ -41,6 +54,8 @@
 
 .image {
   object-fit: cover;
+  object-position: center 46%;
+  filter: brightness(0.96);
   transition: transform 700ms ease;
 }
 

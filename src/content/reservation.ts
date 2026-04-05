@@ -4,82 +4,92 @@ const reservationContentByLocale = {
   fr: {
     pageHero: {
       eyebrow: "Réservation",
-      title: "Une demande de réservation pensée comme une évidence.",
+      title: "Réserver doit déjà ressembler à l'accueil.",
       intro:
-        "Choisissez le moment, indiquez vos préférences et laissez la maison revenir vers vous avec une réponse claire, attentive et rapide.",
+        "Choisissez le moment. Dites l'essentiel. La maison reprend ensuite la main avec une réponse nette.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
-      imagePosition: "50% 56%"
+      imagePosition: "50% 56%",
+      markers: [],
+      noteLabel: "La maison lit",
+      note:
+        "Peu de champs. Plus d'attention, ensuite."
     },
     infoIntro: {
-      eyebrow: "Informations utiles",
-      title: "Ce qu'il faut savoir avant de choisir son moment.",
+      eyebrow: "Avant de venir",
+      title: "Choisir son moment doit rester simple et net.",
       lead:
-        "Horaires, demandes spéciales, groupes et occasions particulières sont rappelés ici pour réserver avec calme et confiance."
+        "Réserver doit enlever du bruit, pas en créer. Horaires, grandes tables, allergies et occasions restent réunis ici pour aller vite et bien."
     },
-    groupCta: "Demande de groupe ou privatisation",
+    groupCta: "Parler d'un groupe ou d'une privatisation",
     organizationIntro: {
-      eyebrow: "Après la demande",
-      title: "Une réponse pensée avec le même niveau de soin.",
+      eyebrow: "Ce que la maison regarde",
+      title: "Une demande bien écrite vaut mieux qu'un long formulaire.",
       lead:
-        "La demande rassemble déjà les informations utiles pour permettre à la maison de répondre justement, de préparer les occasions et d'orienter les groupes."
+        "Quelques lignes bien choisies suffisent à tenir l'occasion, les attentions utiles et le tempo du repas."
     },
-    implementationLabel: "À savoir",
+    implementationLabel: "Quand la maison reprend contact",
     reservationJourney: [
       {
-        title: "Choix du moment",
+        title: "Le moment se pose clairement",
         copy:
-          "Le visiteur choisit le nombre de couverts, la date, l'heure et peut ajouter une occasion ou une remarque importante."
+          "Date, heure et nombre de couverts se donnent en peu de gestes, sans allonger le parcours."
       },
       {
-        title: "Demande enregistrée",
+        title: "L'essentiel reste visible",
         copy:
-          "La maison retrouve ensuite la demande avec toutes les informations utiles: couverts, heure souhaitée, occasion, allergies et remarques."
+          "Occasion, allergies, remarques et contraintes restent immédiatement lisibles pour préparer une réponse plus juste."
       },
       {
-        title: "Suivi côté maison",
+        title: "La réponse garde la même tenue",
         copy:
-          "L'équipe peut confirmer, reprendre contact ou orienter la demande vers une proposition plus adaptée si besoin."
+          "Confirmation, reprise de contact ou suggestion plus adaptée se font ensuite avec la même clarté."
       }
     ],
     reservationPractices: [
       {
         label: "Groupes",
-        copy: "Au-delà de 8 couverts, nous recommandons une demande dédiée afin de construire l'expérience."
+        copy:
+          "Au-delà de 8 couverts, la maison reprend la main pour tenir le rythme du repas et les attentions utiles."
       },
       {
-        label: "Réponse soignée",
-        copy: "Le formulaire reste volontairement calme, lisible et désirable pour donner une impression haut de gamme dès la première interaction."
+        label: "Occasions",
+        copy:
+          "Anniversaire, déjeuner important ou dîner à deux peuvent être signalés simplement dès le départ. Le reste se prépare ensuite."
       },
       {
-        label: "Occasions spéciales",
-        copy: "Anniversaire, allergènes ou attention particulière peuvent être indiqués dès la demande afin de préparer une réponse plus juste."
+        label: "Attention",
+        copy:
+          "Allergies, préférences ou détails sensibles trouvent leur place sans transformer la réservation en questionnaire."
       }
     ],
     zenchefSetupSteps: [
-      "La demande part déjà avec le bon niveau de détail pour éviter les allers-retours inutiles.",
-      "Les occasions particulières, groupes et allergies peuvent être relus avant confirmation.",
-      "Une confirmation ou une reprise de contact peut ensuite affiner l'expérience côté maison."
+      "Si une table mérite un échange, la maison revient vers vous directement.",
+      "Si le rythme du service appelle un autre horaire, il est proposé sans détour.",
+      "Si la demande concerne un groupe ou une privatisation, la conversation change simplement d'échelle."
     ],
     hospitalityStory: {
-      eyebrow: "Hospitalité",
-      title: "Le formulaire ne remplace pas l'accueil: il le prépare.",
+      eyebrow: "Grandes tables",
+      title: "Les grandes tables passent d'abord par la maison.",
       intro:
-        "Quelques informations bien choisies suffisent pour nous permettre de répondre avec attention, sans alourdir le geste de réservation.",
+        "Pour un groupe, une privatisation ou un moment à préparer davantage, le contact direct reste la voie la plus juste.",
       image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
       imageAlt: "Verrerie et lumière douce chez Bleu Marée",
       imagePosition: "50% 50%",
       details: [
         {
-          label: "Occasion",
-          copy: "Anniversaire, dîner à deux, repas professionnel ou demande de groupe peuvent être signalés dès le départ."
+          label: "Groupes",
+          copy:
+            "Pour les grandes tablées, la maison préfère reprendre le fil elle-même afin de tenir placement, tempo et confort."
         },
         {
-          label: "Attention",
-          copy: "Allergies, préférences ou remarques restent lisibles pour permettre une réponse plus juste."
+          label: "Privatisation",
+          copy:
+            "Déjeuner, dîner ou moment de maison plus singulier peuvent être préparés dans un échange plus direct."
         },
         {
           label: "Suite",
-          copy: "Si la demande mérite un échange plus précis, la maison peut reprendre contact dans le même ton calme et soigné."
+          copy:
+            "Le premier message ouvre simplement la bonne conversation. Le reste se règle ensuite avec calme et précision."
         }
       ]
     }
@@ -87,82 +97,92 @@ const reservationContentByLocale = {
   en: {
     pageHero: {
       eyebrow: "Booking",
-      title: "A booking request designed to feel effortless.",
+      title: "Booking should already feel like part of the welcome.",
       intro:
-        "Choose the moment, share your preferences, and let the house come back to you with a clear, attentive, timely reply.",
+        "Choose the moment. Share what matters. The house then takes it from there with a clear reply.",
       image: "/images/hero/bleu-maree-hero-dining-room-golden-hour-realistic.jpg",
-      imagePosition: "50% 56%"
+      imagePosition: "50% 56%",
+      markers: [],
+      noteLabel: "What the house reads",
+      note:
+        "Few fields. More attention afterwards."
     },
     infoIntro: {
-      eyebrow: "Useful information",
-      title: "What to know before choosing the moment.",
+      eyebrow: "Before arriving",
+      title: "Choosing the moment should stay simple and clear.",
       lead:
-        "Opening hours, special requests, groups, and occasions are gathered here so booking feels calm and straightforward."
+        "Booking should remove noise, not create it. Opening hours, larger parties, allergens, and occasions stay gathered here so the path remains clear."
     },
-    groupCta: "Group booking or private dining request",
+    groupCta: "Discuss a group or private dining request",
     organizationIntro: {
-      eyebrow: "After the request",
-      title: "A response shaped with the same level of care.",
+      eyebrow: "What the house looks at",
+      title: "A well-written request is better than a long form.",
       lead:
-        "The request already gathers the information the house needs to respond well, prepare special occasions, and orient group requests."
+        "A few well-chosen lines are enough to hold the occasion, useful attentions, and the meal's pace."
     },
-    implementationLabel: "Good to know",
+    implementationLabel: "When the house follows up",
     reservationJourney: [
       {
-        title: "Choosing the moment",
+        title: "The moment is set clearly",
         copy:
-          "The guest chooses party size, preferred date, preferred time, and can add an occasion or an important note."
+          "Date, time, and party size can be shared in a few gestures without stretching the process."
       },
       {
-        title: "Request saved",
+        title: "What matters stays visible",
         copy:
-          "The house then retrieves the request with the useful details already in place: guests, preferred time, occasion, allergens, and notes."
+          "Occasion, allergens, notes, and constraints stay immediately readable so the reply can be more accurate."
       },
       {
-        title: "House-side follow-up",
+        title: "The reply keeps the same tone",
         copy:
-          "The team can confirm, get back in touch, or redirect the request toward a better-fit proposal when needed."
+          "Confirmation, follow-up, or a better-fit suggestion then happen with the same sense of clarity."
       }
     ],
     reservationPractices: [
       {
         label: "Groups",
-        copy: "For more than 8 guests, we recommend a dedicated request in order to shape the experience properly."
+        copy:
+          "Above 8 guests, the house prefers to take the thread back itself in order to hold the pace and the attentions properly."
       },
       {
-        label: "Thoughtful reply",
-        copy: "The form stays calm and direct so the very first interaction already feels clear, polished, and reassuring."
+        label: "Occasions",
+        copy:
+          "Birthdays, important lunches, or dinner for two can be signaled simply from the start. The rest is prepared afterwards."
       },
       {
-        label: "Special occasions",
-        copy: "Birthdays, allergens, and special attentions can be handled directly through the request journey."
+        label: "Attention",
+        copy:
+          "Allergens, preferences, and sensitive notes all have a place without turning booking into a questionnaire."
       }
     ],
     zenchefSetupSteps: [
-      "The request already contains enough detail to avoid unnecessary back-and-forth.",
-      "Special occasions, groups, and allergens can be reviewed before confirmation.",
-      "A reply or confirmation can then refine the experience house-side."
+      "If a table calls for an exchange, the house comes back directly.",
+      "If service rhythm suggests another time, it is proposed without detour.",
+      "If the request concerns a group or a private event, the conversation simply changes scale."
     ],
     hospitalityStory: {
-      eyebrow: "Hospitality",
-      title: "The form does not replace the welcome: it prepares it.",
+      eyebrow: "Larger parties",
+      title: "Larger tables first pass through the house.",
       intro:
-        "A few well-chosen details are enough for the house to reply with attention, without making booking feel heavy.",
+        "For groups, private dining, or moments that need more preparation, direct contact remains the most accurate path.",
       image: "/images/details/bleu-maree-detail-glassware-candlelight.jpg",
       imageAlt: "Glassware and soft light at Bleu Maree",
       imagePosition: "50% 50%",
       details: [
         {
-          label: "Occasion",
-          copy: "Anniversary, dinner for two, business meal, or group request can all be signaled from the start."
+          label: "Groups",
+          copy:
+            "For larger tables, the house prefers to handle placement, pace, and comfort through a more direct exchange."
         },
         {
-          label: "Attention",
-          copy: "Allergens, preferences, and key notes remain visible so the response can be more accurate."
+          label: "Private dining",
+          copy:
+            "Lunch, dinner, or a more singular house moment can be prepared in a conversation that stays more direct."
         },
         {
           label: "Follow-up",
-          copy: "If the request needs a more precise exchange, the house can get back in touch in the same calm, refined tone."
+          copy:
+            "The first message simply opens the right conversation. The rest is then refined with calm and precision."
         }
       ]
     }

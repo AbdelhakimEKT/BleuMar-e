@@ -43,7 +43,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   } as const;
 
   return (
-    <html lang="fr">
+    <html lang="fr" data-scroll-behavior="smooth">
       <body>
         <AppShell
           header={<SiteHeader settingsByLocale={settingsByLocale} />}

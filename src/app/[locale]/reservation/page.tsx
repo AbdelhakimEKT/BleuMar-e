@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
-import { EditorialSplit } from "@/components/blocks/editorial-split";
+import { HomeReveal } from "@/components/home/home-reveal";
 import { ReservationRequestForm } from "@/components/forms/reservation-request-form";
-import { Reveal } from "@/components/ui/reveal";
-import { SectionIntro } from "@/components/ui/section-intro";
 import { PageHero } from "@/components/ui/page-hero";
 import { getReservationContent } from "@/content/reservation";
 import { resolveLocale } from "@/i18n/server";
@@ -13,20 +12,22 @@ import { createMetadata } from "@/lib/metadata";
 import { isSanityWriteConfigured } from "@/sanity/env";
 import { getSiteSettingsData } from "@/sanity/loaders";
 
+import styles from "./reservation-page.module.css";
+
 type ReservationPageProps = {
   params: Promise<{ locale: string }>;
 };
 
 const reservationMetaCopy = {
   fr: {
-    title: "Reservation",
+    title: "Réservation",
     description:
-      "Réservez une table chez Bleu Marée à Biarritz et indiquez en quelques instants vos préférences, votre occasion ou vos remarques."
+      "Réservez une table chez Bleu Marée à Biarritz dans un parcours clair, calme et précis, pensé comme le premier geste d'accueil."
   },
   en: {
     title: "Booking",
     description:
-      "Book a table at Bleu Maree in Biarritz and share your preferences, occasion, or notes in just a few moments."
+      "Book a table at Bleu Maree in Biarritz through a clear, calm, and precise path designed as the first gesture of welcome."
   }
 } as const;
 
@@ -46,6 +47,8 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
   const locale = await resolveLocale(params);
   const content = getReservationContent(locale);
   const siteConfig = await getSiteSettingsData(locale);
+  const phoneHref = `tel:${siteConfig.phoneRaw}`;
+  const emailHref = `mailto:${siteConfig.email}`;
 
   return (
     <>
@@ -55,113 +58,143 @@ export default async function LocalizedReservationPage({ params }: ReservationPa
         intro={content.pageHero.intro}
         image={content.pageHero.image}
         imagePosition={content.pageHero.imagePosition}
+        markers={content.pageHero.markers}
+        noteLabel={content.pageHero.noteLabel}
+        note={content.pageHero.note}
       />
 
-      <section className="section">
-        <div className="container grid-two">
-          <Reveal>
+      <section id="reserver" className={`section ${styles.bookingSection}`}>
+        <div className={`container ${styles.bookingGrid}`}>
+          <HomeReveal>
             <ReservationRequestForm locale={locale} storageReady={isSanityWriteConfigured} />
-          </Reveal>
+          </HomeReveal>
 
-          <Reveal className="stack">
-            <SectionIntro
-              eyebrow={content.infoIntro.eyebrow}
-              title={content.infoIntro.title}
-              lead={content.infoIntro.lead}
-            />
+          <div className={styles.bookingSide}>
+            <HomeReveal className={styles.infoIntro} delay={0.08}>
+              <div className="eyebrow">{content.infoIntro.eyebrow}</div>
+              <h2 className={styles.statement}>{content.infoIntro.title}</h2>
+              <p className={styles.lead}>{content.infoIntro.lead}</p>
 
-            <div className="surface-card">
-              <ul className="detail-list">
+              <div className={styles.directLine}>
+                <a href={phoneHref} className={styles.inlineLink}>
+                  {siteConfig.phoneDisplay}
+                </a>
+                <a href={emailHref} className={styles.inlineLink}>
+                  {siteConfig.email}
+                </a>
+              </div>
+            </HomeReveal>
+
+            <HomeReveal className={styles.hoursPanel} variant="panel" delay={0.12}>
+              <p className={styles.panelLabel}>{locale === "fr" ? "Horaires" : "Opening hours"}</p>
+              <ul className={styles.hoursList}>
                 {siteConfig.openingHours.map((item) => (
                   <li key={item.day}>
-                    <span className="detail-title">{item.day}</span>
-                    <span className="detail-copy">{item.hours}</span>
+                    <span>{item.day}</span>
+                    <strong>{item.hours}</strong>
                   </li>
                 ))}
               </ul>
-            </div>
+            </HomeReveal>
 
-            <div className="surface-card">
-              <ul className="timeline-list">
+            <HomeReveal className={styles.journeyPanel} variant="panel" delay={0.16}>
+              <p className={styles.panelLabel}>
+                {locale === "fr" ? "En trois gestes" : "In three gestures"}
+              </p>
+              <ul className={styles.journeyList}>
                 {content.reservationJourney.map((item, index) => (
                   <li key={item.title}>
-                    <span className="timeline-index">0{index + 1}</span>
-                    <div className="stack">
+                    <span className={styles.journeyIndex}>0{index + 1}</span>
+                    <div className={styles.journeyCopy}>
                       <strong>{item.title}</strong>
-                      <p className="microcopy">{item.copy}</p>
+                      <p>{item.copy}</p>
                     </div>
                   </li>
                 ))}
               </ul>
-            </div>
+            </HomeReveal>
 
-            <div className="cta-row">
+            <HomeReveal delay={0.2}>
               <Link href={withLocale(locale, "/contact")} className="button-ghost">
                 {content.groupCta}
               </Link>
-            </div>
-          </Reveal>
+            </HomeReveal>
+          </div>
         </div>
       </section>
 
-      <section className="section section-surface--light section--light">
-        <div className="container stack">
-          <Reveal>
-            <SectionIntro
-              eyebrow={content.organizationIntro.eyebrow}
-              title={content.organizationIntro.title}
-              lead={content.organizationIntro.lead}
-            />
-          </Reveal>
+      <section
+        id="attentions"
+        className={`section section-surface--light section--light ${styles.organizationSection}`}
+      >
+        <div className={`container ${styles.organizationGrid}`}>
+          <HomeReveal className={styles.organizationIntro}>
+            <div className="eyebrow">{content.organizationIntro.eyebrow}</div>
+            <h2 className={styles.statement}>{content.organizationIntro.title}</h2>
+            <p className={styles.lead}>{content.organizationIntro.lead}</p>
+          </HomeReveal>
 
-          <div className="grid-three">
-            {content.reservationPractices.map((item) => (
-              <Reveal key={item.label}>
-                <article className="surface-card surface-card--light">
-                  <p className="kicker">{item.label}</p>
-                  <p className="microcopy">{item.copy}</p>
-                </article>
-              </Reveal>
+          <div className={styles.practicesGrid}>
+            {content.reservationPractices.map((item, index) => (
+              <HomeReveal key={item.label} className={styles.practiceItem} delay={0.08 + index * 0.05}>
+                <span className={styles.practiceIndex}>{String(index + 1).padStart(2, "0")}</span>
+                <div className={styles.practiceCopy}>
+                  <h3>{item.label}</h3>
+                  <p>{item.copy}</p>
+                </div>
+              </HomeReveal>
             ))}
           </div>
 
-          <Reveal>
-            <div className="surface-card surface-card--light">
-              <p className="kicker">{content.implementationLabel}</p>
-              <ul className="detail-list">
-                {content.zenchefSetupSteps.map((step, index) => (
-                  <li key={step}>
-                    <span className="detail-title">0{index + 1}</span>
-                    <span className="detail-copy">{step}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
+          <HomeReveal className={styles.followupPanel} variant="panel" delay={0.18}>
+            <p className={styles.panelLabel}>{content.implementationLabel}</p>
+            <ul className={styles.followupList}>
+              {content.zenchefSetupSteps.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ul>
+          </HomeReveal>
         </div>
       </section>
 
-      <section className="section reservation-hospitality-section">
-        <div className="container">
-          <EditorialSplit
-            className="reservation-hospitality"
-            eyebrow={content.hospitalityStory.eyebrow}
-            title={content.hospitalityStory.title}
-            intro={content.hospitalityStory.intro}
-            details={content.hospitalityStory.details}
-            image={content.hospitalityStory.image}
-            imageAlt={content.hospitalityStory.imageAlt}
-            imagePosition={content.hospitalityStory.imagePosition}
-            reverse
-            actions={[
-              {
-                href: withLocale(locale, "/contact"),
-                label: content.groupCta,
-                variant: "primary",
-                className: "reservation-hospitality-cta"
-              }
-            ]}
-          />
+      <section id="groupes" className={`section ${styles.hospitalitySection}`}>
+        <div className={`container ${styles.hospitalityGrid}`}>
+          <HomeReveal className={styles.hospitalityCopy}>
+            <div className="eyebrow">{content.hospitalityStory.eyebrow}</div>
+            <h2 className={styles.hospitalityTitle}>{content.hospitalityStory.title}</h2>
+            <p className={styles.hospitalityLead}>{content.hospitalityStory.intro}</p>
+
+            <ul className={styles.detailList}>
+              {content.hospitalityStory.details.map((detail) => (
+                <li key={detail.label}>
+                  <span>{detail.label}</span>
+                  <strong>{detail.copy}</strong>
+                </li>
+              ))}
+            </ul>
+
+            <div className={styles.actions}>
+              <Link href={withLocale(locale, "/contact")} className="button">
+                {content.groupCta}
+              </Link>
+              <a href={phoneHref} className={`button-ghost ${styles.contactButton}`}>
+                {siteConfig.phoneDisplay}
+              </a>
+            </div>
+          </HomeReveal>
+
+          <HomeReveal variant="soft" delay={0.08}>
+            <figure className={`image-frame ${styles.figure}`}>
+              <Image
+                src={content.hospitalityStory.image}
+                alt={content.hospitalityStory.imageAlt}
+                fill
+                sizes="(max-width: 1080px) 100vw, 44vw"
+                className={`image-cover ${styles.figureImage}`}
+                style={{ objectPosition: content.hospitalityStory.imagePosition }}
+              />
+            </figure>
+          </HomeReveal>
         </div>
       </section>
     </>

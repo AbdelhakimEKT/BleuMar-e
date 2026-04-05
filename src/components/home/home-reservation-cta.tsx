@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { Reveal } from "@/components/ui/reveal";
 import type { Locale } from "@/i18n/config";
 import { withLocale } from "@/i18n/routing";
 
+import { HomeReveal } from "./home-reveal";
 import styles from "./home-reservation-cta.module.css";
 
 type SiteConfig = {
@@ -22,16 +22,16 @@ type HomeReservationCtaProps = {
 const reservationCtaCopy = {
   fr: {
     eyebrow: "Réservation",
-    title: "Réserver, puis laisser le dîner faire le reste.",
+    title: "Réserver devrait déjà donner le ton.",
     lead:
-      "Déjeuner, dîner et occasions particulières se réservent en quelques instants. L'équipe reprend ensuite la main avec le même soin que celui porté à la table.",
+      "Choisissez l'heure. Indiquez l'occasion. La maison prend le relais.",
     reserve: "Réserver une table"
   },
   en: {
     eyebrow: "Booking",
-    title: "Book the table, then let dinner take over.",
+    title: "Booking should already set the tone.",
     lead:
-      "Lunch, dinner, and special occasions can be booked in moments. The team then takes over with the same care found at the table itself.",
+      "Choose the time. Mention the occasion. The house takes over.",
     reserve: "Book a table"
   }
 } as const;
@@ -42,7 +42,7 @@ export function HomeReservationCta({ siteConfig, locale }: HomeReservationCtaPro
   return (
     <section className={`section ${styles.section}`}>
       <div className={`container ${styles.layout}`}>
-        <Reveal className={styles.copyColumn}>
+        <HomeReveal className={styles.copyColumn}>
           <div className="eyebrow">{copy.eyebrow}</div>
           <h2 className={styles.title}>{copy.title}</h2>
           <p className={styles.lead}>{copy.lead}</p>
@@ -59,9 +59,9 @@ export function HomeReservationCta({ siteConfig, locale }: HomeReservationCtaPro
               {siteConfig.phoneDisplay}
             </Link>
           </div>
-        </Reveal>
+        </HomeReveal>
 
-        <Reveal className={styles.card}>
+        <HomeReveal className={styles.card} variant="panel" delay={0.08}>
           <div className={styles.cardHeader}>
             <p>{siteConfig.addressLineOne}</p>
             <strong>{siteConfig.addressLineTwo}</strong>
@@ -75,7 +75,7 @@ export function HomeReservationCta({ siteConfig, locale }: HomeReservationCtaPro
               </li>
             ))}
           </ul>
-        </Reveal>
+        </HomeReveal>
       </div>
     </section>
   );

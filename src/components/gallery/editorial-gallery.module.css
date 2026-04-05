@@ -1,12 +1,12 @@
 .experience {
   display: grid;
-  gap: clamp(2.6rem, 4vw, 4.4rem);
+  gap: clamp(3rem, 5vw, 5.2rem);
 }
 
 .opening {
   display: grid;
   grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
-  gap: 1rem;
+  gap: clamp(1.2rem, 2.6vw, 1.8rem);
   align-items: stretch;
 }
 
@@ -19,12 +19,12 @@
 
 .openingMain {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .openingSupport {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
   align-content: stretch;
 }
 
@@ -39,79 +39,106 @@
 .sequenceTitle {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 0.96;
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  line-height: 0.94;
   letter-spacing: 0.02em;
 }
 
 .openingLead,
 .sequenceLead {
   margin: 0;
-  max-width: 60ch;
-  color: rgba(245, 239, 228, 0.78);
+  max-width: 34rem;
+  color: rgba(245, 239, 228, 0.8);
   line-height: 1.8;
-}
-
-.anchorRail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-}
-
-.anchorChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 0.82rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(245, 239, 228, 0.9);
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background-color 180ms ease;
-}
-
-.anchorChip:hover,
-.anchorChip:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(201, 165, 106, 0.34);
-  background: rgba(255, 255, 255, 0.08);
-  outline: none;
-}
-
-.anchorIndex {
-  color: var(--accent);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
 }
 
 .sequenceSection,
 .archiveSection {
   display: grid;
-  gap: 1.1rem;
+  gap: 1.4rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-radius: 32px;
+}
+
+.sequenceDark {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(6, 21, 32, 0.52), rgba(6, 21, 32, 0.72)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.08), transparent 30%);
+  box-shadow: 0 28px 74px rgba(2, 12, 18, 0.18);
+}
+
+.sequenceLight,
+.archiveLight {
+  border: 1px solid rgba(16, 39, 56, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(247, 242, 233, 0.62)),
+    radial-gradient(circle at top right, rgba(201, 165, 106, 0.12), transparent 30%);
+  box-shadow: 0 22px 60px rgba(16, 39, 56, 0.08);
+  color: #102738;
+}
+
+.sequenceLight .eyebrow,
+.archiveLight .eyebrow,
+.sequenceLight .sequenceLead,
+.archiveLight .sequenceLead {
+  color: rgba(16, 39, 56, 0.82);
+}
+
+.sequenceLight .sequenceTitle,
+.archiveLight .sequenceTitle,
+.sequenceLight .sequenceIndex {
+  color: #102738;
+}
+
+.sequenceHeader {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: end;
 }
 
 .sequenceGrid {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
   grid-template-columns: minmax(0, 1.24fr) minmax(320px, 0.76fr);
   align-items: start;
 }
 
+.sequencePrimary {
+  min-width: 0;
+}
+
+.sequenceReverse .sequencePrimary {
+  order: 2;
+}
+
+.sequenceReverse .sequenceSecondary {
+  order: 1;
+}
+
 .sequenceSecondary {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .archiveGrid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sequenceIntro {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sequenceIndex {
+  color: rgba(201, 165, 106, 0.84);
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+  line-height: 0.92;
 }
 
 .card {
@@ -169,7 +196,6 @@
 }
 
 .cardArchive {
-  grid-column: span 4;
   min-height: 0;
 }
 
@@ -204,7 +230,7 @@
 }
 
 .cardOverlayCompact {
-  inset: auto 0.8rem 0.8rem 0.8rem;
+  inset: auto 0.65rem 0.65rem 0.65rem;
 }
 
 .cardCopy {
@@ -220,10 +246,10 @@
 .cardCopyCompact {
   display: inline-flex;
   width: fit-content;
-  max-width: min(100%, 18rem);
-  padding: 0.72rem 0.88rem;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(5, 17, 25, 0.7), rgba(5, 17, 25, 0.52));
+  max-width: min(100%, 10rem);
+  padding: 0.5rem 0.68rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(5, 17, 25, 0.64), rgba(5, 17, 25, 0.46));
 }
 
 .cardTitle {
@@ -235,14 +261,43 @@
 }
 
 .cardTitleCompact {
-  font-size: 0.84rem;
-  line-height: 1.25;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.16;
 }
 
 .cardCaption {
   color: rgba(245, 239, 228, 0.76);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.sequenceLight .card,
+.archiveLight .card {
+  border-color: rgba(16, 39, 56, 0.12);
+  box-shadow: 0 20px 54px rgba(16, 39, 56, 0.1);
+}
+
+.sequenceLight .cardCopy,
+.archiveLight .cardCopy {
+  border-color: rgba(16, 39, 56, 0.08);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.sequenceLight .cardCopyCompact,
+.archiveLight .cardCopyCompact {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72));
+}
+
+.sequenceLight .cardTitle,
+.archiveLight .cardTitle {
+  color: #102738;
+}
+
+.sequenceLight .cardCaption,
+.archiveLight .cardCaption {
+  color: rgba(16, 39, 56, 0.72);
 }
 
 .lightbox {
@@ -377,6 +432,7 @@
 
 @media (max-width: 1080px) {
   .opening,
+  .sequenceHeader,
   .sequenceGrid {
     grid-template-columns: 1fr;
   }
@@ -388,10 +444,6 @@
 
   .archiveGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .cardArchive {
-    grid-column: span 1;
   }
 }
 
@@ -416,7 +468,13 @@
   }
 
   .cardCopyCompact {
-    max-width: min(100%, 14rem);
+    max-width: min(100%, 8.6rem);
+  }
+
+  .sequenceSection,
+  .archiveSection {
+    padding: 1rem;
+    border-radius: 24px;
   }
 
   .lightboxPanel {

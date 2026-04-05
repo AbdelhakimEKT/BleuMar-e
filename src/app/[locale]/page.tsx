@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
 import { HomeJourneyRail } from "@/components/home/home-journey-rail";
+import { HomeFounderNote } from "@/components/home/home-founder-note";
 import { HomeManifesto } from "@/components/home/home-manifesto";
+import { HomeReveal } from "@/components/home/home-reveal";
 import { HomeReservationCta } from "@/components/home/home-reservation-cta";
 import { HomeSignatureSpread } from "@/components/home/home-signature-spread";
 import { ImmersiveHomeHero } from "@/components/home/immersive-home-hero";
 import { ImpressionMarquee } from "@/components/home/impression-marquee";
-import { Reveal } from "@/components/ui/reveal";
 import { createMetadata, createRestaurantSchema } from "@/lib/metadata";
 import { resolveLocale } from "@/i18n/server";
 import { getHomePageData, getSiteSettingsData } from "@/sanity/loaders";
@@ -20,19 +21,19 @@ const homePageCopy = {
     metaTitle: "Accueil",
     metaDescription:
       "Découvrez Bleu Marée à Biarritz: une table gastronomique tournée vers la mer, la saison et une élégance contemporaine.",
-    impressionsEyebrow: "Impressions",
-    impressionsTitle: "Une atmosphère qui reste après le dîner.",
+    impressionsEyebrow: "Ce qui reste",
+    impressionsTitle: "On emporte rarement un effet. On emporte une sensation tenue.",
     impressionsLead:
-      "Lumière feutrée, dressage précis, service à tempo juste et horizon atlantique: Bleu Marée laisse une impression qui dépasse le dîner."
+      "Lumière. Rythme. Précision. Une maison réellement habitée."
   },
   en: {
     metaTitle: "Home",
     metaDescription:
       "Discover Bleu Maree in Biarritz: a fine dining table shaped by seafood, seasonality, and contemporary elegance.",
-    impressionsEyebrow: "Impressions",
-    impressionsTitle: "An atmosphere that lingers after dinner.",
+    impressionsEyebrow: "What remains",
+    impressionsTitle: "People rarely leave with an effect. They leave with a feeling carried well.",
     impressionsLead:
-      "Soft light, precise plating, service at the right tempo, and an Atlantic horizon: Bleu Maree leaves an impression that lasts beyond dinner."
+      "Light. Rhythm. Precision. A house with a real inner life."
   }
 } as const;
 
@@ -60,11 +61,11 @@ export default async function LocalizedHomePage({ params }: HomePageProps) {
   return (
     <>
       <ImmersiveHomeHero
-        brandName={siteConfig.name}
-        location={siteConfig.location}
         content={homeData.heroContent}
         locale={locale}
       />
+
+      <HomeFounderNote locale={locale} />
 
       <HomeManifesto highlights={homeData.philosophyHighlights} locale={locale} />
 
@@ -74,11 +75,11 @@ export default async function LocalizedHomePage({ params }: HomePageProps) {
 
       <section className="section section-surface--light section--light">
         <div className="container stack" style={{ gap: "2rem" }}>
-          <Reveal>
+          <HomeReveal>
             <div className="eyebrow">{copy.impressionsEyebrow}</div>
             <h2 className="section-title">{copy.impressionsTitle}</h2>
             <p className="lead">{copy.impressionsLead}</p>
-          </Reveal>
+          </HomeReveal>
 
           <ImpressionMarquee impressions={homeData.curatedImpressions} locale={locale} />
         </div>

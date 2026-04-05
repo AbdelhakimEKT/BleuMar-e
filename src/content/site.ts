@@ -3,7 +3,7 @@ import type { Locale } from "@/i18n/config";
 const navigationByLocale = {
   fr: [
     { href: "/", label: "Accueil" },
-    { href: "/restaurant", label: "Le restaurant" },
+    { href: "/restaurant", label: "La maison" },
     { href: "/menus", label: "Menus" },
     { href: "/reservation", label: "Réservation" },
     { href: "/experiences", label: "Expériences" },
@@ -12,7 +12,7 @@ const navigationByLocale = {
   ],
   en: [
     { href: "/", label: "Home" },
-    { href: "/restaurant", label: "Restaurant" },
+    { href: "/restaurant", label: "The house" },
     { href: "/menus", label: "Menus" },
     { href: "/reservation", label: "Booking" },
     { href: "/experiences", label: "Experiences" },
@@ -36,9 +36,9 @@ const siteConfigByLocale = {
   fr: {
     name: "Bleu Marée",
     location: "Biarritz",
-    tagline: "L'Atlantique à table, dans un écrin de lumière.",
+    tagline: "Une maison ouverte pour recevoir juste.",
     description:
-      "Restaurant gastronomique à Biarritz, Bleu Marée célèbre les produits de la mer dans une expérience contemporaine, raffinée et lumineuse.",
+      "Bleu Marée est née d'un désir simple: servir la mer avec précision, lumière et calme, dans une maison qui préfère la tenue au spectacle.",
     url: "https://www.bleu-maree.fr",
     email: "abdelhakim.elakrouti@gmail.com",
     phoneDisplay: "+33 7 68 63 66 49",
@@ -66,9 +66,9 @@ const siteConfigByLocale = {
   en: {
     name: "Bleu Marée",
     location: "Biarritz",
-    tagline: "The Atlantic at the table, in a setting shaped by light.",
+    tagline: "A house opened to receive people well.",
     description:
-      "Fine dining restaurant in Biarritz, Bleu Marée celebrates seafood through a contemporary, refined, and luminous dining experience.",
+      "Bleu Maree was born from a simple desire: to serve the sea with precision, light, and calm, inside a house that prefers hold to spectacle.",
     url: "https://www.bleu-maree.fr",
     email: "abdelhakim.elakrouti@gmail.com",
     phoneDisplay: "+33 7 68 63 66 49",

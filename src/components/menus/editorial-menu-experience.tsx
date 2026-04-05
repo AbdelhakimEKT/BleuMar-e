@@ -33,18 +33,18 @@ const editorialCopy = {
     rhythmCards: [
       {
         label: "Déjeuner",
-        value: "Midi précis",
-        copy: "Une proposition courte, élégante et parfaitement tenue pour le service du midi."
+        value: "Midi net",
+        copy: "Une proposition courte, lumineuse et tenue pour déjeuner avec précision sans alourdir la journée."
       },
       {
         label: "Dégustation",
         value: "5 à 7 temps",
-        copy: "Des parcours qui avancent par paliers, entre fraîcheur marine, profondeur et finale nette."
+        copy: "Des parcours qui avancent par vagues calmes, entre fraîcheur marine, profondeur et finale claire."
       },
       {
         label: "Cave & accords",
-        value: "Accents atlantiques",
-        copy: "Les verres prolongent la carte avec la même retenue que les assiettes."
+        value: "À bonne distance",
+        copy: "Les verres prolongent la carte sans jamais prendre la scène, avec la même retenue que les assiettes."
       }
     ],
     labels: {
@@ -55,11 +55,11 @@ const editorialCopy = {
       event: "Moment signature"
     },
     notesEyebrow: "Repères",
-    notesTitle: "Quelques indications pour choisir votre moment.",
+    notesTitle: "Quelques indications pour choisir votre heure et votre humeur.",
     finaleEyebrow: "Réserver",
-    finaleTitle: "Choisir l'heure, nous confier le reste.",
+    finaleTitle: "Choisir l'heure, puis laisser la maison conduire la suite.",
     finaleCopy:
-      "Les menus évoluent avec les arrivages, les saisons et certains rendez-vous de la maison. La réservation permet ensuite de signaler allergies, occasions et préférences.",
+      "Les menus évoluent avec les arrivages, les saisons et certains rendez-vous de la maison. La réservation permet ensuite de signaler allergies, occasions et préférences dans le même esprit de clarté.",
     reserveLabel: "Réserver",
     contactLabel: "Demander la carte PDF",
     itemCount: {
@@ -76,18 +76,18 @@ const editorialCopy = {
     rhythmCards: [
       {
         label: "Lunch",
-        value: "A precise midday pace",
-        copy: "A concise, elegant proposal designed for midday without heaviness."
+        value: "Midday clarity",
+        copy: "A concise, luminous proposal designed for lunch with precision and without heaviness."
       },
       {
         label: "Tasting",
         value: "5 to 7 courses",
-        copy: "Paths that unfold in stages, between marine freshness, depth, and a clear ending."
+        copy: "Paths that unfold in calm waves between marine freshness, depth, and a clear ending."
       },
       {
         label: "Cellar & pairings",
-        value: "Atlantic accents",
-        copy: "Glasses and bottles extend the menu with the same restraint as the plates."
+        value: "At the right distance",
+        copy: "Glasses and bottles extend the menu without taking over, with the same restraint as the plates."
       }
     ],
     labels: {
@@ -98,11 +98,11 @@ const editorialCopy = {
       event: "Signature moment"
     },
     notesEyebrow: "Guidance",
-    notesTitle: "A few pointers before choosing your moment.",
+    notesTitle: "A few pointers before choosing the right hour and mood.",
     finaleEyebrow: "Booking",
-    finaleTitle: "Choose the hour, then leave the rest to us.",
+    finaleTitle: "Choose the hour, then let the house lead the rest.",
     finaleCopy:
-      "Menus evolve with arrivals, the season, and certain house moments. Booking then leaves room for allergies, occasions, and personal preferences.",
+      "Menus evolve with arrivals, the season, and certain house moments. Booking then leaves room for allergies, occasions, and personal preferences in the same spirit of clarity.",
     reserveLabel: "Book",
     contactLabel: "Request the PDF",
     itemCount: {

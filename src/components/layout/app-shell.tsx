@@ -7,8 +7,6 @@ import { SignatureCursor } from "@/components/home/signature-cursor";
 import { getLocaleFromPathname } from "@/i18n/routing";
 import { getUiCopy } from "@/i18n/ui";
 
-import { BrandIntro } from "./brand-intro";
-
 type AppShellProps = {
   children: React.ReactNode;
   header: React.ReactNode;
@@ -33,7 +31,6 @@ export function AppShell({ children, header, footer }: AppShellProps) {
       <a href="#main-content" className="skip-link">
         {ui.skipToContent}
       </a>
-      <BrandIntro />
       <SignatureCursor />
       <div className="site-shell">
         {header}

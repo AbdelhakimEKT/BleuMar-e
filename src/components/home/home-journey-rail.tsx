@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Reveal } from "@/components/ui/reveal";
 import type { Locale } from "@/i18n/config";
 import { withLocale } from "@/i18n/routing";
 
+import { HomeReveal } from "./home-reveal";
 import styles from "./home-journey-rail.module.css";
 
 type GuestJourneyStep = {
@@ -19,19 +19,21 @@ type HomeJourneyRailProps = {
 
 const journeyCopy = {
   fr: {
-    eyebrow: "Expérience client",
-    title: "De l'arrivée à la dernière bouchée, tout doit sembler naturel.",
+    eyebrow: "Le déroulé du dîner",
+    title: "Une soirée se juge à son rythme.",
     lead:
-      "Chez Bleu Marée, le souvenir ne tient pas à un seul plat. Il se construit dans l'accueil, la cadence du service, la justesse des accords et la façon dont la soirée se referme.",
-    imageAlt: "Chef Bleu Marée au dressage",
+      "On arrive sans friction. Le repas monte sans brusquer. La finale reste claire.",
+    aside: "Le meilleur service vous laisse avec la soirée, pas avec lui.",
+    imageAlt: "Service en salle chez Bleu Marée",
     action: "Préparer votre venue"
   },
   en: {
-    eyebrow: "Guest experience",
-    title: "From arrival to the final bite, everything should feel effortless.",
+    eyebrow: "The arc of dinner",
+    title: "An evening is judged by its rhythm.",
     lead:
-      "At Bleu Maree, memory does not rely on a single plate. It is built through the welcome, the rhythm of service, the pairings, and the way the evening comes to a close.",
-    imageAlt: "Bleu Maree chef plating",
+      "Arrival stays frictionless. The meal builds without pushing. The finish remains clear.",
+    aside: "The best service leaves you with the evening, not with itself.",
+    imageAlt: "Bleu Maree dining room service",
     action: "Plan your visit"
   }
 } as const;
@@ -42,35 +44,38 @@ export function HomeJourneyRail({ steps, locale }: HomeJourneyRailProps) {
   return (
     <section className={`section ${styles.section}`}>
       <div className={`container ${styles.layout}`}>
-        <Reveal className={styles.intro}>
+        <HomeReveal className={styles.intro}>
           <div className="eyebrow">{copy.eyebrow}</div>
           <h2 className={styles.title}>{copy.title}</h2>
           <p className={styles.lead}>{copy.lead}</p>
-        </Reveal>
+          <div className={styles.asidePanel}>
+            <p>{copy.aside}</p>
+          </div>
+        </HomeReveal>
 
-        <Reveal>
+        <HomeReveal variant="soft" delay={0.08}>
           <figure className={styles.heroFrame} data-cursor-label="Cuisine">
             <Image
-              src="/images/experience/bleu-maree-chef-plating-action-alt.jpg"
+              src="/images/experience/bleu-maree-service-in-dining-room.jpg"
               alt={copy.imageAlt}
               fill
               sizes="100vw"
               className={styles.image}
             />
           </figure>
-        </Reveal>
+        </HomeReveal>
 
         <div className={styles.steps}>
           {steps.map((step, index) => (
-            <Reveal key={step.title} className={styles.step}>
+            <HomeReveal key={step.title} className={styles.step} delay={0.1 + index * 0.06}>
               <div className={styles.stepIndex}>{String(index + 1).padStart(2, "0")}</div>
               <h3>{step.title}</h3>
               <p>{step.copy}</p>
-            </Reveal>
+            </HomeReveal>
           ))}
         </div>
 
-        <Reveal className={styles.actionRow}>
+        <HomeReveal className={styles.actionRow} delay={0.2}>
           <Link
             href={withLocale(locale, "/reservation")}
             className="button"
@@ -78,7 +83,7 @@ export function HomeJourneyRail({ steps, locale }: HomeJourneyRailProps) {
           >
             {copy.action}
           </Link>
-        </Reveal>
+        </HomeReveal>
       </div>
     </section>
   );
